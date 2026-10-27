@@ -11,4 +11,4 @@ set -euo pipefail
 R=/scratch/madan.pa/aura3d
 export TORCH_HOME=$R/torchhub PYTHONPATH=$R/code/src
 nvidia-smi --query-gpu=name,memory.total --format=csv,noheader
-$R/envs/vision/bin/python -m aura3d.world_model_training.train_latent --data $R/datasets/traj_v1 --out $R/runs/wm_latent ${EXTRA:-}
+$R/envs/vision/bin/python -m aura3d.world_model_training.train_latent --data $R/datasets/${DATA:-traj_v1} --out $R/runs/${OUT:-wm_latent} ${EXTRA:-}

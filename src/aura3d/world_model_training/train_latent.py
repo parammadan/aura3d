@@ -67,6 +67,10 @@ def eval_split(model, d, stats, H, dev):
         perm = torch.roll(torch.arange(len(a)), 1)
         zsh, _ = model.rollout(z[:, 0], p[:, 0], a[perm])          # actions from a different episode
         err_sh = ((zsh - z[:, 1:]) ** 2).mean(-1)
+        # L2-norm ratios vs copy-z0, the scale-free metric shared with scripts/jepa_transfer.py
+        n_model = (zs - z[:, 1:]).norm(dim=-1)
+        n_copy = (z[:, :1] - z[:, 1:]).norm(dim=-1)
+        n_sh = (zsh - z[:, 1:]).norm(dim=-1)
         pr = model.p_success(zs[:, -1]).cpu().numpy()
     y = d["y"].numpy()
     from sklearn.metrics import roc_auc_score
@@ -75,6 +79,8 @@ def eval_split(model, d, stats, H, dev):
     return {"mse_by_h": {h: float(err[:, h - 1].mean()) for h in hs},
             "copy_baseline_by_h": {h: float(copy[:, h - 1].mean()) for h in hs},
             "shuffled_actions_by_h": {h: float(err_sh[:, h - 1].mean()) for h in hs},
+            "model_over_copy_by_h": {h: float(n_model[:, h - 1].mean() / n_copy[:, h - 1].mean()) for h in range(1, T + 1)},
+            "shuffled_over_copy_by_h": {h: float(n_sh[:, h - 1].mean() / n_copy[:, h - 1].mean()) for h in range(1, T + 1)},
             "outcome_auroc": auroc, "success_rate": float(y.mean()), "n": int(len(y))}
 
 
