@@ -92,3 +92,10 @@ used for tuning.
 - Attention-pooling probe → P(success) on (a) the WM-B *predicted* final latent after unrolling all 24 adapted actions
   from frame 0, and (b) control: the *true* final frame's latent. Class-balanced BCE, 200 epochs, best val AUROC.
 - traj_v2 splits. Gate as in EXP-M8-002: (a) val AUROC ≥ 0.80 before any verifier use.
+
+## EXP-M9-003: risk gate in touching-part clutter (registered 2026-10-27, before running)
+- Follow-up to EXP-M9-001, where the gate had nothing to stop after recalibration. Clutter, no drift, 6 parts,
+  seeds 4000–4049. AuraRunner with bin slots and max_fail_per_part = 1; gate off vs on (P(out) ≤ 0.5, ≤ 2
+  re-observations, then defer). Note: the risk model was trained on 3-part scenes, so 6-part clutter is a distribution
+  shift for it.
+- **Primary:** wrong picks (gate's purpose). **Secondary:** episode success, parts correct, deferrals; McNemar on success.
