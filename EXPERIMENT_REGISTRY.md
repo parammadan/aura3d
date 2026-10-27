@@ -87,3 +87,8 @@ used for tuning.
   dev seeds 0–19 (same camera). Cells (0,0) (0.5,0) (0,10); seeds 2000–2049; B1 vs B3cal, paired.
 - **Primary:** B3cal − B1 episode success per cell (exact McNemar). **Transfer cost:** lines of robot-specific code
   needed beyond `configs/robots.yaml` (counted from git diff).
+
+## EXP-M8-003: patch-level outcome probe on JEPA-WM WM-B (registered 2026-10-27, before running)
+- Attention-pooling probe → P(success) on (a) the WM-B *predicted* final latent after unrolling all 24 adapted actions
+  from frame 0, and (b) control: the *true* final frame's latent. Class-balanced BCE, 200 epochs, best val AUROC.
+- traj_v2 splits. Gate as in EXP-M8-002: (a) val AUROC ≥ 0.80 before any verifier use.
