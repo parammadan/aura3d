@@ -20,8 +20,11 @@ _Last updated: 2026-10-27_
   0.71 under shift (`results/m5/RISK_ANALYSIS.md`)
 - Vision dataset `datasets/vision_v1` (3000/300/300/300, 185 MB; uploaded to cluster)
 
+- M6 JEPA-WMs reproduction: reach-wall 5/12 (paper 41.6 %), inference latencies measured (`results/m6/`)
+- Fallback latent WM trained: test h=8 MSE 0.438 vs copy 2.461 vs shuffled actions 1.074 (`docs/WORLD_MODEL.md`)
+
 ## In progress
-- JEPA-WMs official MetaWorld reproduction (cluster, background).
+- Mask R-CNN PRE/FT-A/FT-B/FT-C array (SLURM 11412274).
 - Mask R-CNN FT smoke test queued on A100 (SLURM 11410744); trainer not yet run at full scale.
 - Written, not run: trajectory recorder (smoke-tested on 3 episodes), fallback latent world model + trainer.
 
