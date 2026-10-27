@@ -27,6 +27,8 @@ ap.add_argument("--split", choices=list(SEED0), required=True)
 ap.add_argument("--n", type=int, required=True)
 ap.add_argument("--robot", default="ur10e")
 ap.add_argument("--out", default="datasets/traj_v1")
+ap.add_argument("--offset-frac", type=float, default=0.35, help="fraction of episodes with an offset grasp")
+ap.add_argument("--offset-mm", default="8,20", help="offset range lo,hi in mm")
 a = ap.parse_args()
 
 wm_cam = CameraCfg(name="wm", eye=(0.0, 0.0, 0.0), width=224, height=224, hfov_deg=58.0)
@@ -50,7 +52,8 @@ for k in range(a.n):
     env.reset(seed)
     i = int(rng.integers(len(env.meta["parts"])))
     g = env.grasp_world(i, env.gt_part_pose(i))       # scripted expert uses GT (data generation only)
-    off = rng.uniform(8, 20) / 1000 if rng.random() < 0.35 else 0.0
+    olo, ohi = map(float, a.offset_mm.split(","))
+    off = rng.uniform(olo, ohi) / 1000 if rng.random() < a.offset_frac else 0.0
     th = rng.uniform(0, 2 * np.pi)
     goal = g["p"] + off * np.array([np.cos(th), np.sin(th), 0])
     yaw = g["yaw"]
