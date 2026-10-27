@@ -1,0 +1,637 @@
+{
+ "summary": {
+  "B0": {
+   "episode_success": 0.52,
+   "wilson95": [
+    0.33498516822009217,
+    0.6996871416694923
+   ],
+   "parts_matched_first_frame": 1.0,
+   "parts_correct": 0.8933333333333333,
+   "wrong_picks": 71
+  },
+  "B1": {
+   "episode_success": 0.24,
+   "wilson95": [
+    0.11496313626452448,
+    0.4342968351708788
+   ],
+   "parts_matched_first_frame": 0.5466666666666666,
+   "parts_correct": 0.78,
+   "wrong_picks": 84
+  },
+  "B2": {
+   "episode_success": 0.52,
+   "wilson95": [
+    0.33498516822009217,
+    0.6996871416694923
+   ],
+   "parts_matched_first_frame": 0.9933333333333333,
+   "parts_correct": 0.8666666666666667,
+   "wrong_picks": 68
+  },
+  "mcnemar_p": 0.015625
+ },
+ "rows": [
+  {
+   "seed": 4025,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B1": {
+    "n_dets": 4,
+    "matched": 3.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 1
+   },
+   "B2": {
+    "n_dets": 7,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   }
+  },
+  {
+   "seed": 4026,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 5
+   },
+   "B1": {
+    "n_dets": 4,
+    "matched": 3.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B2": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 1
+   }
+  },
+  {
+   "seed": 4027,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 8
+   },
+   "B1": {
+    "n_dets": 3,
+    "matched": 1.0,
+    "correct": 3,
+    "success": false,
+    "wrong_picks": 3
+   },
+   "B2": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 5
+   }
+  },
+  {
+   "seed": 4028,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 7
+   },
+   "B1": {
+    "n_dets": 4,
+    "matched": 3.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 3
+   },
+   "B2": {
+    "n_dets": 7,
+    "matched": 6.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 8
+   }
+  },
+  {
+   "seed": 4029,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 7
+   },
+   "B1": {
+    "n_dets": 3,
+    "matched": 0.0,
+    "correct": 2,
+    "success": false,
+    "wrong_picks": 9
+   },
+   "B2": {
+    "n_dets": 7,
+    "matched": 6.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 7
+   }
+  },
+  {
+   "seed": 4030,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 7
+   },
+   "B1": {
+    "n_dets": 5,
+    "matched": 4.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 8
+   },
+   "B2": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 5
+   }
+  },
+  {
+   "seed": 4031,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B1": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B2": {
+    "n_dets": 7,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   }
+  },
+  {
+   "seed": 4032,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B1": {
+    "n_dets": 4,
+    "matched": 2.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 8
+   },
+   "B2": {
+    "n_dets": 7,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   }
+  },
+  {
+   "seed": 4033,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B1": {
+    "n_dets": 5,
+    "matched": 4.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 0
+   },
+   "B2": {
+    "n_dets": 9,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 1
+   }
+  },
+  {
+   "seed": 4034,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 2
+   },
+   "B1": {
+    "n_dets": 4,
+    "matched": 3.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 7
+   },
+   "B2": {
+    "n_dets": 8,
+    "matched": 6.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 4
+   }
+  },
+  {
+   "seed": 4035,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B1": {
+    "n_dets": 5,
+    "matched": 4.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B2": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   }
+  },
+  {
+   "seed": 4036,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 4
+   },
+   "B1": {
+    "n_dets": 4,
+    "matched": 3.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 2
+   },
+   "B2": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 4
+   }
+  },
+  {
+   "seed": 4037,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 3
+   },
+   "B1": {
+    "n_dets": 5,
+    "matched": 4.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 2
+   },
+   "B2": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   }
+  },
+  {
+   "seed": 4038,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 3
+   },
+   "B1": {
+    "n_dets": 5,
+    "matched": 4.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 1
+   },
+   "B2": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 3,
+    "success": false,
+    "wrong_picks": 9
+   }
+  },
+  {
+   "seed": 4039,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 7
+   },
+   "B1": {
+    "n_dets": 5,
+    "matched": 4.0,
+    "correct": 3,
+    "success": false,
+    "wrong_picks": 8
+   },
+   "B2": {
+    "n_dets": 7,
+    "matched": 6.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 3
+   }
+  },
+  {
+   "seed": 4040,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 7
+   },
+   "B1": {
+    "n_dets": 4,
+    "matched": 2.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 2
+   },
+   "B2": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   }
+  },
+  {
+   "seed": 4041,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B1": {
+    "n_dets": 5,
+    "matched": 4.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 7
+   },
+   "B2": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 1
+   }
+  },
+  {
+   "seed": 4042,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 1
+   },
+   "B1": {
+    "n_dets": 5,
+    "matched": 4.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 4
+   },
+   "B2": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 3
+   }
+  },
+  {
+   "seed": 4043,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B1": {
+    "n_dets": 4,
+    "matched": 2.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 8
+   },
+   "B2": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 6
+   }
+  },
+  {
+   "seed": 4044,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B1": {
+    "n_dets": 5,
+    "matched": 4.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 2
+   },
+   "B2": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 4
+   }
+  },
+  {
+   "seed": 4045,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 8
+   },
+   "B1": {
+    "n_dets": 3,
+    "matched": 2.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 3
+   },
+   "B2": {
+    "n_dets": 8,
+    "matched": 5.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 1
+   }
+  },
+  {
+   "seed": 4046,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B1": {
+    "n_dets": 4,
+    "matched": 4.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B2": {
+    "n_dets": 7,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   }
+  },
+  {
+   "seed": 4047,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 4,
+    "success": false,
+    "wrong_picks": 2
+   },
+   "B1": {
+    "n_dets": 5,
+    "matched": 4.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 5
+   },
+   "B2": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 6
+   }
+  },
+  {
+   "seed": 4048,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B1": {
+    "n_dets": 5,
+    "matched": 4.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B2": {
+    "n_dets": 7,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   }
+  },
+  {
+   "seed": 4049,
+   "B0": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   },
+   "B1": {
+    "n_dets": 5,
+    "matched": 4.0,
+    "correct": 5,
+    "success": false,
+    "wrong_picks": 1
+   },
+   "B2": {
+    "n_dets": 6,
+    "matched": 6.0,
+    "correct": 6,
+    "success": true,
+    "wrong_picks": 0
+   }
+  }
+ ]
+}

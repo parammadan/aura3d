@@ -12,3 +12,18 @@ remaining failures are refused recalibrations (deferrals), which a downstream ga
 harmful (0 extra deferrals at zero drift), but on this task it adds no closed-loop value. Its measured value is
 offline ranking (EXP-M5-003). To show closed-loop value it needs a scenario where geometry is right but individual
 estimates are wrong (clutter, occlusion, reflective parts), not yet run with the gate.
+
+# EXP-M9-003 results: risk gate in clutter (seeds 4000–4049, paired; gate off vs on)
+| | gate off | gate on |
+|---|---|---|
+| Episode success | 14/50 (0.28) | 5/50 (0.10) |
+| Parts correct | 219/300 | 180/300 |
+| **Wrong picks (primary)** | 95 | **34 (−64 %)** |
+| Deferred episodes | 0 | 32 |
+McNemar on success p = 0.0039, against the gate.
+
+The gate does its job (wrong actions −64 %) but is far too conservative here: the risk model was trained on 3-part,
+uncluttered scenes, and 6-part clutter is a shift where its P(out) is miscalibrated (consistent with the conformal
+coverage drop to 0.71 under shift, EXP-M5-003). **The gate trades throughput for safety, and with out-of-domain
+calibration the trade is poor.** Fix to test: calibration data from the deployment distribution. Not by tuning the
+threshold on these test seeds.
