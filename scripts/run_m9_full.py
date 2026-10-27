@@ -25,7 +25,7 @@ lo, hi = map(int, a.seeds.split(":"))
 
 
 def load(split):
-    ps = [np.load(f) for f in sorted(glob.glob(f"datasets/risk_v1/{split}_*.npz"))]
+    ps = [np.load(f) for f in sorted(glob.glob(f"datasets/risk_v1/{split}_[0-9]*.npz"))]
     return {k: np.concatenate([p[k] for p in ps]) for k in ("X", "e_mm", "cls")}
 
 

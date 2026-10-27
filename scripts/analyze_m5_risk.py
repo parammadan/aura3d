@@ -12,7 +12,7 @@ D = Path("datasets/risk_v1")
 
 
 def load(split):
-    parts = [np.load(f) for f in sorted(glob.glob(str(D / f"{split}_*.npz")))]
+    parts = [np.load(f) for f in sorted(glob.glob(str(D / f"{split}_[0-9]*.npz")))]
     return {k: np.concatenate([p[k] for p in parts]) for k in ("X", "e_mm", "cls", "meta")}
 
 
