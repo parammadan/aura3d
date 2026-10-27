@@ -27,3 +27,20 @@ uncluttered scenes, and 6-part clutter is a shift where its P(out) is miscalibra
 coverage drop to 0.71 under shift, EXP-M5-003). **The gate trades throughput for safety, and with out-of-domain
 calibration the trade is poor.** Fix to test: calibration data from the deployment distribution. Not by tuning the
 threshold on these test seeds.
+
+# EXP-M9-004 results: in-domain calibrated gate (fresh seeds 4100–4149). Registered criterion NOT met
+| | gate off | gate on (isotonic/conformal refit on dev clutter) |
+|---|---|---|
+| Wrong picks (primary) | 108 | **17 (−84 %)** |
+| Episode success | 14/50 | 4/50 |
+| Parts correct | 220/300 | 162/300 |
+| Deferred episodes | 0 | 43 |
+McNemar on success p = 0.0020, against the gate. Criterion (keep ≥ 50 % of the wrong-pick reduction *without* lowering
+success): **failed**.
+
+Interpretation: calibrating on clutter made the gate more selective (wrong picks −84 % vs −64 % in EXP-M9-003) and also
+deferred more. So the over-deferral is not miscalibration. With classical B1 perception, many clutter estimates
+really are out of tolerance (merged blobs), and the gate correctly refuses them. **The missing piece is an informative
+recovery action:** REOBSERVE re-images the same static scene from the same camera and returns the same estimate.
+A gate only raises throughput when paired with a recovery that changes the information: learned segmentation (B2
+localises 99.2 % of clutter parts, EXP-M4-002), another viewpoint (BELIEF-3D's active perception), or singulation.

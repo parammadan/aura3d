@@ -1,0 +1,877 @@
+{
+ "summary": {
+  "gate_off": {
+   "episode_success": 0.28,
+   "wilson95": [
+    0.17474170598814281,
+    0.4166512380904474
+   ],
+   "parts_correct": 220,
+   "wrong_picks": 108,
+   "deferred": 0
+  },
+  "gate_on": {
+   "episode_success": 0.08,
+   "wilson95": [
+    0.031549513869311444,
+    0.1883824702807244
+   ],
+   "parts_correct": 162,
+   "wrong_picks": 17,
+   "deferred": 43
+  },
+  "mcnemar_p": 0.001953125
+ },
+ "rows": [
+  {
+   "seed": 4100,
+   "gate_off": {
+    "correct": 6,
+    "success": true,
+    "wrong": 1,
+    "picks": 7,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4101,
+   "gate_off": {
+    "correct": 6,
+    "success": true,
+    "wrong": 0,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4102,
+   "gate_off": {
+    "correct": 4,
+    "success": false,
+    "wrong": 10,
+    "picks": 14,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 2,
+    "success": false,
+    "wrong": 0,
+    "picks": 2,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4103,
+   "gate_off": {
+    "correct": 6,
+    "success": true,
+    "wrong": 1,
+    "picks": 7,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 3,
+    "success": false,
+    "wrong": 1,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4104,
+   "gate_off": {
+    "correct": 5,
+    "success": false,
+    "wrong": 3,
+    "picks": 8,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4105,
+   "gate_off": {
+    "correct": 4,
+    "success": false,
+    "wrong": 2,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4106,
+   "gate_off": {
+    "correct": 6,
+    "success": true,
+    "wrong": 1,
+    "picks": 7,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4107,
+   "gate_off": {
+    "correct": 3,
+    "success": false,
+    "wrong": 3,
+    "picks": 7,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 2,
+    "success": false,
+    "wrong": 0,
+    "picks": 2,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4108,
+   "gate_off": {
+    "correct": 6,
+    "success": true,
+    "wrong": 0,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 2,
+    "success": false,
+    "wrong": 0,
+    "picks": 2,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4109,
+   "gate_off": {
+    "correct": 4,
+    "success": false,
+    "wrong": 1,
+    "picks": 5,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 3,
+    "success": false,
+    "wrong": 1,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4110,
+   "gate_off": {
+    "correct": 6,
+    "success": true,
+    "wrong": 0,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 2,
+    "success": false,
+    "wrong": 0,
+    "picks": 2,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4111,
+   "gate_off": {
+    "correct": 6,
+    "success": true,
+    "wrong": 0,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 6,
+    "success": true,
+    "wrong": 0,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   }
+  },
+  {
+   "seed": 4112,
+   "gate_off": {
+    "correct": 4,
+    "success": false,
+    "wrong": 1,
+    "picks": 5,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 2,
+    "success": false,
+    "wrong": 0,
+    "picks": 2,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4113,
+   "gate_off": {
+    "correct": 3,
+    "success": false,
+    "wrong": 6,
+    "picks": 9,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 1,
+    "success": false,
+    "wrong": 1,
+    "picks": 2,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4114,
+   "gate_off": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4115,
+   "gate_off": {
+    "correct": 3,
+    "success": false,
+    "wrong": 2,
+    "picks": 5,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4116,
+   "gate_off": {
+    "correct": 3,
+    "success": false,
+    "wrong": 3,
+    "picks": 7,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 3,
+    "success": false,
+    "wrong": 2,
+    "picks": 5,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4117,
+   "gate_off": {
+    "correct": 6,
+    "success": true,
+    "wrong": 1,
+    "picks": 7,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4118,
+   "gate_off": {
+    "correct": 4,
+    "success": false,
+    "wrong": 4,
+    "picks": 9,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 2,
+    "success": false,
+    "wrong": 0,
+    "picks": 2,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4119,
+   "gate_off": {
+    "correct": 6,
+    "success": true,
+    "wrong": 0,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 6,
+    "success": true,
+    "wrong": 0,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   }
+  },
+  {
+   "seed": 4120,
+   "gate_off": {
+    "correct": 3,
+    "success": false,
+    "wrong": 2,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4121,
+   "gate_off": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 1,
+    "success": false,
+    "wrong": 0,
+    "picks": 1,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4122,
+   "gate_off": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4123,
+   "gate_off": {
+    "correct": 2,
+    "success": false,
+    "wrong": 3,
+    "picks": 5,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 2,
+    "success": false,
+    "wrong": 3,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   }
+  },
+  {
+   "seed": 4124,
+   "gate_off": {
+    "correct": 6,
+    "success": true,
+    "wrong": 0,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4125,
+   "gate_off": {
+    "correct": 4,
+    "success": false,
+    "wrong": 2,
+    "picks": 7,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 2,
+    "success": false,
+    "wrong": 0,
+    "picks": 2,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4126,
+   "gate_off": {
+    "correct": 3,
+    "success": false,
+    "wrong": 1,
+    "picks": 4,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 3,
+    "success": false,
+    "wrong": 0,
+    "picks": 3,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4127,
+   "gate_off": {
+    "correct": 4,
+    "success": false,
+    "wrong": 2,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4128,
+   "gate_off": {
+    "correct": 5,
+    "success": false,
+    "wrong": 0,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4129,
+   "gate_off": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4130,
+   "gate_off": {
+    "correct": 6,
+    "success": true,
+    "wrong": 1,
+    "picks": 7,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4131,
+   "gate_off": {
+    "correct": 4,
+    "success": false,
+    "wrong": 2,
+    "picks": 7,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4132,
+   "gate_off": {
+    "correct": 2,
+    "success": false,
+    "wrong": 2,
+    "picks": 5,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 3,
+    "success": false,
+    "wrong": 0,
+    "picks": 3,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4133,
+   "gate_off": {
+    "correct": 3,
+    "success": false,
+    "wrong": 4,
+    "picks": 7,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 0,
+    "success": false,
+    "wrong": 0,
+    "picks": 0,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4134,
+   "gate_off": {
+    "correct": 6,
+    "success": true,
+    "wrong": 0,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 6,
+    "success": true,
+    "wrong": 0,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   }
+  },
+  {
+   "seed": 4135,
+   "gate_off": {
+    "correct": 5,
+    "success": false,
+    "wrong": 8,
+    "picks": 13,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4136,
+   "gate_off": {
+    "correct": 2,
+    "success": false,
+    "wrong": 5,
+    "picks": 8,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 1,
+    "success": false,
+    "wrong": 0,
+    "picks": 1,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4137,
+   "gate_off": {
+    "correct": 4,
+    "success": false,
+    "wrong": 1,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 2,
+    "success": false,
+    "wrong": 0,
+    "picks": 2,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4138,
+   "gate_off": {
+    "correct": 3,
+    "success": false,
+    "wrong": 2,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 2,
+    "success": false,
+    "wrong": 1,
+    "picks": 3,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4139,
+   "gate_off": {
+    "correct": 5,
+    "success": false,
+    "wrong": 6,
+    "picks": 11,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 2,
+    "picks": 6,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4140,
+   "gate_off": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 2,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   }
+  },
+  {
+   "seed": 4141,
+   "gate_off": {
+    "correct": 6,
+    "success": true,
+    "wrong": 0,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 2,
+    "success": false,
+    "wrong": 0,
+    "picks": 2,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4142,
+   "gate_off": {
+    "correct": 4,
+    "success": false,
+    "wrong": 4,
+    "picks": 9,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 2,
+    "success": false,
+    "wrong": 0,
+    "picks": 2,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4143,
+   "gate_off": {
+    "correct": 4,
+    "success": false,
+    "wrong": 3,
+    "picks": 7,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 3,
+    "picks": 7,
+    "outcome": "COMPLETE"
+   }
+  },
+  {
+   "seed": 4144,
+   "gate_off": {
+    "correct": 6,
+    "success": true,
+    "wrong": 0,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 6,
+    "success": true,
+    "wrong": 0,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   }
+  },
+  {
+   "seed": 4145,
+   "gate_off": {
+    "correct": 1,
+    "success": false,
+    "wrong": 9,
+    "picks": 11,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 3,
+    "success": false,
+    "wrong": 1,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4146,
+   "gate_off": {
+    "correct": 4,
+    "success": false,
+    "wrong": 2,
+    "picks": 7,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4147,
+   "gate_off": {
+    "correct": 4,
+    "success": false,
+    "wrong": 4,
+    "picks": 8,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 1,
+    "success": false,
+    "wrong": 0,
+    "picks": 1,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4148,
+   "gate_off": {
+    "correct": 4,
+    "success": false,
+    "wrong": 1,
+    "picks": 5,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  },
+  {
+   "seed": 4149,
+   "gate_off": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "picks": 6,
+    "outcome": "COMPLETE"
+   },
+   "gate_on": {
+    "correct": 4,
+    "success": false,
+    "wrong": 0,
+    "picks": 4,
+    "outcome": "DEFER"
+   }
+  }
+ ]
+}
