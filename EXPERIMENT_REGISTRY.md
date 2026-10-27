@@ -81,3 +81,9 @@ used for tuning.
 - Change: retrain the fallback model on traj_v2 with class-balanced BCE, outcome weight 1.0 (`runs/wm_latent_v2b`).
 - **Authority gate (fixed now):** the verifier is evaluated on EXP-M8-001's protocol and seeds only if val outcome
   AUROC ≥ 0.80. Otherwise it is not deployed, and that is the result.
+
+## EXP-M9-002: transfer of the reliability layer to the FANUC M-710iC/50 (H5) (registered 2026-10-27)
+- Same code and configuration as EXP-M5-001 with `--robot fanuc_m710ic_50`. The monitor is re-commissioned on FANUC
+  dev seeds 0–19 (same camera). Cells (0,0) (0.5,0) (0,10); seeds 2000–2049; B1 vs B3cal, paired.
+- **Primary:** B3cal − B1 episode success per cell (exact McNemar). **Transfer cost:** lines of robot-specific code
+  needed beyond `configs/robots.yaml` (counted from git diff).
