@@ -69,7 +69,9 @@ Test AUROC 0.995 (GB) vs 0.754 (estimator score); real-part rows only 0.966 vs 0
 COCO-only Mask R-CNN: 0.001 segm mAP. Fine-tuned (head-only / partial / full): 0.854 / 0.853 / 0.861, with no
 established difference. Downstream, in touching-part clutter (EXP-M4-002, 100 paired seeds), B2 (Mask R-CNN + the same pose fit) sorts
 53/100 episodes vs 30/100 for B1 (p = 1.5×10⁻⁵), and first-frame localisation rises from 60.5 % to 99.2 %. The oracle
-ceiling is 58/100: in clutter the gripper, not perception, becomes the limit.
+ceiling is 58/100: in clutter the gripper, not perception, becomes the limit. Collision-aware grasp selection
+(clearance-ordered picking from *estimated* poses, EXP-M4-003, fresh seeds) lifts B2 from 50/100 to 88/100
+(p = 7.5×10⁻¹¹), matching the oracle with the same selection (88/100) and cutting wrong picks by 76 %.
 ### 5.7 Full loop (EXP-M9-001)
 B6 = B3cal in every drift cell (0.5°: 42/50; 1°: 30/50; 10 mm: 30/50; 0 wrong picks; failures are deferrals). After
 validated recalibration, nothing is left for the risk gate to stop. In clutter (EXP-M9-003) the gate cuts wrong picks by

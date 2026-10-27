@@ -12,3 +12,17 @@ merged-blob localisation (60.5 % → 99.2 %) and nearly reaches the controller c
 The ceiling itself is low: with exact poses only 58 % of 6-part clutter episodes succeed, and 269 picks fail. In
 touching clutter the parallel-jaw approach collides with neighbours. That is a grasp-planning limit (collision-aware
 grasp selection, singulation), not a perception one.
+
+# EXP-M4-003 results: collision-aware grasp selection (fresh seeds 4200–4299, paired)
+| Arm | Episode success | Wilson 95 % | Parts correct | Wrong picks |
+|---|---|---|---|---|
+| B0 oracle | 62/100 | [0.52, 0.71] | 544/600 | 205 |
+| B0 + CA | **88/100** | [0.80, 0.93] | 586/600 | 48 |
+| B2 Mask R-CNN | 50/100 | [0.40, 0.60] | 522/600 | 232 |
+| B2 + CA | **88/100** | [0.80, 0.93] | 584/600 | 55 |
+McNemar CA vs no-CA: B0 p = 8.7e-7 (2 vs 28 discordant); B2 p = 7.5e-11 (1 vs 39).
+
+**Supported.** Choosing the part with the most jaw clearance first (and the best pin yaw), using only estimated poses,
+lifts learned perception from 50 to 88/100 and cuts wrong picks by 76 %. **B2 + CA equals the oracle + CA**: with
+fine-tuned segmentation plus clearance ordering, perception is no longer the limit in this clutter setting. Remaining
+12 % failures are not yet analysed.

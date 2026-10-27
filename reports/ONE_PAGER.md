@@ -15,7 +15,7 @@ latent world model. ROS 2 Jazzy integration test passes.
 - Vision: COCO-only Mask R-CNN 0.001 segm mAP → 0.85 fine-tuned. Head-only = full within noise, at 28 % of the memory.
 - World models: JEPA reproduction 5/12 (paper 41.6 %). Zero-shot on our cell 2.7× worse than copy; predictor fine-tune → 0.67×. Own model as
   verifier **hurt** picking (99 → 88/100), so it is gated off.
-- Clutter: Mask R-CNN 30/100 → 53/100 sorting (oracle ceiling 58). FANUC: same code, 0.5° bump 6/50 → 42/50.
+- Clutter: Mask R-CNN 30/100 → 53/100 sorting (oracle ceiling 58); + collision-aware grasping → **88/100** (= oracle). FANUC: same code, 0.5° bump 6/50 → 42/50.
 - Risk gate in clutter: wrong picks −64 %, but it over-defers (success 14 → 5/50). It needs in-domain calibration.
 
 **Honest limits.** Simulation only; assumed sensor noise; primitive parts; drift modelled as a rigid bump; single

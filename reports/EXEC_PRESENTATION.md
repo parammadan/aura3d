@@ -37,6 +37,7 @@ asks for an operator instead of acting.
 ## 4b. Learned vision earns its place in clutter (20 s)
 Touching parts merge in depth. Fine-tuned Mask R-CNN lifts first-frame localisation from 60 % to 99 % and sorting from
 30/100 to 53/100 (p = 1.5e-5), close to the 58/100 oracle ceiling, where the gripper becomes the limit.
+Picking the part with the most jaw clearance first fixes that: **50 → 88/100**, equal to oracle poses with the same rule.
 
 ## 5. World models: what worked and what didn't (60 s)
 - Reproduced Meta JEPA-WM on its own task: 5/12 vs the paper's 41.6 %.
