@@ -51,3 +51,24 @@ Adapter rules:
 3. **Clip to the training range before z-scoring**: unclipped actions at ≈ 6.6σ predicted worse than copy-z0.
 4. Differences in camera, embodiment and scene mean WM-A (frozen, zero-shot) is expected to transfer poorly. That is
    the hypothesis WM-B (predictor fine-tune) tests.
+
+## C. EXP-M7-001: JEPA-WM transfer to the UR10e cell (done)
+SLURM 11412967. traj_v2: 600 train, 100 val, 100 test. Adapter `src/aura3d/world_models/jepa_adapter.py`. WM-B: encoder
+frozen; predictor (17.6 M) fine-tuned for 15 epochs with a 6-step latent L2 loss, AdamW 5e-5, bf16; best epoch by val.
+
+Held-out **test**: mean L2 to the true latent, as a multiple of the copy-z_s baseline (scale-free across models):
+
+| h | JEPA WM-A (zero-shot) | JEPA WM-B (predictor FT) | Fallback (ours, traj_v2) |
+|---|---|---|---|
+| 1 | 2.757 | 1.077 | 0.626 |
+| 2 | 2.721 | 0.820 | 0.520 |
+| 4 | 2.713 | 0.653 | 0.443 |
+| 6 | 2.681 | **0.672** | **0.428** |
+
+- **H3 supported:** fine-tuning the predictor on industrial-robot trajectories improves held-out prediction over the
+  pretrained model (2.68 → 0.67 at h = 6). Zero-shot transfer fails outright (worse than copy at every horizon).
+- WM-B is still worse than copy at h = 1 (1.08), and better from h = 2 on.
+- The smaller fallback predicts better at every horizon. The comparison is not like-for-like: JEPA predicts a
+  16×16×384 patch grid while the fallback predicts a global 768-d vector (an easier target). The ratio normalises
+  scale, not difficulty.
+- Prediction quality ≠ decision value (EXP-M8-001/002). JEPA's patch-level outcome probe is EXP-M8-003.
