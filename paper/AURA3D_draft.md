@@ -80,7 +80,8 @@ FANUC M-710iC/50 with no robot-specific code: 0.5° bump B1 6/50 → B3cal 42/50
 (p = 2×10⁻⁴). The camera and fixtures are shared, so this measures modular transfer, not generalisation to a new cell.
 ### 5.9 World models (EXP-M6/M7/M8)
 - JEPA-WM reproduction on its own task: reach-wall 5/12 (paper 41.6 %).
-- Zero-shot on our cell: 2.7× copy error. WM-B (predictor fine-tune): **PENDING** (val 0.77× copy after 3 epochs).
+- Zero-shot on our cell: 2.7× copy error at every horizon. Predictor fine-tuning (WM-B) on 600 UR10e trajectories:
+  0.67× copy at h = 6 (H3 supported). The smaller fallback reaches 0.43×, though it predicts an easier global target.
 - Fallback model: h = 6 error 0.43× copy; outcome head AUROC 0.58 (test).
 - Verifier at 0° drift: 88/100 vs geometry 99/100 (p = 0.001); at 1.0°: 16/100 vs 21/100 (p = 0.125); oracle 94/100.
   A retrained, class-balanced outcome head reached val AUROC 0.669, below the pre-set 0.80 gate, so it was not deployed.

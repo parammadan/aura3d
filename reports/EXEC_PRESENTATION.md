@@ -41,7 +41,7 @@ Touching parts merge in depth. Fine-tuned Mask R-CNN lifts first-frame localisat
 ## 5. World models: what worked and what didn't (60 s)
 - Reproduced Meta JEPA-WM on its own task: 5/12 vs the paper's 41.6 %.
 - **Zero-shot on our robot it is worse than predicting "nothing moves"** (2.7×). Fine-tuning only the predictor
-  brings it to 0.73× after 5 epochs (PENDING final).
+  brings it to **0.67×** (15 epochs, V100, 67 min).
 - My own latent model predicts well (0.43×), but **as a grasp verifier it made picking worse: 99 → 88/100**. Good
   prediction is not good decision-making, so world models get authority over actions only after their outcome
   ranking is validated (pre-set gate AUROC ≥ 0.80; retrained head 0.67, so not deployed).

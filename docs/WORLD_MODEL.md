@@ -67,7 +67,8 @@ Held-out **test**: mean L2 to the true latent, as a multiple of the copy-z_s bas
 
 - **H3 supported:** fine-tuning the predictor on industrial-robot trajectories improves held-out prediction over the
   pretrained model (2.68 → 0.67 at h = 6). Zero-shot transfer fails outright (worse than copy at every horizon).
-- WM-B is still worse than copy at h = 1 (1.08), and better from h = 2 on.
+- WM-B is still worse than copy at h = 1 (1.08), and better from h = 2 on. It uses actions, but weakly: shuffled
+  actions give 0.764 vs 0.672 at h = 6 (fallback: 0.65 vs 0.43). Training: 4,033 s on a V100, peak 6.9 GB.
 - The smaller fallback predicts better at every horizon. The comparison is not like-for-like: JEPA predicts a
   16×16×384 patch grid while the fallback predicts a global 768-d vector (an easier target). The ratio normalises
   scale, not difficulty.
