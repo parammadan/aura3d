@@ -126,3 +126,9 @@ used for tuning.
 
 ## EXP-M4-004: failure analysis of B2 + CA in clutter (descriptive, 2026-10-27)
 - Rerun the 12 failed seeds of EXP-M4-003 with per-pick reasons logged. Descriptive only; no hypothesis test.
+- **EXP-M5-004 run 1 invalid (bug):** `env.reset()` does not restore the camera pose, so each seed's "no drift" frames
+  inherited the previous seed's ramp (up to 1°), giving 867/1000 "false" alarms that were really drift. Fixed by
+  restoring the nominal camera per seed; rerun with the same seeds and settings. Registered experiments M5-001/M9-*
+  call `apply_camera_drift` every episode (which resets the camera), so they are unaffected.
+- **EXP-M4-004 run 1 invalid (bug):** a comma-separated seed list was cut by `sbatch --export`, so only one seed ran.
+  Rerun with '+' separators.

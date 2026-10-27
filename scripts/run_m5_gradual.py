@@ -50,6 +50,8 @@ def worst_err(frame):
 rows, fa_frames, fa_alarms = [], 0, 0
 for s in range(lo, hi):
     env.reset(s)
+    # reset() does not restore the camera; restore nominal explicitly (bug found in the first run, see registry)
+    apply_camera_drift(env, CameraDrift(0.0, 0.0, seed=s))
     for k in range(a.n_frames):                       # (a) no drift
         env.step(25)
         fa_frames += 1

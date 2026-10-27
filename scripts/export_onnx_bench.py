@@ -31,7 +31,10 @@ X = [to_tensor(Image.open(p).convert("RGB")) for p in imgs]
 onnx_path = Path(a.out).with_suffix(".onnx")
 onnx_path.parent.mkdir(parents=True, exist_ok=True)
 t0 = time.time()
-torch.onnx.export(m, ([X[0].to(dev)],), str(onnx_path), opset_version=17, input_names=["image"],
+import copy  # noqa: E402
+
+m_cpu = copy.deepcopy(m).cpu().eval()      # torchvision detection export mixes devices on CUDA; export on CPU
+torch.onnx.export(m_cpu, ([X[0]],), str(onnx_path), opset_version=17, input_names=["image"],
                   output_names=["boxes", "labels", "scores", "masks"],
                   dynamic_axes={"image": {1: "h", 2: "w"}, "boxes": {0: "n"}, "labels": {0: "n"}, "scores": {0: "n"},
                                 "masks": {0: "n"}})

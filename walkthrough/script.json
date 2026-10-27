@@ -1,0 +1,92 @@
+[
+ {
+  "id": "s01",
+  "kind": "card",
+  "visual": "hook",
+  "text": "Bump a factory camera by half a degree, and a robot that sorted every part starts grabbing at nothing. Seven good runs out of fifty. This project is about catching that, fixing it safely, and proving it with numbers."
+ },
+ {
+  "id": "s02",
+  "kind": "card",
+  "visual": "intro",
+  "text": "I'm Param Madan. I build robot perception that knows when not to trust itself."
+ },
+ {
+  "id": "s03",
+  "kind": "footage",
+  "visual": "robots",
+  "text": "Everything here runs in simulation, in MuJoCo. One workcell, two robots: a FANUC M seven ten, loaded from FANUC's official robot description, and a Universal Robots U R ten e. Same gripper, same depth camera, same parts. Given exact part positions, both robots placed three hundred out of three hundred."
+ },
+ {
+  "id": "s04",
+  "kind": "card",
+  "visual": "baseline",
+  "text": "First, a plain perception pipeline. The depth camera turns the tray into a 3D point cloud, and each part's pose comes from fitting its CAD shape to those points. With normal sensor noise, it never failed. That's the catch: noise alone can't separate a robust system from a fragile one. So I injected the failures real cells actually see."
+ },
+ {
+  "id": "s05",
+  "kind": "footage",
+  "visual": "drift",
+  "text": "Here's one. On the left, the camera has been bumped half a degree, and nothing notices. The robot reaches for parts that aren't there. On the right, the system compares what the camera sees against the known table, the tray walls and three reference spheres, spots the mismatch, and recalibrates before it picks."
+ },
+ {
+  "id": "s06",
+  "kind": "card",
+  "visual": "drift_numbers",
+  "text": "Across fifty test layouts per condition, a half degree bump took plain perception from fifty out of fifty down to seven. With monitoring and recalibration, forty two, and wrong picks went from two hundred fifty one to zero. When it couldn't verify a correction, it stopped and asked for help instead of guessing."
+ },
+ {
+  "id": "s07",
+  "kind": "card",
+  "visual": "observability",
+  "text": "That surfaced two engineering lessons. A flat table and low walls can't pin down a camera shift: a ten millimetre bump stayed seven and a half millimetres off. Three reference spheres brought it to about one millimetre. And a standard math check for a trustworthy fit didn't work, so a fix is only accepted if it predicts a sphere it never saw."
+ },
+ {
+  "id": "s08",
+  "kind": "card",
+  "visual": "risk",
+  "text": "Next lesson: most of those failures weren't small pose errors. A tilted camera makes patches of table look like parts. I measured how much error each part can tolerate, about one to one and a half centimetres, and trained a risk model. It catches bad estimates far better than the estimator's own confidence. Its error bounds held in normal conditions, but broke under shift."
+ },
+ {
+  "id": "s09",
+  "kind": "card",
+  "visual": "vision",
+  "text": "Then, touching parts. Depth alone merges them into one blob. An off the shelf Mask R-CNN model, trained on everyday photos, found essentially none of these parts. Fine tuned on synthetic images, it reached zero point eight five mean average precision, and training only its head matched full fine tuning, with a quarter of the memory."
+ },
+ {
+  "id": "s10",
+  "kind": "footage",
+  "visual": "clutter",
+  "text": "In the robot loop, learned vision took cluttered trays from thirty to fifty three fully sorted, out of a hundred. But even with perfect poses, the gripper kept bumping neighbours. So now the robot picks the part with the most room for its fingers first. Without that rule: four of six parts, in twelve attempts. With it: six of six, in six."
+ },
+ {
+  "id": "s11",
+  "kind": "card",
+  "visual": "clutter_numbers",
+  "text": "Over a hundred new trays, that went from fifty to eighty eight, exactly matching perfect poses with the same rule. And the risk gate? Paired with weak perception, it refused almost everything. Paired with the fine tuned vision, it cut wrong picks in half, and raised success from twenty one to thirty one, out of fifty."
+ },
+ {
+  "id": "s12",
+  "kind": "card",
+  "visual": "fanuc",
+  "text": "Then transfer. The exact same code ran on the FANUC with only a configuration change. After the same half degree bump: six out of fifty without monitoring, forty two with it. The camera and cell were shared, so this shows the layer moves between robots cleanly, not that it works in a brand new cell."
+ },
+ {
+  "id": "s13",
+  "kind": "card",
+  "visual": "world_models",
+  "text": "World models. I reproduced Meta's JEPA world model on its own benchmark: five of twelve, against the paper's forty two percent. On our robot, out of the box, it predicted worse than assuming nothing moves. Fine tuning fixed the prediction. But neither it nor my own model could foresee whether a grasp would succeed, so world models get no say over actions."
+ },
+ {
+  "id": "s14",
+  "kind": "card",
+  "visual": "rigor",
+  "text": "TBD rigor, gradual drift and deployment numbers"
+ },
+ {
+  "id": "s15",
+  "kind": "card",
+  "visual": "outro",
+  "text": "The lesson: reliability comes from knowing when you're wrong, and having a good next move. The code, results and paper are on GitHub, at param madan slash aura three d. If you're building perception that has to work on a real factory floor, I'd love to talk."
+ }
+]
