@@ -9,6 +9,7 @@ from __future__ import annotations
 import mujoco
 import numpy as np
 
+from aura3d.cameras.noise import StereoNoise, corrupt
 from aura3d.contracts import CameraFrame
 from aura3d.geometry import se3
 from aura3d.robots.manipulator import Manipulator
@@ -24,8 +25,10 @@ PART_HALF_HEIGHT = {"block": 0.015, "pin": 0.025, "bracket": 0.015}
 
 
 class WorkcellEnv:
-    def __init__(self, cfg: WorkcellCfg | None = None):
+    def __init__(self, cfg: WorkcellCfg | None = None, noise: StereoNoise | None = None):
         self.cfg = cfg or WorkcellCfg()
+        self.noise = noise
+        self._noise_rng = np.random.default_rng(0)
         self.model, self.meta = build_workcell(self.cfg)
         self.data = mujoco.MjData(self.model)
         self.robot = Manipulator(self.model, self.data, self.meta["robot_cfg"])
@@ -40,6 +43,7 @@ class WorkcellEnv:
     # ---------- reset ----------
     def reset(self, seed: int, min_sep: float = 0.085) -> dict:
         rng = np.random.default_rng(seed)
+        self._noise_rng = np.random.default_rng([seed, 1])   # sensor noise stream, independent of layout
         mujoco.mj_resetData(self.model, self.data)
         self.robot.set_joint_state(self.robot.observe_q)
         tray, top = self.meta["tray"], self.meta["table_top"]
@@ -78,6 +82,8 @@ class WorkcellEnv:
             r.update_scene(self.data, camera=self.cam_ids[cam])
             d = r.render().astype(np.float32)     # MuJoCo returns z-depth in metres
             r.disable_depth_rendering()
+            if self.noise is not None:
+                rgb, d = corrupt(rgb, d, self.noise, self._noise_rng)
         return CameraFrame(stamp=float(self.data.time), frame_id=f"camera/{cam}", rgb=rgb, depth=d, K=c["K"],
                            T_world_cam=self.believed_T_world_cam[cam])
 
@@ -121,13 +127,17 @@ class WorkcellEnv:
         return bool(inside and p[2] < self.meta["table_top"] + 0.06)
 
     def grasp_world(self, i: int, T_world_part: np.ndarray) -> dict:
-        """Grasp target for part i given ITS POSE (estimated or oracle) — the pose source decides privilege."""
-        g = GRASPS[self.meta["part_classes"][i]]
-        R = T_world_part[:3, :3]
-        p = T_world_part[:3, 3] + R @ np.array([*g["offset"], 0.0])
-        p[2] = self.meta["table_top"] + g["tcp_z"]
-        axis = R @ np.array([*g["axis"], 0.0])
-        return {"p": p, "yaw": float(np.arctan2(axis[1], axis[0])), "width": g["width"]}
+        return grasp_for(self.meta["part_classes"][i], T_world_part, self.meta["table_top"])
 
 
-__all__ = ["WorkcellEnv", "GRASPS", "CATALOG"]
+def grasp_for(cls: str, T_world_part: np.ndarray, table_top: float) -> dict:
+    """Grasp target for a part of class `cls` at a pose (estimated or oracle; the pose source decides privilege)."""
+    g = GRASPS[cls]
+    R = T_world_part[:3, :3]
+    p = T_world_part[:3, 3] + R @ np.array([*g["offset"], 0.0])
+    p[2] = table_top + g["tcp_z"]
+    axis = R @ np.array([*g["axis"], 0.0])
+    return {"p": p, "yaw": float(np.arctan2(axis[1], axis[0])), "width": g["width"]}
+
+
+__all__ = ["WorkcellEnv", "GRASPS", "CATALOG", "grasp_for"]

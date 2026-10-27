@@ -1,0 +1,2528 @@
+{
+ "summary": {
+  "exp": "m3",
+  "baseline": "B0",
+  "robot": "fanuc_m710ic_50",
+  "noise": "nominal",
+  "seeds": "1000:1100",
+  "episodes": 100,
+  "episode_success": 1.0,
+  "episode_wilson95": [
+   0.9630065012310038,
+   1.0
+  ],
+  "parts_correct": 300,
+  "parts": 300,
+  "part_rate": 1.0,
+  "part_wilson95": [
+   0.9873570285785234,
+   1.0
+  ],
+  "mean_attempts": 3.0,
+  "wall_s": 67.36870884895325,
+  "mujoco": "3.17.0",
+  "git": "ced7b1d"
+ },
+ "episodes": [
+  {
+   "seed": 1000,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.421999999999715
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.398000000000694
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.439999999995877
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1001,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.435999999999719
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.364000000000766
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.461999999995864
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1002,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.3779999999997
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.464000000000766
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.389999999995904
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1003,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.429999999999717
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.392000000000756
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.393999999995902
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1004,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.455999999999726
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.36200000000075
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.3979999999959
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1005,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.435999999999719
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.478000000000648
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.331999999995936
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1006,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.435999999999719
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.376000000000708
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.355999999995923
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1007,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.415999999999713
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.4320000000007465
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.391999999995903
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1008,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.451999999999725
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.460000000000674
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.32599999999594
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1009,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.431999999999718
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.3540000000007755
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.393999999995902
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1010,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.443999999999722
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.422000000000715
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.381999999995909
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1011,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.391999999999705
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.460000000000752
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.37999999999591
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1012,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.457999999999727
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.406000000000688
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.373999999995913
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1013,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.40799999999971
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.4460000000006765
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.405999999995895
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1014,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.401999999999708
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.416000000000764
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.399999999995899
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1015,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.413999999999712
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.414000000000762
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.427999999995883
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1016,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.419999999999714
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.482000000000687
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.335999999995934
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1017,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.427999999999717
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.362000000000725
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.3679999999959165
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1018,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.431999999999718
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.378000000000711
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.401999999995898
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1019,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.423999999999715
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.4100000000007515
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.359999999995921
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1020,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.417999999999713
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.3440000000007934
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.407999999995894
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1021,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.423999999999715
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.438000000000736
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.321999999995942
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1022,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.409999999999711
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.406000000000766
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.365999999995918
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1023,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.485999999999736
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.394000000000688
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.381999999995909
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1024,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.421999999999715
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.462000000000705
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.331999999995936
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1025,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.395999999999706
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.4000000000007855
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.413999999995891
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1026,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.453999999999725
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.336000000000752
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.401999999995898
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1027,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.425999999999716
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.402000000000754
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.341999999995931
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1028,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.369999999999697
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.414000000000801
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.43399999999588
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1029,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.3779999999997
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.450000000000774
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.373999999995913
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1030,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.439999999999721
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.3660000000007155
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.391999999995903
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1031,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.431999999999718
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.416000000000713
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.395999999995901
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1032,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.421999999999715
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.388000000000698
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.391999999995903
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1033,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.427999999999717
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.42400000000074
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.371999999995914
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1034,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.443999999999722
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.332000000000777
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.387999999995905
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1035,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.411999999999711
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.448000000000727
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.331999999995936
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1036,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.385999999999703
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.398000000000776
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.37999999999591
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1037,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.401999999999708
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.4200000000007655
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.333999999995935
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1038,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.425999999999716
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.3580000000007715
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.371999999995914
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1039,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.419999999999714
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.370000000000754
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.3859999999959065
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1040,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.447999999999723
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.3680000000007535
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.427999999995883
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1041,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.419999999999714
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.352000000000787
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.3859999999959065
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1042,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.397999999999707
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.414000000000767
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.353999999995924
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1043,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.435999999999719
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.400000000000743
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.345999999995929
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1044,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.411999999999711
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.406000000000764
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.363999999995919
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1045,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.415999999999713
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.340000000000797
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.453999999995869
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1046,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.423999999999715
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.364000000000777
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.425999999995884
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1047,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.431999999999718
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.4140000000007245
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.375999999995912
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1048,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.441999999999721
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.3620000000007515
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.4039999999958965
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1049,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.449999999999724
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.448000000000649
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.347999999995928
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1050,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.415999999999713
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.410000000000702
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.437999999995878
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1051,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.363999999999695
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.382000000000824
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.449999999995871
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1052,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.413999999999712
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.456000000000735
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.335999999995934
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1053,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.383999999999702
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.386000000000767
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.409999999995893
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1054,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.415999999999713
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.378000000000776
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.3859999999959065
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1055,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.419999999999714
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.378000000000773
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.399999999995899
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1056,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.429999999999717
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.380000000000763
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.393999999995902
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1057,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.435999999999719
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.4180000000007364
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.323999999995941
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1058,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.413999999999712
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.438000000000745
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.339999999995932
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1059,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.403999999999709
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.414000000000767
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.321999999995942
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1060,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.395999999999706
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.3720000000007975
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.391999999995903
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1061,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.3779999999997
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.424000000000788
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.3859999999959065
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1062,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.457999999999727
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.344000000000758
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.453999999995869
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1063,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.383999999999702
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.424000000000783
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.407999999995894
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1064,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.431999999999718
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.4080000000007455
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.327999999995939
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1065,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.443999999999722
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.3460000000007
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.391999999995903
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1066,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.415999999999713
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.400000000000764
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.341999999995931
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1067,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.351999999999691
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.4000000000008015
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.36199999999592
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1068,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.40799999999971
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.388000000000778
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.405999999995895
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1069,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.359999999999694
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.404000000000815
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.3859999999959065
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1070,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.395999999999706
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.460000000000749
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.337999999995933
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1071,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.427999999999717
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.454000000000686
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.357999999995922
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1072,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.361999999999695
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.394000000000819
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.43399999999588
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1073,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.391999999999705
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.426000000000771
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.355999999995923
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1074,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.419999999999714
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.3700000000007115
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.381999999995909
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1075,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.3779999999997
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.370000000000784
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.407999999995894
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1076,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.409999999999711
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.4180000000007595
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.393999999995902
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1077,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.383999999999702
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.384000000000734
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.461999999995864
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1078,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.413999999999712
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.444000000000676
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.4039999999958965
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1079,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.363999999999695
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.398000000000815
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.36199999999592
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1080,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.3319999999996845
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.3660000000008345
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.431999999995881
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1081,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.397999999999707
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.404000000000741
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.3859999999959065
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1082,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.401999999999708
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.400000000000729
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.365999999995918
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1083,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.417999999999713
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.394000000000766
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.399999999995899
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1084,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.385999999999703
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.44400000000077
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.45199999999587
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1085,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.391999999999705
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.458000000000709
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.445999999995873
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1086,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.429999999999717
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.432000000000734
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.345999999995929
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1087,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.399999999999707
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.420000000000723
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.439999999995877
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1088,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.367999999999697
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.414000000000803
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.37999999999591
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1089,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.409999999999711
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.384000000000778
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.377999999995911
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1090,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.445999999999723
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.412000000000722
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.323999999995941
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1091,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.383999999999702
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.436000000000771
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.405999999995895
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1092,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.433999999999719
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.4180000000007205
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.3299999999959375
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1093,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.453999999999725
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.332000000000768
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.439999999995877
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1094,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.459999999999727
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.372000000000737
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.439999999995877
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1095,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.385999999999703
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.4280000000007576
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.387999999995905
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1096,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.413999999999712
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.396000000000704
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.429999999995882
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1097,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.381999999999701
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.434000000000779
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.461999999995864
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1098,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.40799999999971
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.444000000000747
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.319999999995943
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1099,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.441999999999721
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.424000000000728
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.399999999995899
+    }
+   ],
+   "end": "tray_empty"
+  }
+ ]
+}

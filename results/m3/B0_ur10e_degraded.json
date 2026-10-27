@@ -1,0 +1,2528 @@
+{
+ "summary": {
+  "exp": "m3",
+  "baseline": "B0",
+  "robot": "ur10e",
+  "noise": "degraded",
+  "seeds": "1000:1100",
+  "episodes": 100,
+  "episode_success": 1.0,
+  "episode_wilson95": [
+   0.9630065012310038,
+   1.0
+  ],
+  "parts_correct": 300,
+  "parts": 300,
+  "part_rate": 1.0,
+  "part_wilson95": [
+   0.9873570285785234,
+   1.0
+  ],
+  "mean_attempts": 3.0,
+  "wall_s": 128.2726550102234,
+  "mujoco": "3.17.0",
+  "git": "ced7b1d"
+ },
+ "episodes": [
+  {
+   "seed": 1000,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.971999999999898
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.991999999999804
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.953999999995592
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1001,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.031999999999918
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.965999999999763
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.987999999995573
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1002,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.971999999999898
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.01599999999979
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.977999999995578
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1003,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.03799999999992
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.903999999999792
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.947999999995595
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1004,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.061999999999928
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.9459999999997475
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.967999999995584
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1005,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.03599999999992
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.041999999999717
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.907999999995617
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1006,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.013999999999912
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.96399999999978
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.903999999995619
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1007,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.043999999999922
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.009999999999728
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.8839999999956305
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1008,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.031999999999918
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.011999999999738
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.853999999995647
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1009,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.053999999999926
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.949999999999752
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.973999999995581
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1010,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.049999999999924
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.045999999999703
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.859999999995644
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1011,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.985999999999903
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.023999999999774
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.9759999999955795
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1012,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.013999999999912
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.977999999999772
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.887999999995628
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1013,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.931999999999885
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.965999999999854
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.929999999995605
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1014,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.003999999999909
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.005999999999766
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.871999999995637
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1015,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.985999999999903
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.013999999999779
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.947999999995595
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1016,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.031999999999918
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.017999999999724
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.9199999999956106
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1017,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.011999999999912
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.923999999999804
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.937999999995601
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1018,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.023999999999916
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.953999999999777
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.991999999995571
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1019,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.033999999999919
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.897999999999799
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.917999999995612
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1020,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.061999999999928
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.92399999999976
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.9939999999955695
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1021,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.017999999999914
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.997999999999758
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.869999999995638
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1022,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.051999999999925
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.913999999999774
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.935999999995602
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1023,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.053999999999926
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.005999999999721
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.891999999995626
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1024,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.021999999999915
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.969999999999764
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.881999999995632
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1025,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.961999999999895
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.081999999999763
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.955999999995591
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1026,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.03799999999992
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.92599999999978
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.987999999995573
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1027,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.055999999999926
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.007999999999718
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.871999999995637
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1028,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.959999999999894
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.001999999999809
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.959999999995588
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1029,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.973999999999899
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.95999999999982
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.951999999995593
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1030,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.029999999999918
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.905999999999798
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.985999999995574
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1031,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.045999999999923
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.915999999999768
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.963999999995586
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1032,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.951999999999892
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.97599999999983
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.955999999995591
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1033,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.041999999999922
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.957999999999759
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.949999999995594
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1034,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.063999999999929
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.869999999999788
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.941999999995598
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1035,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.053999999999926
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.02199999999971
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.875999999995635
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1036,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.991999999999905
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.017999999999768
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.979999999995577
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1037,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.013999999999912
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.021999999999748
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.887999999995628
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1038,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.019999999999914
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.945999999999785
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.965999999995585
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1039,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.031999999999918
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.92199999999978
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.9579999999955895
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1040,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.06599999999993
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.913999999999762
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.951999999995593
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1041,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.00799999999991
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.935999999999801
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.949999999995594
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1042,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.009999999999911
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.017999999999754
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.905999999995618
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1043,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.039999999999921
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.019999999999726
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.891999999995626
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1044,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.051999999999925
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.99399999999973
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.873999999995636
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1045,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.00599999999991
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.917999999999813
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.9579999999955895
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1046,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.041999999999922
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.9419999999997675
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.963999999995586
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1047,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.961999999999895
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.991999999999813
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.9579999999955895
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1048,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.06799999999993
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.963999999999732
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.971999999995582
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1049,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.025999999999916
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.993999999999753
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.905999999995618
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1050,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.985999999999903
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.003999999999785
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.947999999995595
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1051,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.963999999999896
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.981999999999816
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.967999999995584
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1052,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.025999999999916
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.991999999999754
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.8659999999956405
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1053,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.967999999999897
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.965999999999822
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.955999999995591
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1054,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.051999999999925
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.90399999999978
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.943999999995597
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1055,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.039999999999921
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.947999999999766
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.965999999995585
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1056,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.03799999999992
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.9139999999997865
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.949999999995594
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1057,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.047999999999924
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.009999999999724
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.889999999995627
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1058,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.039999999999921
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.057999999999705
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.905999999995618
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1059,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.033999999999919
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.007999999999738
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.871999999995637
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1060,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.019999999999914
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.943999999999786
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.945999999995596
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1061,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.965999999999896
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.981999999999815
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.929999999995605
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1062,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.041999999999922
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.93799999999977
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.981999999995576
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1063,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.9759999999999
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.02799999999978
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.931999999995604
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1064,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.031999999999918
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.983999999999753
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.879999999995633
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1065,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.989999999999904
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.9079999999998325
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.937999999995601
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1066,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.059999999999928
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.005999999999716
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.897999999995623
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1067,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.929999999999884
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.973999999999846
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.933999999995603
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1068,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.019999999999914
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.933999999999791
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.953999999995592
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1069,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.951999999999892
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.977999999999829
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.927999999995606
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1070,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.019999999999914
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.003999999999753
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.909999999995616
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1071,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.03799999999992
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.017999999999729
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.879999999995633
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1072,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.933999999999886
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.9919999999998375
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.941999999995598
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1073,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.009999999999911
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.027999999999748
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.921999999995609
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1074,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.951999999999892
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.949999999999845
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.9399999999955995
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1075,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.963999999999896
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.947999999999835
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.9579999999955895
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1076,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.029999999999918
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.015999999999737
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.925999999995607
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1077,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.889999999999871
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.9379999999999065
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.949999999995594
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1078,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.94599999999989
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.001999999999821
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.953999999995592
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1079,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.955999999999893
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.9619999999998345
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.929999999995605
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1080,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.8319999999998515
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.9420000000000766
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.933999999995603
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1081,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.991999999999905
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.007999999999775
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.875999999995635
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1082,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.967999999999897
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.983999999999812
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.929999999995605
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1083,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.017999999999914
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.003999999999754
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.917999999995612
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1084,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.987999999999904
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.067999999999747
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.961999999995587
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1085,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.9779999999999
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.977999999999806
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.955999999995591
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1086,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.071999999999932
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.959999999999731
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.871999999995637
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1087,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.987999999999904
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.001999999999784
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.965999999995585
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1088,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.941999999999888
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.99199999999983
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.933999999995603
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1089,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.041999999999922
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.951999999999762
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.951999999995593
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1090,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.027999999999917
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.979999999999759
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.867999999995639
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1091,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.9759999999999
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.051999999999767
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.979999999995577
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1092,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.057999999999927
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.001999999999716
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.869999999995638
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1093,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.023999999999916
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.915999999999798
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.965999999995585
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1094,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.039999999999921
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.965999999999756
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.973999999995581
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1095,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.989999999999904
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.001999999999779
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.987999999995573
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1096,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.957999999999894
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.9479999999998405
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.929999999995605
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1097,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.979999999999901
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.035999999999772
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.001999999995565
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1098,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.997999999999907
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.9539999999998
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.869999999995638
+    }
+   ],
+   "end": "tray_empty"
+  },
+  {
+   "seed": 1099,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.045999999999923
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.051999999999703
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.911999999995615
+    }
+   ],
+   "end": "tray_empty"
+  }
+ ]
+}
