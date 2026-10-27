@@ -39,21 +39,25 @@ class RunLog:
     transitions: list = field(default_factory=list)
     picks: list = field(default_factory=list)
     outcome: str = ""
+    hook: object = None        # optional callable(state, next_state, reason), e.g. for live captions
 
     def t(self, a, b, why):
         self.transitions.append((a, b, why))
+        if self.hook is not None:
+            self.hook(a, b, why)
 
 
 class AuraRunner:
     """monitor: DriftMonitor or None; risk: (GBRisk, tau dict) or None; localize: frame -> estimates."""
 
     def __init__(self, env, localize, monitor=None, risk=None, p_out_thr: float = 0.5, budget: Budget = Budget(),  # noqa: B008
-                 bin_slots: bool = False):
+                 bin_slots: bool = False, on_transition=None):
         self.env, self.localize, self.monitor, self.risk = env, localize, monitor, risk
+        self.on_transition = on_transition
         self.thr, self.budget, self.bin_slots = p_out_thr, budget, bin_slots
 
     def run(self, cfg: PickPlaceCfg = PickPlaceCfg()) -> RunLog:  # noqa: B008
-        env, B, log = self.env, self.budget, RunLog()
+        env, B, log = self.env, self.budget, RunLog(hook=self.on_transition)
         slots = [(-0.04, -0.04), (0.04, 0.04), (-0.04, 0.04), (0.04, -0.04)]
         used, failed, reobs, recal_n = {}, [], 0, 0
         state, steps = "OBSERVE", 0
