@@ -21,3 +21,15 @@ candidates: gripper-centred crops, patch-level latents (as JEPA-WM keeps), or de
 G 21/100, WM 16/100 (3 deferred), oracle 94/100; wrong actions G 79, WM 81; McNemar WM vs G p = 0.125.
 The 1° bump puts the estimate ≈ 17 mm off (beyond tolerance). A verifier with a weak outcome head (AUROC 0.58) cannot
 find the correct candidate even though it lies inside the ±16 mm grid. **H4 is not supported with this world model.**
+
+# EXP-M8-003: patch-level outcome probe on JEPA-WM WM-B (SLURM 11414015). Gate FAILS, verifier not deployed
+| Probe input | val AUROC | test AUROC |
+|---|---|---|
+| **True** final frame latent (control) | 0.988 | 0.990 |
+| WM-B **predicted** final latent (24 adapted actions from frame 0) | 0.674 | 0.718 |
+
+Grasp outcome is almost perfectly readable from real JEPA patch latents, so the representation and the probe are
+adequate. It is largely lost in the model's 24-step prediction. **The world model does not foresee whether a grasp
+succeeds.** This refutes the EXP-M8-002 hypothesis that the global-embedding bottleneck was the cause: patch-level
+latents fail the same way. The missing piece is the contact dynamics (jaws vs part) over a long open-loop horizon.
+That is consistent with the training data: 600 scripted episodes, with small offsets as the only source of failure.

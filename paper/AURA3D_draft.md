@@ -85,6 +85,9 @@ FANUC M-710iC/50 with no robot-specific code: 0.5° bump B1 6/50 → B3cal 42/50
 - Fallback model: h = 6 error 0.43× copy; outcome head AUROC 0.58 (test).
 - Verifier at 0° drift: 88/100 vs geometry 99/100 (p = 0.001); at 1.0°: 16/100 vs 21/100 (p = 0.125); oracle 94/100.
   A retrained, class-balanced outcome head reached val AUROC 0.669, below the pre-set 0.80 gate, so it was not deployed.
+- Diagnostic probe on JEPA patch latents: success is readable from the *true* final frame (test AUROC 0.990) but not
+  from WM-B's *predicted* final frame (0.718). The world models we trained do not foresee grasp outcome. Prediction
+  error falls with fine-tuning while the decision-relevant content stays missing.
 
 ## 6 Limitations
 Simulation only, with assumed sensor noise. Primitive parts; a mild domain shift for vision; single seeds for training

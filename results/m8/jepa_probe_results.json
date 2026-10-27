@@ -1,0 +1,12 @@
+{
+ "predicted_final_latent": {
+  "val_auroc": 0.6737938596491229,
+  "test_auroc": 0.7176470588235294
+ },
+ "true_final_frame_control": {
+  "val_auroc": 0.9879385964912281,
+  "test_auroc": 0.9898039215686275
+ },
+ "gate_val_auroc_min": 0.8,
+ "gate_pass": false
+}

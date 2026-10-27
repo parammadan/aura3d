@@ -44,7 +44,9 @@ Touching parts merge in depth. Fine-tuned Mask R-CNN lifts first-frame localisat
   brings it to **0.67×** (15 epochs, V100, 67 min).
 - My own latent model predicts well (0.43×), but **as a grasp verifier it made picking worse: 99 → 88/100**. Good
   prediction is not good decision-making, so world models get authority over actions only after their outcome
-  ranking is validated (pre-set gate AUROC ≥ 0.80; retrained head 0.67, so not deployed).
+  ranking is validated (pre-set gate AUROC ≥ 0.80; not passed).
+- Diagnostic: grasp success is visible in the *real* final frame (AUROC 0.99) but not in JEPA's *predicted* one (0.72).
+  The models learn the scene's motion, not the contact outcome.
 
 ## 6. Why this matters for a product team (30 s)
 - The value is in **turning silent wrong actions into explicit, explainable deferrals**, measured with paired tests.
