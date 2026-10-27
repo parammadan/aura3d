@@ -16,3 +16,8 @@ pre-registered 0.80 gate, so the verifier gets no authority over actions. Dynami
 Diagnosis (hypothesis, untested): grasp success depends on millimetre offsets between the jaws and the part. A global
 image embedding (DINOv2 CLS + mean of patch tokens from a 224 px wide view) averages away exactly that detail. Next
 candidates: gripper-centred crops, patch-level latents (as JEPA-WM keeps), or depth features.
+
+# EXP-M8-001 at 1.0° drift (complete)
+G 21/100, WM 16/100 (3 deferred), oracle 94/100; wrong actions G 79, WM 81; McNemar WM vs G p = 0.125.
+The 1° bump puts the estimate ≈ 17 mm off (beyond tolerance). A verifier with a weak outcome head (AUROC 0.58) cannot
+find the correct candidate even though it lies inside the ±16 mm grid. **H4 is not supported with this world model.**
