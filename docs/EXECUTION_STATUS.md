@@ -23,14 +23,22 @@ _Last updated: 2026-10-27_
 - M6 JEPA-WMs reproduction: reach-wall 5/12 (paper 41.6 %), inference latencies measured (`results/m6/`)
 - Fallback latent WM trained: test h=8 MSE 0.438 vs copy 2.461 vs shuffled actions 1.074 (`docs/WORLD_MODEL.md`)
 
+- EXP-M4-001 Mask R-CNN: COCO-only 0.001 segm mAP; FT-A 0.854 / FT-B 0.853 / FT-C 0.861 (no established difference);
+  FT-A chosen (1.6× faster, 28 % memory) (`docs/VISION_FINETUNING.md`)
+- EXP-M7-001 WM-A: JEPA-WM zero-shot on UR10e = 2.7× worse than copy-z0 at every horizon (transfer fails)
+- Recovery state machine with budgets + reason codes (`src/aura3d/recovery/state_machine.py`, tests)
+- JEPA adapter (`src/aura3d/world_models/jepa_adapter.py`); traj_v2 (600/100/100, 24 % / 15 % failures in val/test)
+
 ## In progress
-- Mask R-CNN PRE/FT-A/FT-B/FT-C array (SLURM 11412274).
+- EXP-M4-002 clutter B0/B1/B2 (local, CPU Mask R-CNN inference)
+- EXP-M7-001 WM-B JEPA predictor fine-tune on traj_v2 (SLURM 11412967); fallback WM v2 (SLURM 11413119)
+- EXP-M9-001 full loop B6-geo on drift cells (local)
+- EXP-M8-001 WM grasp verification: script + registry ready, waits for WM v2 checkpoint
 - Mask R-CNN FT smoke test queued on A100 (SLURM 11410744); trainer not yet run at full scale.
 - Written, not run: trajectory recorder (smoke-tested on 3 episodes), fallback latent world model + trainer.
 
 ## Not started
-Trajectory dataset + action adapter, WM fine-tuning, predictive
-planner, recovery state machine, ROS 2 adapters, real-data (BOP) validation, ONNX/TensorRT, paper, demo.
+ROS 2 adapters, real-data (BOP) validation, ONNX/TensorRT, paper, demo.
 
 ## Known issues
 - Condition-number observability gate is not discriminative (measured); acceptance relies on held-out spheres instead.
