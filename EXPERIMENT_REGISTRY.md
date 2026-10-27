@@ -55,3 +55,14 @@ used for tuning.
   pick, try a different part first" (`skip_failed`) for all arms. Seeds 4000–4099, paired.
 - **Primary:** episode success (6/6 sorted). **Secondary:** parts matched on the first frame (right class, grasp-point
   error ≤ 15 mm), parts correct, wrong picks. Exact McNemar B2 vs B1.
+
+## EXP-M8-001: world-model grasp verification under camera drift (registered 2026-10-27, before test seeds)
+- **Question (H4, partial):** does ranking perception-derived grasp candidates by a world model's predicted success
+  beat executing the perception estimate when the fixed camera has drifted?
+- **World model:** fallback LatentDynamics trained on `traj_v2` (`runs/wm_latent_v2`). JEPA-WM is excluded from
+  this arm unless WM-B beats the copy baseline on held-out trajectories (EXP-M7-001).
+- **Arms:** G (execute estimate), WM (5×5 grid ±16 mm, argmax P(success), defer if < 0.5, ties toward centre),
+  OR (oracle). The same reset state and start pose for all arms. Target = largest B1 blob.
+- **Conditions:** fixed-camera bump 0° (control) and 1.0° (≈ 17 mm at 1 m, chosen from geometry: beyond the 10–15 mm
+  tolerance, inside the grid). Seeds 70000–70099 (never used for trajectories: train 0–599, val 50000+, test 60000+).
+- **Primary:** pick success. **Secondary:** wrong actions (executed and failed), deferrals; exact McNemar WM vs G.
