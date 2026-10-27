@@ -8,8 +8,8 @@
 # CPU-only: thin venv over the JEPA env's torch (same torch/torchvision), adds pycocotools, caches COCO weights.
 set -euo pipefail
 R=/scratch/madan.pa/aura3d
-[ -x $R/envs/vision/bin/python ] || $R/envs/jepa/bin/python -m venv --system-site-packages $R/envs/vision
-PIP_CACHE_DIR=$R/pipcache $R/envs/vision/bin/pip install -q pycocotools
+[ -x $R/envs/vision/bin/pip ] || $R/envs/jepa/bin/python -m venv --clear --system-site-packages $R/envs/vision
+PIP_CACHE_DIR=$R/pipcache $R/envs/vision/bin/python -m pip install -q pycocotools
 TORCH_HOME=$R/torchhub $R/envs/vision/bin/python - <<'PY'
 import torch, torchvision, pycocotools
 from torchvision.models.detection import MaskRCNN_ResNet50_FPN_Weights as W
