@@ -27,10 +27,16 @@ ap.add_argument("--seeds", required=True)
 ap.add_argument("--robot", default="ur10e")
 ap.add_argument("--out", default="datasets/risk_v1")
 ap.add_argument("--clutter6", action="store_true", help="6 parts, always touching (min_sep 0.045), no drift")
+ap.add_argument("--localizer", choices=["b1", "b2"], default="b1")
+ap.add_argument("--ckpt", default="checkpoints/maskrcnn_ftA/best.pt")
 a = ap.parse_args()
 lo, hi = map(int, a.seeds.split(":"))
 parts = ["block", "pin", "bracket"] * (2 if a.clutter6 else 1)
 envs = {k: WorkcellEnv(WorkcellCfg(robot=a.robot, parts=parts), noise=PRESETS[k]) for k in ("nominal", "degraded")}
+_mr = None
+if a.localizer == "b2":
+    from aura3d.pose_estimation.learned import MaskRCNNLocalizer
+    _mr = MaskRCNNLocalizer(a.ckpt)
 X, E, CLS, META = [], [], [], []
 for s in range(lo, hi):
     rng = np.random.default_rng([s, 99])
@@ -51,7 +57,7 @@ for s in range(lo, hi):
     r_cal = fx.residual(f, env.meta).median_abs_mm
     top = env.meta["table_top"]
     truth = [(c, grasp_for(c, env.gt_part_pose(i), top)) for i, c in enumerate(env.meta["part_classes"])]
-    for est in detect_and_localize(f, env.meta):
+    for est in (detect_and_localize(f, env.meta) if _mr is None else _mr(f, env.meta)):
         c = est.features["cls"]
         g = grasp_for(c, est.T, top)
         same = [gt for (ct, gt) in truth if ct == c]
@@ -62,6 +68,6 @@ for s in range(lo, hi):
         META.append([s, rot, tr, clutter, nz == "degraded"])
 out = Path(a.out)
 out.mkdir(parents=True, exist_ok=True)
-np.savez(out / f"{a.split}{'_clutter6' if a.clutter6 else ''}_{lo}_{hi}.npz", X=np.array(X), e_mm=np.array(E), cls=np.array(CLS),
+np.savez(out / f"{a.split}{'_clutter6' if a.clutter6 else ''}{'_b2' if a.localizer == 'b2' else ''}_{lo}_{hi}.npz", X=np.array(X), e_mm=np.array(E), cls=np.array(CLS),
          meta=np.array(META, float), meta_cols=np.array(["seed", "rot_deg", "trans_mm", "clutter", "degraded"]))
 print(a.split, len(E), "rows; error mm median", np.median(E).round(2), "p90", np.percentile(E, 90).round(2))

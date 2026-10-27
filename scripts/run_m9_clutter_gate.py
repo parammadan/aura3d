@@ -23,6 +23,8 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--seeds", default="4000:4050")
 ap.add_argument("--out", default="results/m9/clutter_gate.json")
 ap.add_argument("--cal", default="cal", help="calibration split glob prefix, e.g. cal_clutter6")
+ap.add_argument("--localizer", choices=["b1", "b2"], default="b1")
+ap.add_argument("--ckpt", default="checkpoints/maskrcnn_ftA/best.pt")
 a = ap.parse_args()
 lo, hi = map(int, a.seeds.split(":"))
 
@@ -36,12 +38,18 @@ tau = json.loads(Path("results/m5/grasp_tolerance_ur10e.json").read_text())["tau
 tr, cal = load("train"), load(a.cal)
 risk = GBRisk().fit(tr["X"], tr["e_mm"], cal["X"], cal["e_mm"], cal["cls"], np.array([tau[c] for c in cal["cls"]]))
 env = WorkcellEnv(WorkcellCfg(robot="ur10e", parts=["block", "pin", "bracket"] * 2), noise=PRESETS["nominal"])
+if a.localizer == "b2":
+    from aura3d.pose_estimation.learned import MaskRCNNLocalizer
+    _mr = MaskRCNNLocalizer(a.ckpt)
+    localize = lambda f: _mr(f, env.meta)  # noqa: E731
+else:
+    localize = lambda f: detect_and_localize(f, env.meta)  # noqa: E731
 rows = []
 for s in range(lo, hi):
     row = {"seed": s}
     for arm, rk in (("gate_off", None), ("gate_on", (risk, tau))):
         env.reset(s, min_sep=0.045)
-        log = AuraRunner(env, lambda f: detect_and_localize(f, env.meta), risk=rk, bin_slots=True).run()
+        log = AuraRunner(env, localize, risk=rk, bin_slots=True).run()
         ok = sum(env.part_in_bin(i, SORT_BINS[c]) for i, c in enumerate(env.meta["part_classes"]))
         row[arm] = {"correct": int(ok), "success": ok == 6, "wrong": sum(p["reason"] != "placed" for p in log.picks),
                     "picks": len(log.picks), "outcome": log.outcome}

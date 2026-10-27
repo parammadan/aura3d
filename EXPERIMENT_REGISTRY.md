@@ -112,3 +112,10 @@ used for tuning.
 - Dev (seeds 0–11, oracle): 10/12 → 12/12 episodes. Test: seeds 4200–4299 (fresh), 6-part touching clutter.
 - Arms: B0, B0+CA, B2, B2+CA (CA = clearance-maximising part order and pin yaw from *estimated* poses only).
 - **Primary:** episode success, exact McNemar CA vs no-CA within each base. Secondary: wrong picks, parts correct.
+
+## EXP-M9-005: risk gate with learned segmentation in clutter (registered 2026-10-27, before running)
+- Follow-up to EXP-M9-004: the gate needs perception whose estimates are mostly in tolerance. Localiser = B2 (FT-A Mask
+  R-CNN). The GB error model keeps risk_v1 train. Isotonic/conformal refit on **B2 clutter data, dev seeds 0–399**
+  (`make_risk_dataset.py --clutter6 --localizer b2`).
+- Test seeds 4150–4199 (fresh). Gate off vs on, as in EXP-M9-003/004.
+- **Criterion (stated now):** wrong picks reduced by ≥ 30 % with episode success not lower (McNemar p > 0.05 or higher).
