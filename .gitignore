@@ -1,0 +1,11 @@
+.venv/
+external/
+__pycache__/
+*.pyc
+.pytest_cache/
+checkpoints/
+datasets/
+results/**/*.mp4
+results/**/*.npz
+MUJOCO_LOG.TXT
+demos/*.mp4

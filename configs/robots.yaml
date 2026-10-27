@@ -1,0 +1,38 @@
+# Robot embodiments. Everything robot-specific lives here; perception, uncertainty
+# and planning code never sees joint names. Gains are tuned in sim (docs/ROBOT_SIMULATION.md).
+ur10e:
+  source: mjcf
+  path: assets/robots/ur10e/ur10e.xml
+  joints: [shoulder_pan_joint, shoulder_lift_joint, elbow_joint, wrist_1_joint, wrist_2_joint, wrist_3_joint]
+  attach: {kind: site, name: attachment_site}     # z out of the flange
+  strip_actuators: true
+  kp: [3000, 3000, 2000, 500, 500, 500]
+  kv: [300, 300, 200, 50, 50, 50]
+  # Table-mounted: keep the upper arm above the mount plane and the elbow up (IK search bounds only).
+  ik_q_lo: [-6.2832, -3.1416, 0.0, -6.2832, -6.2832, -6.2832]
+  ik_q_hi: [6.2832, 0.0, 3.1416, 6.2832, 6.2832, 6.2832]
+  home_q: [0.0, -1.5708, 1.5708, -1.5708, -1.5708, 0.0]
+  observe_q: [-1.5708, -1.5708, 1.5708, -1.5708, -1.5708, 0.0]
+  base_pos: [0.0, 0.0, 0.0]
+  # Workcell in the base frame: table centre and top height.
+  table_center: [0.75, 0.0]
+  table_top: 0.0
+  label: "UR10e (MuJoCo Menagerie, BSD-3-Clause)"
+
+fanuc_m710ic_50:
+  source: urdf
+  path: assets/robots/fanuc_m710ic_50/m710ic_50.urdf
+  joints: [J1, J2, J3, J4, J5, J6]
+  attach: {kind: body, name: fanuc_flange}        # z out of the flange (measured, scripts/import_fanuc_m710.py)
+  strip_actuators: false
+  # Link masses are FANUC's (130 / 201 / 91 / 95 / 33 / 9 kg). Gravity compensation is on,
+  # so these gains set tracking stiffness, not load holding. They are NOT FANUC servo gains.
+  kp: [40000, 40000, 30000, 4000, 3000, 2000]
+  kv: [4000, 4000, 3000, 400, 300, 200]
+  armature: [5.0, 5.0, 3.0, 1.0, 0.5, 0.5]
+  home_q: [0.0, 0.0, 0.0, 0.0, -1.5708, 0.0]
+  observe_q: [-1.5708, 0.0, 0.0, 0.0, -1.5708, 0.0]
+  base_pos: [0.0, 0.0, -0.25]
+  table_center: [1.35, 0.0]
+  table_top: 0.0
+  label: "FANUC M-710iC/50 kinematics+inertials (FANUC-CORPORATION/fanuc_description, Apache-2.0); STL visuals; sim gains are ours"

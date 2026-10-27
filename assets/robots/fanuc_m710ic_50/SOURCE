@@ -1,0 +1,3 @@
+https://github.com/FANUC-CORPORATION/fanuc_description@fb40c9803a826ba68c7c8e28ba904a25efa7fcd2
+fanuc_m710_description/robot/m710ic_50.urdf.xacro
+Modified: xacro expanded; visual .dae replaced by collision .stl; mesh paths flattened.

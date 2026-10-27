@@ -1,0 +1,32 @@
+#!/bin/bash
+#SBATCH -J aura-jepa-env
+#SBATCH -p short
+#SBATCH -c 8
+#SBATCH --mem=32G
+#SBATCH -t 02:00:00
+#SBATCH -o /scratch/madan.pa/aura3d/logs/jepa_env_%j.log
+# CPU-only: builds the isolated JEPA-WMs env and fetches the MetaWorld checkpoint.
+set -euo pipefail
+ROOT=/scratch/madan.pa/aura3d
+module load miniconda3/25.9.1
+export CONDA_PKGS_DIRS=$ROOT/condapkgs PIP_CACHE_DIR=$ROOT/pipcache UV_CACHE_DIR=$ROOT/uvcache
+export HF_HOME=$ROOT/hf TORCH_HOME=$ROOT/torchhub
+ENV=$ROOT/envs/jepa
+if [ ! -x $ENV/bin/python ]; then
+  conda create -y -p $ENV --override-channels -c conda-forge python=3.10 ffmpeg=7
+fi
+source activate $ENV || conda activate $ENV
+python -m pip install -q uv
+cd $ROOT/external/jepa-wms
+python -m uv pip install --python $ENV/bin/python -e ".[dev]"
+python -c "import torch, torchvision, mujoco, metaworld; print('torch', torch.__version__, 'cuda', torch.version.cuda, 'tv', torchvision.__version__, 'mujoco', mujoco.__version__)"
+python -c "import torchcodec; print('torchcodec ok')" || echo "torchcodec FAILED"
+python - <<'PY'
+from huggingface_hub import hf_hub_download
+for f in ["jepa_wm_metaworld.pth.tar", "dinov2_vits_224_INet.pth.tar"]:
+    p = hf_hub_download(repo_id="facebook/jepa-wms", filename=f)
+    print("ckpt", f, p)
+PY
+python -m pip freeze > $ROOT/logs/jepa_env_freeze.txt
+sha256sum $HF_HOME/hub/models--facebook--jepa-wms/snapshots/*/*.pth.tar
+echo DONE
