@@ -22,6 +22,7 @@ from aura3d.uncertainty.risk import GBRisk
 ap = argparse.ArgumentParser()
 ap.add_argument("--seeds", default="4000:4050")
 ap.add_argument("--out", default="results/m9/clutter_gate.json")
+ap.add_argument("--cal", default="cal", help="calibration split glob prefix, e.g. cal_clutter6")
 a = ap.parse_args()
 lo, hi = map(int, a.seeds.split(":"))
 
@@ -32,7 +33,7 @@ def load(split):
 
 
 tau = json.loads(Path("results/m5/grasp_tolerance_ur10e.json").read_text())["tau_mm"]
-tr, cal = load("train"), load("cal")
+tr, cal = load("train"), load(a.cal)
 risk = GBRisk().fit(tr["X"], tr["e_mm"], cal["X"], cal["e_mm"], cal["cls"], np.array([tau[c] for c in cal["cls"]]))
 env = WorkcellEnv(WorkcellCfg(robot="ur10e", parts=["block", "pin", "bracket"] * 2), noise=PRESETS["nominal"])
 rows = []

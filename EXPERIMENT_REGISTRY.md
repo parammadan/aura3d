@@ -99,3 +99,11 @@ used for tuning.
   re-observations, then defer). Note: the risk model was trained on 3-part scenes, so 6-part clutter is a distribution
   shift for it.
 - **Primary:** wrong picks (gate's purpose). **Secondary:** episode success, parts correct, deferrals; McNemar on success.
+
+## EXP-M9-004: risk gate with in-domain calibration (registered 2026-10-27, before running)
+- Follow-up to EXP-M9-003 (gate over-deferred under a clutter shift). The GB error model keeps its train set
+  (risk_v1 train). The isotonic P(out) map and conformal q are refit on **clutter calibration data from dev seeds
+  0–399** (`make_risk_dataset.py --clutter6`, split "cal").
+- **Test on fresh seeds 4100–4149** (never used before), same protocol as EXP-M9-003: gate off vs on, threshold 0.5.
+- **Primary:** wrong picks. **Secondary:** episode success, deferrals. Success criterion stated now: the gate keeps
+  ≥ 50 % of the wrong-pick reduction without lowering episode success (McNemar p > 0.05 or better).

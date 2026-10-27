@@ -26,9 +26,11 @@ ap.add_argument("--split", choices=["train", "cal", "test", "shift"], required=T
 ap.add_argument("--seeds", required=True)
 ap.add_argument("--robot", default="ur10e")
 ap.add_argument("--out", default="datasets/risk_v1")
+ap.add_argument("--clutter6", action="store_true", help="6 parts, always touching (min_sep 0.045), no drift")
 a = ap.parse_args()
 lo, hi = map(int, a.seeds.split(":"))
-envs = {k: WorkcellEnv(WorkcellCfg(robot=a.robot), noise=PRESETS[k]) for k in ("nominal", "degraded")}
+parts = ["block", "pin", "bracket"] * (2 if a.clutter6 else 1)
+envs = {k: WorkcellEnv(WorkcellCfg(robot=a.robot, parts=parts), noise=PRESETS[k]) for k in ("nominal", "degraded")}
 X, E, CLS, META = [], [], [], []
 for s in range(lo, hi):
     rng = np.random.default_rng([s, 99])
@@ -39,7 +41,10 @@ for s in range(lo, hi):
     rot = rng.uniform(0.3, 1.5) if shift else (rng.uniform(0, 0.6) if bump else 0.0)
     tr = rng.uniform(2, 10) if shift else (rng.uniform(0, 5) if bump else 0.0)
     clutter = rng.random() < (0.5 if shift else 0.3)
-    env.reset(s, min_sep=0.05 if clutter else 0.085)
+    if a.clutter6:
+        nz, rot, tr, clutter = "nominal", 0.0, 0.0, True
+        env = envs[nz]
+    env.reset(s, min_sep=(0.045 if a.clutter6 else 0.05) if clutter else 0.085)
     apply_camera_drift(env, CameraDrift(rot, tr, seed=s))
     env.step()
     f = env.render("fixed")
@@ -57,6 +62,6 @@ for s in range(lo, hi):
         META.append([s, rot, tr, clutter, nz == "degraded"])
 out = Path(a.out)
 out.mkdir(parents=True, exist_ok=True)
-np.savez(out / f"{a.split}_{lo}_{hi}.npz", X=np.array(X), e_mm=np.array(E), cls=np.array(CLS),
+np.savez(out / f"{a.split}{'_clutter6' if a.clutter6 else ''}_{lo}_{hi}.npz", X=np.array(X), e_mm=np.array(E), cls=np.array(CLS),
          meta=np.array(META, float), meta_cols=np.array(["seed", "rot_deg", "trans_mm", "clutter", "degraded"]))
 print(a.split, len(E), "rows; error mm median", np.median(E).round(2), "p90", np.percentile(E, 90).round(2))
