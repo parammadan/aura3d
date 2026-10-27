@@ -1,0 +1,188 @@
+{
+ "config": {
+  "data": "/scratch/madan.pa/aura3d/datasets/vision_v1",
+  "mode": "FT-B",
+  "epochs": 8,
+  "bs": 8,
+  "lr": 0.02,
+  "seed": 0,
+  "max_train": null,
+  "max_eval": null,
+  "torch": "2.7.0+cu126",
+  "torchvision": "0.22.0+cu126"
+ },
+ "config_hash": "ba8b77802a3e",
+ "trainable_params": 42498343,
+ "total_params": 43933159,
+ "device": "NVIDIA A100-SXM4-80GB",
+ "epochs": [
+  {
+   "epoch": 0,
+   "imgs_per_s": 29.058539348436852,
+   "peak_mem_gb": 7.327330304,
+   "loss": {
+    "loss_classifier": 0.11550248295068741,
+    "loss_box_reg": 0.1394230112830798,
+    "loss_mask": 0.13166134502490362,
+    "loss_objectness": 0.009479370896297041,
+    "loss_rpn_box_reg": 0.0025336270487556854
+   },
+   "val_segm_mAP": 0.848034562694886,
+   "val_bbox_mAP": 0.8684962226589307
+  },
+  {
+   "epoch": 1,
+   "imgs_per_s": 31.565901265013533,
+   "peak_mem_gb": 7.324301312,
+   "loss": {
+    "loss_classifier": 0.023800447031855583,
+    "loss_box_reg": 0.06390241693456968,
+    "loss_mask": 0.07377017249663671,
+    "loss_objectness": 0.0002567838359391317,
+    "loss_rpn_box_reg": 0.0012550059421919287
+   },
+   "val_segm_mAP": 0.8525694751713351,
+   "val_bbox_mAP": 0.8998656916983335
+  },
+  {
+   "epoch": 2,
+   "imgs_per_s": 30.043798735349462,
+   "peak_mem_gb": 7.325925376,
+   "loss": {
+    "loss_classifier": 0.019998164415359496,
+    "loss_box_reg": 0.052361274167895315,
+    "loss_mask": 0.07249758424361546,
+    "loss_objectness": 0.00017379336406399187,
+    "loss_rpn_box_reg": 0.0010385418147003899
+   },
+   "val_segm_mAP": 0.8475521859565431,
+   "val_bbox_mAP": 0.8998994754210619
+  },
+  {
+   "epoch": 3,
+   "imgs_per_s": 30.87773062469097,
+   "peak_mem_gb": 7.324325888,
+   "loss": {
+    "loss_classifier": 0.01791742492467165,
+    "loss_box_reg": 0.04545393816630046,
+    "loss_mask": 0.07193911606073379,
+    "loss_objectness": 0.00013849806080785734,
+    "loss_rpn_box_reg": 0.000881409209764873
+   },
+   "val_segm_mAP": 0.8496127181068962,
+   "val_bbox_mAP": 0.9126439217362096
+  },
+  {
+   "epoch": 4,
+   "imgs_per_s": 30.892170831889505,
+   "peak_mem_gb": 7.325134848,
+   "loss": {
+    "loss_classifier": 0.01684215317418178,
+    "loss_box_reg": 0.04155079732835293,
+    "loss_mask": 0.07153633083899816,
+    "loss_objectness": 0.00012312770081916824,
+    "loss_rpn_box_reg": 0.0007938943894114345
+   },
+   "val_segm_mAP": 0.8498432321439959,
+   "val_bbox_mAP": 0.9193299445748647
+  },
+  {
+   "epoch": 5,
+   "imgs_per_s": 31.256035359574376,
+   "peak_mem_gb": 7.325863936,
+   "loss": {
+    "loss_classifier": 0.016035866354902586,
+    "loss_box_reg": 0.038139176333944,
+    "loss_mask": 0.07128840114672978,
+    "loss_objectness": 9.596867617316699e-05,
+    "loss_rpn_box_reg": 0.0007205064941275244
+   },
+   "val_segm_mAP": 0.8559354971292185,
+   "val_bbox_mAP": 0.9245000666961528
+  },
+  {
+   "epoch": 6,
+   "imgs_per_s": 31.29153165130969,
+   "peak_mem_gb": 7.32358656,
+   "loss": {
+    "loss_classifier": 0.015557811333487432,
+    "loss_box_reg": 0.035685352141658466,
+    "loss_mask": 0.07114642731348673,
+    "loss_objectness": 0.00010176522236239786,
+    "loss_rpn_box_reg": 0.0006825669091970971
+   },
+   "val_segm_mAP": 0.8568158050844308,
+   "val_bbox_mAP": 0.9250385607557107
+  },
+  {
+   "epoch": 7,
+   "imgs_per_s": 31.41930795972047,
+   "peak_mem_gb": 7.326435328,
+   "loss": {
+    "loss_classifier": 0.015041271423300107,
+    "loss_box_reg": 0.03438584050536156,
+    "loss_mask": 0.07109614455699921,
+    "loss_objectness": 0.00010678564654275154,
+    "loss_rpn_box_reg": 0.0006606626566499472
+   },
+   "val_segm_mAP": 0.858619408075269,
+   "val_bbox_mAP": 0.9255185864843165
+  }
+ ],
+ "test": {
+  "test": {
+   "n_images": 300,
+   "latency_ms_p50": 23.164449259638786,
+   "latency_ms_p95": 25.615329667925835,
+   "bbox_mAP": 0.9217150038056431,
+   "bbox_AP50": 1.0,
+   "bbox_AP75": 0.9964828599648288,
+   "bbox_AP_small": 0.9217150038056431,
+   "segm_mAP": 0.8533561016604739,
+   "segm_AP50": 1.0,
+   "segm_AP75": 1.0,
+   "segm_AP_small": 0.8533561016604739
+  },
+  "shift": {
+   "n_images": 300,
+   "latency_ms_p50": 23.931026458740234,
+   "latency_ms_p95": 27.50197984278202,
+   "bbox_mAP": 0.9077045823630184,
+   "bbox_AP50": 0.9868040794490369,
+   "bbox_AP75": 0.9785530447034845,
+   "bbox_AP_small": 0.9083513324295961,
+   "segm_mAP": 0.8515695272795343,
+   "segm_AP50": 0.9792893410532845,
+   "segm_AP75": 0.9747820984484559,
+   "segm_AP_small": 0.8520393963913218
+  }
+ },
+ "test_agnostic": {
+  "test": {
+   "n_images": 300,
+   "latency_ms_p50": 23.182658478617668,
+   "latency_ms_p95": 25.896928459405895,
+   "bbox_mAP": 0.9207574668154802,
+   "bbox_AP50": 0.9999918443244654,
+   "bbox_AP75": 0.9898130902199125,
+   "bbox_AP_small": 0.9207574668154802,
+   "segm_mAP": 0.8536169672913128,
+   "segm_AP50": 0.9999918443244654,
+   "segm_AP75": 0.9999918443244654,
+   "segm_AP_small": 0.8536169672913128
+  },
+  "shift": {
+   "n_images": 300,
+   "latency_ms_p50": 23.94902892410755,
+   "latency_ms_p95": 27.22594551742077,
+   "bbox_mAP": 0.9114432812730017,
+   "bbox_AP50": 0.9899368748086153,
+   "bbox_AP75": 0.9872826027517613,
+   "bbox_AP_small": 0.912229650672355,
+   "segm_mAP": 0.85278584016862,
+   "segm_AP50": 0.9833061859351262,
+   "segm_AP75": 0.9725836994094412,
+   "segm_AP_small": 0.853405750207359
+  }
+ }
+}

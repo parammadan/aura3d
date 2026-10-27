@@ -77,7 +77,10 @@ print("encoded", {s: len(v) for s, v in data.items()}, round(enc_s, 1), "s", flu
 
 
 def zslice(e, s):
-    return {"visual": e["visual"][s:s + 1].float(), "proprio": e["proprio"][s:s + 1].float()}
+    # unroll() only returns a value for TensorDict input (a plain dict falls through and returns None upstream)
+    from tensordict import TensorDict
+    return TensorDict({"visual": e["visual"][s:s + 1].float(), "proprio": e["proprio"][s:s + 1].float()},
+                      batch_size=[1])
 
 
 def rollout(e, s, H, act=None):

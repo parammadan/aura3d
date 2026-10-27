@@ -43,3 +43,15 @@ used for tuning.
   marginal and Mondrian-by-class on test and shift.
 - **Analysis:** bootstrap 95 % CI (2,000 resamples over scenes) of the difference in wrong-accept rate (c) − (a).
   Coverage under shift is reported as measured; no guarantee is claimed there.
+
+## EXP-M4-001: Mask R-CNN fine-tuning strategies (done 2026-10-27)
+- PRE (COCO, class-agnostic) vs FT-A/B/C, 8 epochs, seed 0, A100. Test 300 and shift 300 images. Results:
+  `results/m4/maskrcnn_*.json`, `docs/VISION_FINETUNING.md`.
+
+## EXP-M4-002: learned segmentation in touching-part clutter (registered 2026-10-27, before test seeds)
+- **Question:** does FT-A Mask R-CNN (B2) improve localisation and sorting over classical depth components (B1)
+  when parts touch? B0 (oracle poses) is the controller ceiling.
+- **Setup:** UR10e, nominal noise, 6 parts (2 per class), min_sep 0.045 m; bin slots; recovery rule "after a failed
+  pick, try a different part first" (`skip_failed`) for all arms. Seeds 4000–4099, paired.
+- **Primary:** episode success (6/6 sorted). **Secondary:** parts matched on the first frame (right class, grasp-point
+  error ≤ 15 mm), parts correct, wrong picks. Exact McNemar B2 vs B1.

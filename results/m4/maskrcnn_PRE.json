@@ -1,0 +1,47 @@
+{
+ "config": {
+  "data": "/scratch/madan.pa/aura3d/datasets/vision_v1",
+  "mode": "PRE",
+  "epochs": 8,
+  "bs": 8,
+  "lr": 0.02,
+  "seed": 0,
+  "max_train": null,
+  "max_eval": null,
+  "torch": "2.7.0+cu126",
+  "torchvision": "0.22.0+cu126"
+ },
+ "config_hash": "e9c87eb8e9a4",
+ "trainable_params": 44178993,
+ "total_params": 44401393,
+ "device": "NVIDIA A100-SXM4-80GB",
+ "epochs": [],
+ "test": {
+  "test": {
+   "n_images": 300,
+   "latency_ms_p50": 24.70685075968504,
+   "latency_ms_p95": 28.045102208852768,
+   "bbox_mAP": 0.0013794237352345697,
+   "bbox_AP50": 0.0018148454356637293,
+   "bbox_AP75": 0.0017629013259066349,
+   "bbox_AP_small": 0.00408777752835373,
+   "segm_mAP": 0.0013895627013282377,
+   "segm_AP50": 0.0018148454356637293,
+   "segm_AP75": 0.0017812371868551418,
+   "segm_AP_small": 0.004120094889376961
+  },
+  "shift": {
+   "n_images": 300,
+   "latency_ms_p50": 26.92010160535574,
+   "latency_ms_p95": 29.950326122343537,
+   "bbox_mAP": 0.005727383462880353,
+   "bbox_AP50": 0.0075629795119338036,
+   "bbox_AP75": 0.007336854423546513,
+   "bbox_AP_small": 0.021018572256144716,
+   "segm_mAP": 0.006075407003993936,
+   "segm_AP50": 0.0075629795119338036,
+   "segm_AP75": 0.007467595220243893,
+   "segm_AP_small": 0.02234385960181437
+  }
+ }
+}

@@ -45,20 +45,27 @@ def oracle_localizer(env):
 
 
 def run_episode(env, seed: int, localize, cfg: PickPlaceCfg = PickPlaceCfg(), gate=None,  # noqa: B008
-                max_attempts_per_part: int = 2, reset: bool = True) -> EpisodeResult:
+                max_attempts_per_part: int = 2, reset: bool = True, bin_slots: bool = False,
+                skip_failed: bool = False) -> EpisodeResult:
+    """bin_slots: drop successive parts at a 2x2 grid of points in each bin (needed for > 2 parts per bin)."""
     """gate(estimate, frame) -> (proceed: bool, info) lets reliability layers veto a pick (B3+)."""
     if reset:
         env.reset(seed)
     n = len(env.meta["parts"])
     budget = max_attempts_per_part * n
     picks, attempts = [], 0
+    slots = [(-0.04, -0.04), (0.04, 0.04), (-0.04, 0.04), (0.04, -0.04)]
+    used = {}
+    failed_xy = []          # skip_failed: positions of parts whose last pick failed; prefer others first
     while attempts < budget:
         env.robot.move_to(env.robot.observe_q, cfg.move_s, env.step)
         frame = env.render("fixed")
         ests = localize(frame)
         if not ests:
             break           # tray empty, or the localiser deferred
-        est = min(ests, key=lambda e: (e.translation[0], e.translation[1]))   # deterministic order
+        def penalty(e):
+            return sum(np.linalg.norm(e.translation[:2] - q) < 0.02 for q in failed_xy) if skip_failed else 0
+        est = min(ests, key=lambda e: (penalty(e), e.translation[0], e.translation[1]))   # deterministic order
         if gate is not None:
             ok, info = gate(est, frame)
             if not ok:
@@ -66,7 +73,13 @@ def run_episode(env, seed: int, localize, cfg: PickPlaceCfg = PickPlaceCfg(), ga
                 attempts += 1
                 continue
         cls = est.features["cls"]
-        r = pick_and_place(env, grasp_for(cls, est.T, env.meta["table_top"]), SORT_BINS[cls], cfg)
+        b = SORT_BINS[cls]
+        off = slots[used.get(b, 0) % 4] if bin_slots else (0.0, 0.0)
+        r = pick_and_place(env, grasp_for(cls, est.T, env.meta["table_top"]), b, cfg, place_offset=off)
+        if r.reason == "placed":
+            used[b] = used.get(b, 0) + 1
+        elif skip_failed:
+            failed_xy.append(est.translation[:2].copy())
         picks.append({"cls": cls, "reason": r.reason, "cycle_s": r.cycle_s})
         attempts += 1
     correct = sum(env.part_in_bin(i, SORT_BINS[c]) for i, c in enumerate(env.meta["part_classes"]))

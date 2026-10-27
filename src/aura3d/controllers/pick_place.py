@@ -34,7 +34,8 @@ class PickPlaceResult:
     cycle_s: float
 
 
-def pick_and_place(env, grasp: dict, bin_name: str, cfg: PickPlaceCfg = PickPlaceCfg()) -> PickPlaceResult:  # noqa: B008
+def pick_and_place(env, grasp: dict, bin_name: str, cfg: PickPlaceCfg = PickPlaceCfg(),  # noqa: B008
+                   place_offset: tuple = (0.0, 0.0)) -> PickPlaceResult:
     robot, step = env.robot, env.step
     t0 = env.data.time
     top = env.meta["table_top"]
@@ -51,7 +52,8 @@ def pick_and_place(env, grasp: dict, bin_name: str, cfg: PickPlaceCfg = PickPlac
     lift_T[2, 3] = top + cfg.lift
     lift = robot.ik(lift_T, q0=grasp_ik.q)
     bc = env.meta["bins"][bin_name]["center"]
-    place_T = robot.top_down(np.array([bc[0], bc[1], top + cfg.place_height]), grasp["yaw"] + k * np.pi)
+    place_T = robot.top_down(np.array([bc[0] + place_offset[0], bc[1] + place_offset[1], top + cfg.place_height]),
+                             grasp["yaw"] + k * np.pi)
     above_T = place_T.copy()
     above_T[2, 3] = top + cfg.lift
     above = robot.ik(above_T, q0=lift.q)
