@@ -66,3 +66,12 @@ used for tuning.
 - **Conditions:** fixed-camera bump 0° (control) and 1.0° (≈ 17 mm at 1 m, chosen from geometry: beyond the 10–15 mm
   tolerance, inside the grid). Seeds 70000–70099 (never used for trajectories: train 0–599, val 50000+, test 60000+).
 - **Primary:** pick success. **Secondary:** wrong actions (executed and failed), deferrals; exact McNemar WM vs G.
+
+## EXP-M9-001: full reliability loop (B6-geo) vs B1 / B3cal (registered 2026-10-27, before running)
+- **Arm B6-geo:** AuraRunner = DriftMonitor (same commissioning as EXP-M5-001) + fixture recalibration + GBRisk
+  gate (trained on risk_v1 train, isotonic on cal; P(out of tolerance) ≤ 0.5 to execute; ≤ 2 re-observations, then
+  defer) + "a part that failed once is not retried". The geometric controller only (no world model; the WM arm
+  is EXP-M8-001).
+- **Cells:** a subset of the EXP-M5-001 grid: (0,0) (0.5,0) (1,0) (0,10). Seeds 2000–2049, UR10e, nominal noise, so it
+  is paired with the stored B1 and B3cal episodes.
+- **Primary:** episode success. **Secondary:** wrong picks, deferrals. Exact McNemar B6 vs B3cal.
