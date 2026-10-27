@@ -92,6 +92,8 @@ def main():
     ap.add_argument("--epochs", type=int, default=300)
     ap.add_argument("--lr", type=float, default=3e-4)
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--outcome-weight", type=float, default=0.1)
+    ap.add_argument("--balanced", action="store_true", help="class-balanced BCE for the outcome head")
     a = ap.parse_args()
     torch.manual_seed(a.seed)
     dev = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -118,7 +120,12 @@ def main():
             zs, ps = model.rollout(z[b, s], p[b, s], act[b, s:s + a.H])
             loss = F.mse_loss(zs, z[b, s + 1:s + 1 + a.H]) + F.mse_loss(ps, p[b, s + 1:s + 1 + a.H])
             zT, _ = model.rollout(z[b, 0], p[b, 0], act[b])
-            loss = loss + 0.1 * F.binary_cross_entropy(model.p_success(zT[:, -1]).clamp(1e-5, 1 - 1e-5), y[b])
+            w = None
+            if a.balanced:
+                pos = y.mean().clamp(0.05, 0.95)
+                w = torch.where(y[b] > 0.5, 0.5 / pos, 0.5 / (1 - pos))
+            loss = loss + a.outcome_weight * F.binary_cross_entropy(
+                model.p_success(zT[:, -1]).clamp(1e-5, 1 - 1e-5), y[b], weight=w)
             opt.zero_grad(set_to_none=True)
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)

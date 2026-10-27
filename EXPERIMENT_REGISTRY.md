@@ -75,3 +75,9 @@ used for tuning.
 - **Cells:** a subset of the EXP-M5-001 grid: (0,0) (0.5,0) (1,0) (0,10). Seeds 2000–2049, UR10e, nominal noise, so it
   is paired with the stored B1 and B3cal episodes.
 - **Primary:** episode success. **Secondary:** wrong picks, deferrals. Exact McNemar B6 vs B3cal.
+
+## EXP-M8-002: verifier with a ranking-validated outcome model (registered 2026-10-27, after EXP-M8-001 control)
+- Motivation: EXP-M8-001 control showed a weak outcome head (test AUROC 0.58) degrades picking (88 vs 99/100).
+- Change: retrain the fallback model on traj_v2 with class-balanced BCE, outcome weight 1.0 (`runs/wm_latent_v2b`).
+- **Authority gate (fixed now):** the verifier is evaluated on EXP-M8-001's protocol and seeds only if val outcome
+  AUROC ≥ 0.80. Otherwise it is not deployed, and that is the result.
