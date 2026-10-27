@@ -19,20 +19,23 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--ckpt", required=True)
 ap.add_argument("--seeds", default="4200:4300")
 ap.add_argument("--out", default="results/m4/grasp_select.json")
+ap.add_argument("--only-seeds", default="", help="comma list: rerun just these seeds (failure analysis)")
 a = ap.parse_args()
 lo, hi = map(int, a.seeds.split(":"))
 env = WorkcellEnv(WorkcellCfg(robot="ur10e", parts=["block", "pin", "bracket"] * 2), noise=PRESETS["nominal"])
 mr = MaskRCNNLocalizer(a.ckpt)
 locs = {"B0": oracle_localizer(env), "B2": lambda f: mr(f, env.meta)}
 rows = []
-for s in range(lo, hi):
+seeds = [int(x) for x in a.only_seeds.split(",")] if a.only_seeds else range(lo, hi)
+for s in seeds:
     row = {"seed": s}
     for base, loc in locs.items():
         for ca in (False, True):
             env.reset(s, min_sep=0.045)
             r = run_episode(env, s, loc, reset=False, bin_slots=True, skip_failed=True, collision_aware=ca)
             row[base + ("+CA" if ca else "")] = {"correct": r.correct, "success": r.success,
-                                                 "wrong": sum(p["reason"] != "placed" for p in r.picks)}
+                                                 "wrong": sum(p["reason"] != "placed" for p in r.picks),
+                                                 "reasons": [p["cls"] + ":" + p["reason"] for p in r.picks], "end": r.reason}
     rows.append(row)
     print(s, {k: v["correct"] for k, v in row.items() if k != "seed"}, flush=True)
 n = len(rows)

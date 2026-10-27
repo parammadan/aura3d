@@ -119,3 +119,10 @@ used for tuning.
   (`make_risk_dataset.py --clutter6 --localizer b2`).
 - Test seeds 4150–4199 (fresh). Gate off vs on, as in EXP-M9-003/004.
 - **Criterion (stated now):** wrong picks reduced by ≥ 30 % with episode success not lower (McNemar p > 0.05 or higher).
+
+## EXP-M5-004: gradual drift + long-run false alarms (registered 2026-10-27, before running)
+- Monitor as in EXP-M5-001. Seeds 5000–5049 (fresh). (a) 20 drift-free frames per seed → false alarms per frame.
+  (b) Linear ramp 0 → 1.0° over 20 observations: rotation at first alarm, and B1's worst grasp-point error before it.
+
+## EXP-M4-004: failure analysis of B2 + CA in clutter (descriptive, 2026-10-27)
+- Rerun the 12 failed seeds of EXP-M4-003 with per-pick reasons logged. Descriptive only; no hypothesis test.
