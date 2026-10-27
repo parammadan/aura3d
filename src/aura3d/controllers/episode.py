@@ -45,9 +45,10 @@ def oracle_localizer(env):
 
 
 def run_episode(env, seed: int, localize, cfg: PickPlaceCfg = PickPlaceCfg(), gate=None,  # noqa: B008
-                max_attempts_per_part: int = 2) -> EpisodeResult:
+                max_attempts_per_part: int = 2, reset: bool = True) -> EpisodeResult:
     """gate(estimate, frame) -> (proceed: bool, info) lets reliability layers veto a pick (B3+)."""
-    env.reset(seed)
+    if reset:
+        env.reset(seed)
     n = len(env.meta["parts"])
     budget = max_attempts_per_part * n
     picks, attempts = [], 0
@@ -56,7 +57,7 @@ def run_episode(env, seed: int, localize, cfg: PickPlaceCfg = PickPlaceCfg(), ga
         frame = env.render("fixed")
         ests = localize(frame)
         if not ests:
-            break
+            break           # tray empty, or the localiser deferred
         est = min(ests, key=lambda e: (e.translation[0], e.translation[1]))   # deterministic order
         if gate is not None:
             ok, info = gate(est, frame)

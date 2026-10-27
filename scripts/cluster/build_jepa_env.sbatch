@@ -20,7 +20,7 @@ python -m pip install -q uv
 cd $ROOT/external/jepa-wms
 # Upstream pins metaworld@master (branch no longer exists) and a malformed d4rl URL, so install
 # the declared deps ourselves: everything except metaworld/d4rl/mujoco-py helpers, then metaworld
-# at a pinned main commit, then jepa-wms itself with --no-deps. D4RL is only for PointMaze (unused).
+# v3.0.0 (cdafedf; main now needs py>=3.11, jepa-wms needs <3.11), then jepa-wms itself with --no-deps. D4RL is only for PointMaze (unused).
 python - <<'PY' > $ROOT/logs/jepa_reqs.txt
 import re
 block = open("pyproject.toml").read().split("dependencies = [", 1)[1].split("]", 1)[0]
@@ -30,7 +30,7 @@ print("\n".join(d for d in deps if not d.lower().startswith(skip)))
 print("pytest\nhuggingface_hub>=0.20.0")
 PY
 python -m uv pip install --python $ENV/bin/python -r $ROOT/logs/jepa_reqs.txt
-python -m uv pip install --python $ENV/bin/python "metaworld @ git+https://github.com/Farama-Foundation/Metaworld.git@c0dafaf1557f31cad3b96ba2b62462f45638f5a5"
+python -m uv pip install --python $ENV/bin/python "metaworld @ git+https://github.com/Farama-Foundation/Metaworld.git@cdafedfaaa896472fb7e76e2fe103e120b67a9b6"
 python -m uv pip install --python $ENV/bin/python --no-deps -e .
 python -c "import torch, torchvision, mujoco, metaworld; print('torch', torch.__version__, 'cuda', torch.version.cuda, 'tv', torchvision.__version__, 'mujoco', mujoco.__version__)"
 python -c "import torchcodec; print('torchcodec ok')" || echo "torchcodec FAILED"

@@ -59,6 +59,7 @@ class WorkcellCfg:
     parts: list = field(default_factory=lambda: ["block", "pin", "bracket"])
     cameras: list = field(default_factory=lambda: [CameraCfg()])
     timestep: float = 0.002
+    ref_spheres: bool = True      # three calibration spheres on posts (industrial reference artefacts)
 
 
 def _rot_mj_from_cv(R_cv: np.ndarray) -> np.ndarray:
@@ -163,6 +164,14 @@ def build_workcell(wc: WorkcellCfg) -> tuple[mujoco.MjModel, dict]:
             wb.add_geom(name=f"{name}_wall{j}", type=mujoco.mjtGeom.mjGEOM_BOX, size=[sx, sy, 0.02],
                         pos=[c[0] + ox, c[1] + oy, top + 0.02], rgba=[0.6, 0.6, 0.2 + 0.4 * k, 1])
 
+    if wc.ref_spheres:
+        for k, (dx, dy, hpost) in enumerate([(-0.32, -0.45, 0.05), (0.30, -0.45, 0.09), (-0.32, 0.47, 0.07)]):
+            base = np.array([cx + dx, cy + dy, top])
+            wb.add_geom(name=f"ref_post{k}", type=mujoco.mjtGeom.mjGEOM_CYLINDER, size=[0.008, hpost / 2, 0],
+                        pos=base + [0, 0, hpost / 2], rgba=[0.4, 0.4, 0.4, 1])
+            wb.add_geom(name=f"ref_sphere{k}", type=mujoco.mjtGeom.mjGEOM_SPHERE, size=[0.025, 0, 0],
+                        pos=base + [0, 0, hpost + 0.025], rgba=[0.9, 0.9, 0.9, 1])
+
     cams = {}
     for c in wc.cameras:
         eye = np.array(c.eye) if np.any(c.eye) else np.array([cx + 0.55, cy - 0.15, top + 0.85])
@@ -208,7 +217,19 @@ def build_workcell(wc: WorkcellCfg) -> tuple[mujoco.MjModel, dict]:
         if b.name.startswith("robot/"):
             b.gravcomp = 1.0
     model = spec.compile()
-    meta = {"robot": wc.robot, "robot_cfg": rc, "table_top": top, "table_center": np.array([cx, cy]),
+    fixtures = []      # static boxes (centre, half-size) = workcell CAD, usable by calibration
+    for g in range(model.ngeom):
+        nm = model.geom(g).name
+        if nm == "table" or "wall" in nm:
+            fixtures.append({"name": nm, "kind": "box", "center": model.geom_pos[g].copy(),
+                             "half": model.geom_size[g].copy()})
+        elif nm.startswith("ref_sphere"):
+            fixtures.append({"name": nm, "kind": "sphere", "center": model.geom_pos[g].copy(),
+                             "radius": float(model.geom_size[g][0])})
+        elif nm.startswith("ref_post"):
+            fixtures.append({"name": nm, "kind": "cylinder", "center": model.geom_pos[g].copy(),
+                             "radius": float(model.geom_size[g][0]), "half_h": float(model.geom_size[g][1])})
+    meta = {"fixtures": fixtures,"robot": wc.robot, "robot_cfg": rc, "table_top": top, "table_center": np.array([cx, cy]),
             "tray": tray, "bins": bins, "cameras": cams, "parts": [f"part/{i}_{c}" for i, c in enumerate(wc.parts)],
             "part_classes": list(wc.parts)}
     return model, meta
