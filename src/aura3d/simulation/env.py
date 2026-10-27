@@ -41,14 +41,22 @@ class WorkcellEnv:
         self.believed_T_world_cam = {k: v["T_world_cam"].copy() for k, v in self.meta["cameras"].items()}
 
     # ---------- reset ----------
-    def reset(self, seed: int, min_sep: float = 0.085) -> dict:
+    def reset(self, seed: int, min_sep: float = 0.085, n_active: int | None = None) -> dict:
+        """n_active: place only the first n parts (in a seeded random order); park the rest out of view."""
         rng = np.random.default_rng(seed)
         self._noise_rng = np.random.default_rng([seed, 1])   # sensor noise stream, independent of layout
         mujoco.mj_resetData(self.model, self.data)
         self.robot.set_joint_state(self.robot.observe_q)
         tray, top = self.meta["tray"], self.meta["table_top"]
         placed = []
-        for qadr, cls in zip(self.part_qadr, self.meta["part_classes"]):
+        order = np.arange(len(self.part_qadr))
+        if n_active is not None:
+            order = rng.permutation(order)
+        self.active = sorted(order[: (len(order) if n_active is None else n_active)].tolist())
+        for j, (qadr, cls) in enumerate(zip(self.part_qadr, self.meta["part_classes"])):
+            if j not in self.active:
+                self.data.qpos[qadr:qadr + 7] = [-3.0 - 0.3 * j, 3.0, 0.05, 1, 0, 0, 0]   # parked, out of view
+                continue
             for _ in range(1000):
                 xy = tray["center"][:2] + rng.uniform(-1, 1, 2) * (tray["half"] - 0.055)
                 if all(np.linalg.norm(xy - p) > min_sep for p in placed):

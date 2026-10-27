@@ -1,0 +1,2638 @@
+{
+ "summary": {
+  "exp": "m5",
+  "baseline": "B3cal",
+  "robot": "ur10e",
+  "noise": "nominal",
+  "seeds": "2000:2050",
+  "drift_rot_deg": 0.5,
+  "drift_trans_mm": 0.0,
+  "monitor": {
+   "mu0": 0.9815323421327153,
+   "sigma0": 0.0173204886251841,
+   "thr": 1.08545527388382
+  },
+  "alarm_episodes": 50,
+  "episodes": 50,
+  "episode_success": 0.84,
+  "episode_wilson95": [
+   0.7148578382325514,
+   0.916625793645991
+  ],
+  "parts_correct": 126,
+  "parts": 150,
+  "part_rate": 0.84,
+  "part_wilson95": [
+   0.7729603173678037,
+   0.8900599162007243
+  ],
+  "mean_attempts": 2.52,
+  "wall_s": 205.5835678577423,
+  "mujoco": "3.17.0",
+  "git": "2d32105"
+ },
+ "episodes": [
+  {
+   "seed": 2000,
+   "correct": 0,
+   "n_parts": 3,
+   "attempts": 0,
+   "success": false,
+   "picks": [],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2000,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 1.2696973864513572,
+     "alarm": true,
+     "recal": "validation_failed",
+     "after_mm": 1.026577087443458
+    }
+   ]
+  },
+  {
+   "seed": 2001,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.011999999999912
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.009999999999756
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.877999999995634
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2001,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.709419881790298,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.046722255945265
+    },
+    {
+     "t": 11.274000000000434,
+     "residual_mm": 1.0221141573928394,
+     "alarm": false
+    },
+    {
+     "t": 20.845999999999325,
+     "residual_mm": 1.0135067513512668,
+     "alarm": false
+    },
+    {
+     "t": 30.283999999994094,
+     "residual_mm": 1.0179960497289642,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2002,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.971999999999898
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.007999999999795
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.935999999995602
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2002,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.735637815585279,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0269577045003975
+    },
+    {
+     "t": 11.23200000000042,
+     "residual_mm": 1.042871135274237,
+     "alarm": false
+    },
+    {
+     "t": 20.80199999999935,
+     "residual_mm": 1.0308625336528099,
+     "alarm": false
+    },
+    {
+     "t": 30.299999999994085,
+     "residual_mm": 1.0425490468555232,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2003,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.03599999999992
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.009999999999735
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.851999999995648
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2003,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.5385136146785503,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0154861244109359
+    },
+    {
+     "t": 11.298000000000442,
+     "residual_mm": 0.9958605267070819,
+     "alarm": false
+    },
+    {
+     "t": 20.86999999999931,
+     "residual_mm": 1.001408870568543,
+     "alarm": false
+    },
+    {
+     "t": 30.281999999994095,
+     "residual_mm": 1.0233575188911548,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2004,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.985999999999903
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.9879999999997935
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.983999999995575
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2004,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 1.2124334473831455,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.025651341090117
+    },
+    {
+     "t": 11.246000000000425,
+     "residual_mm": 1.0513951567243662,
+     "alarm": false
+    },
+    {
+     "t": 20.79799999999935,
+     "residual_mm": 1.0224614242083652,
+     "alarm": false
+    },
+    {
+     "t": 30.34399999999406,
+     "residual_mm": 1.0432533588136117,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2005,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.063999999999929
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.969999999999732
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.887999999995628
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2005,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 3.6314272606741693,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0226849319449616
+    },
+    {
+     "t": 11.326000000000452,
+     "residual_mm": 1.0076816641753594,
+     "alarm": false
+    },
+    {
+     "t": 20.85799999999932,
+     "residual_mm": 0.9829266702864325,
+     "alarm": false
+    },
+    {
+     "t": 30.305999999994082,
+     "residual_mm": 1.03743351918395,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2006,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.029999999999918
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.951999999999773
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.951999999995593
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2006,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.5484179783727967,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0092160817399232
+    },
+    {
+     "t": 11.29200000000044,
+     "residual_mm": 1.0251817017462583,
+     "alarm": false
+    },
+    {
+     "t": 20.80399999999935,
+     "residual_mm": 0.9976638159074902,
+     "alarm": false
+    },
+    {
+     "t": 30.317999999994075,
+     "residual_mm": 1.0080193487858025,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2007,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.9759999999999
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.9679999999998135
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.951999999995593
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2007,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 3.764660035164955,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.061479381648578
+    },
+    {
+     "t": 11.236000000000422,
+     "residual_mm": 1.0192739997247902,
+     "alarm": false
+    },
+    {
+     "t": 20.76599999999937,
+     "residual_mm": 1.0322653046054842,
+     "alarm": false
+    },
+    {
+     "t": 30.279999999994097,
+     "residual_mm": 1.044465986310493,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2008,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.993999999999906
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.955999999999804
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.947999999995595
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2008,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.1612574969862575,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.006585397414883
+    },
+    {
+     "t": 11.254000000000428,
+     "residual_mm": 0.9982003706985321,
+     "alarm": false
+    },
+    {
+     "t": 20.771999999999366,
+     "residual_mm": 1.008034250153833,
+     "alarm": false
+    },
+    {
+     "t": 30.281999999994095,
+     "residual_mm": 1.027928280343926,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2009,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.029999999999918
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.99199999999975
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.879999999995633
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2009,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 3.2746468753788274,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0018048202760088
+    },
+    {
+     "t": 11.29200000000044,
+     "residual_mm": 1.0219984321009241,
+     "alarm": false
+    },
+    {
+     "t": 20.849999999999323,
+     "residual_mm": 1.0241117646691,
+     "alarm": false
+    },
+    {
+     "t": 30.28999999999409,
+     "residual_mm": 1.0080369124807476,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2010,
+   "correct": 0,
+   "n_parts": 3,
+   "attempts": 0,
+   "success": false,
+   "picks": [],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2010,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.976379629164194,
+     "alarm": true,
+     "recal": "validation_failed",
+     "after_mm": 1.0322795133663443
+    }
+   ]
+  },
+  {
+   "seed": 2011,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.959999999999894
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.943999999999841
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.969999999995583
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2011,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.6856484116470924,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0062536461745708
+    },
+    {
+     "t": 11.220000000000416,
+     "residual_mm": 1.0189734007253204,
+     "alarm": false
+    },
+    {
+     "t": 20.72599999999939,
+     "residual_mm": 1.009032318703862,
+     "alarm": false
+    },
+    {
+     "t": 30.25799999999411,
+     "residual_mm": 1.0222377476190037,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2012,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.033999999999919
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.94999999999977
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.987999999995573
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2012,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.005041276856412,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0287494756283655
+    },
+    {
+     "t": 11.296000000000442,
+     "residual_mm": 1.015808316239375,
+     "alarm": false
+    },
+    {
+     "t": 20.805999999999347,
+     "residual_mm": 1.0227866707079314,
+     "alarm": false
+    },
+    {
+     "t": 30.355999999994054,
+     "residual_mm": 1.0081624279225099,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2013,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.027999999999917
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.965999999999767
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.8659999999956405
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2013,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 3.20959550490163,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0521792632575133
+    },
+    {
+     "t": 11.29000000000044,
+     "residual_mm": 1.0303334020572708,
+     "alarm": false
+    },
+    {
+     "t": 20.81799999999934,
+     "residual_mm": 1.020513983805213,
+     "alarm": false
+    },
+    {
+     "t": 30.243999999994116,
+     "residual_mm": 1.0323214088355792,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2014,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.033999999999919
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.8879999999998045
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.9399999999955995
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2014,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 1.8005023022346078,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0127610380043484
+    },
+    {
+     "t": 11.296000000000442,
+     "residual_mm": 1.034761679669205,
+     "alarm": false
+    },
+    {
+     "t": 20.74399999999938,
+     "residual_mm": 1.0352593543694888,
+     "alarm": false
+    },
+    {
+     "t": 30.245999999994115,
+     "residual_mm": 1.015262231429559,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2015,
+   "correct": 0,
+   "n_parts": 3,
+   "attempts": 0,
+   "success": false,
+   "picks": [],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2015,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 1.67776908955114,
+     "alarm": true,
+     "recal": "validation_failed",
+     "after_mm": 1.0781228448961677
+    }
+   ]
+  },
+  {
+   "seed": 2016,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.939999999999888
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.011999999999821
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.943999999995597
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2016,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 3.0793902385798932,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0458463181483024
+    },
+    {
+     "t": 11.20000000000041,
+     "residual_mm": 1.0185826963315936,
+     "alarm": false
+    },
+    {
+     "t": 20.773999999999365,
+     "residual_mm": 1.0051321127396706,
+     "alarm": false
+    },
+    {
+     "t": 30.279999999994097,
+     "residual_mm": 1.0450548607164878,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2017,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.039999999999921
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.941999999999769
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.943999999995597
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2017,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.6297582957997556,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0191403481240937
+    },
+    {
+     "t": 11.302000000000444,
+     "residual_mm": 1.0182836130323558,
+     "alarm": false
+    },
+    {
+     "t": 20.80399999999935,
+     "residual_mm": 1.0494308697256427,
+     "alarm": false
+    },
+    {
+     "t": 30.30999999999408,
+     "residual_mm": 1.023158986289463,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2018,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.003999999999909
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.933999999999806
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.875999999995635
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2018,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.9347352531505777,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0351778239751086
+    },
+    {
+     "t": 11.266000000000432,
+     "residual_mm": 1.0494304561431966,
+     "alarm": false
+    },
+    {
+     "t": 20.76199999999937,
+     "residual_mm": 1.0155324376832642,
+     "alarm": false
+    },
+    {
+     "t": 30.197999999994142,
+     "residual_mm": 1.0418436140097187,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2019,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.043999999999922
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.975999999999747
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.877999999995634
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2019,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.979561532822972,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0149848503755443
+    },
+    {
+     "t": 11.306000000000445,
+     "residual_mm": 0.9980939648276399,
+     "alarm": false
+    },
+    {
+     "t": 20.845999999999325,
+     "residual_mm": 1.000257010758454,
+     "alarm": false
+    },
+    {
+     "t": 30.283999999994094,
+     "residual_mm": 1.0230627535313674,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2020,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.003999999999909
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.96799999999978
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.885999999995629
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2020,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.13774768009789,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0188976785479031
+    },
+    {
+     "t": 11.274000000000434,
+     "residual_mm": 1.0269765913543694,
+     "alarm": false
+    },
+    {
+     "t": 20.80399999999935,
+     "residual_mm": 1.0240373331575903,
+     "alarm": false
+    },
+    {
+     "t": 30.249999999994113,
+     "residual_mm": 1.013387273200994,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2021,
+   "correct": 0,
+   "n_parts": 3,
+   "attempts": 0,
+   "success": false,
+   "picks": [],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2021,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 1.9559093678079842,
+     "alarm": true,
+     "recal": "validation_failed",
+     "after_mm": 1.063137052875529
+    }
+   ]
+  },
+  {
+   "seed": 2022,
+   "correct": 0,
+   "n_parts": 3,
+   "attempts": 0,
+   "success": false,
+   "picks": [],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2022,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 3.750319672411624,
+     "alarm": true,
+     "recal": "validation_failed",
+     "after_mm": 1.037375905025062
+    }
+   ]
+  },
+  {
+   "seed": 2023,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.051999999999925
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.933999999999763
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.967999999995584
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2023,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 3.72712032203254,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0195407599286055
+    },
+    {
+     "t": 11.314000000000448,
+     "residual_mm": 0.9914562884936196,
+     "alarm": false
+    },
+    {
+     "t": 20.809999999999345,
+     "residual_mm": 1.0039107364364086,
+     "alarm": false
+    },
+    {
+     "t": 30.339999999994063,
+     "residual_mm": 1.0220812014289926,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2024,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.057999999999927
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.979999999999723
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.877999999995634
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2024,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 3.339717372350004,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0485727572192571
+    },
+    {
+     "t": 11.330000000000453,
+     "residual_mm": 1.0280882486914944,
+     "alarm": false
+    },
+    {
+     "t": 20.87199999999931,
+     "residual_mm": 1.033796608934212,
+     "alarm": false
+    },
+    {
+     "t": 30.30999999999408,
+     "residual_mm": 1.052157033115786,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2025,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.019999999999914
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.873999999999825
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.9399999999955995
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2025,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 1.9618564748077327,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.014832529709242
+    },
+    {
+     "t": 11.282000000000437,
+     "residual_mm": 1.0279076690689442,
+     "alarm": false
+    },
+    {
+     "t": 20.715999999999397,
+     "residual_mm": 1.0096731709092754,
+     "alarm": false
+    },
+    {
+     "t": 30.21799999999413,
+     "residual_mm": 1.0429248812687808,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2026,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.03599999999992
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.967999999999758
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.881999999995632
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2026,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 3.2175534441941656,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0130994210972855
+    },
+    {
+     "t": 11.298000000000442,
+     "residual_mm": 1.016046144481808,
+     "alarm": false
+    },
+    {
+     "t": 20.827999999999335,
+     "residual_mm": 1.0051067795890933,
+     "alarm": false
+    },
+    {
+     "t": 30.269999999994102,
+     "residual_mm": 1.0007842211149365,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2027,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.063999999999929
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.933999999999752
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.937999999995601
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2027,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.370304454355765,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0149830064967724
+    },
+    {
+     "t": 11.326000000000452,
+     "residual_mm": 1.0389926120031312,
+     "alarm": false
+    },
+    {
+     "t": 20.81999999999934,
+     "residual_mm": 1.0313354406951691,
+     "alarm": false
+    },
+    {
+     "t": 30.319999999994074,
+     "residual_mm": 1.0087693108986584,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2028,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.00799999999991
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.9999999999997655
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.861999999995643
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2028,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.331831952947061,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.029818692022677
+    },
+    {
+     "t": 11.270000000000433,
+     "residual_mm": 1.0179319319603142,
+     "alarm": false
+    },
+    {
+     "t": 20.831999999999333,
+     "residual_mm": 1.0327809229451757,
+     "alarm": false
+    },
+    {
+     "t": 30.25399999999411,
+     "residual_mm": 1.0361280288928958,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2029,
+   "correct": 0,
+   "n_parts": 3,
+   "attempts": 0,
+   "success": false,
+   "picks": [],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2029,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 1.745754311165304,
+     "alarm": true,
+     "recal": "validation_failed",
+     "after_mm": 1.0696891846280199
+    }
+   ]
+  },
+  {
+   "seed": 2030,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.949999999999891
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.003999999999817
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.945999999995596
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2030,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 1.7127883620471698,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0117989345940215
+    },
+    {
+     "t": 11.210000000000413,
+     "residual_mm": 1.0033153259471028,
+     "alarm": false
+    },
+    {
+     "t": 20.775999999999364,
+     "residual_mm": 1.0237741585895632,
+     "alarm": false
+    },
+    {
+     "t": 30.283999999994094,
+     "residual_mm": 1.0098083990863205,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2031,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.003999999999909
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.009999999999764
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.887999999995628
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2031,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 1.929974802311163,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0210432033842531
+    },
+    {
+     "t": 11.266000000000432,
+     "residual_mm": 1.0178771830907651,
+     "alarm": false
+    },
+    {
+     "t": 20.83799999999933,
+     "residual_mm": 0.9881324333008701,
+     "alarm": false
+    },
+    {
+     "t": 30.285999999994093,
+     "residual_mm": 1.0158741900661572,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2032,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.041999999999922
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.9959999999997375
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.875999999995635
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2032,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.6447625647814155,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0134453491777995
+    },
+    {
+     "t": 11.304000000000444,
+     "residual_mm": 1.006904368873962,
+     "alarm": false
+    },
+    {
+     "t": 20.861999999999316,
+     "residual_mm": 0.9928670816312726,
+     "alarm": false
+    },
+    {
+     "t": 30.297999999994087,
+     "residual_mm": 1.0119325337234475,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2033,
+   "correct": 0,
+   "n_parts": 3,
+   "attempts": 0,
+   "success": false,
+   "picks": [],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2033,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.812201217659349,
+     "alarm": true,
+     "recal": "validation_failed",
+     "after_mm": 1.0193507011462266
+    }
+   ]
+  },
+  {
+   "seed": 2034,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.993999999999906
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.045999999999754
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.953999999995592
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2034,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 1.958728379842345,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 0.993473508744569
+    },
+    {
+     "t": 11.254000000000428,
+     "residual_mm": 1.0290291970952437,
+     "alarm": false
+    },
+    {
+     "t": 20.861999999999316,
+     "residual_mm": 1.0289641924644544,
+     "alarm": false
+    },
+    {
+     "t": 30.377999999994042,
+     "residual_mm": 1.011885298712989,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2035,
+   "correct": 0,
+   "n_parts": 3,
+   "attempts": 0,
+   "success": false,
+   "picks": [],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2035,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 3.581832437790422,
+     "alarm": true,
+     "recal": "validation_failed",
+     "after_mm": 1.0220180013535973
+    }
+   ]
+  },
+  {
+   "seed": 2036,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.021999999999915
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.959999999999775
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.941999999995598
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2036,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 3.6568706938794326,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 0.9899058768895186
+    },
+    {
+     "t": 11.284000000000438,
+     "residual_mm": 1.0140899549409,
+     "alarm": false
+    },
+    {
+     "t": 20.80399999999935,
+     "residual_mm": 1.0129671146069663,
+     "alarm": false
+    },
+    {
+     "t": 30.30799999999408,
+     "residual_mm": 0.9962141633492738,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2037,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.971999999999898
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.9979999999998
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.953999999995592
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2037,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 3.027906616812348,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.038209652835631
+    },
+    {
+     "t": 11.23200000000042,
+     "residual_mm": 1.0093325842888135,
+     "alarm": false
+    },
+    {
+     "t": 20.791999999999355,
+     "residual_mm": 1.0182266631707515,
+     "alarm": false
+    },
+    {
+     "t": 30.30799999999408,
+     "residual_mm": 1.0111460319144339,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2038,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.987999999999904
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.9919999999997895
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.963999999995586
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2038,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 3.4319269278565434,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0165381138588225
+    },
+    {
+     "t": 11.248000000000426,
+     "residual_mm": 1.00283787814609,
+     "alarm": false
+    },
+    {
+     "t": 20.80199999999935,
+     "residual_mm": 1.0159141405376992,
+     "alarm": false
+    },
+    {
+     "t": 30.32799999999407,
+     "residual_mm": 1.0223819072656126,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2039,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.063999999999929
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.971999999999731
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.895999999995624
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2039,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.2412740207168844,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0025744452024088
+    },
+    {
+     "t": 11.326000000000452,
+     "residual_mm": 0.997597755775459,
+     "alarm": false
+    },
+    {
+     "t": 20.859999999999317,
+     "residual_mm": 0.9974097396882597,
+     "alarm": false
+    },
+    {
+     "t": 30.315999999994077,
+     "residual_mm": 1.0013503729484619,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2040,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.061999999999928
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.953999999999743
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.971999999995582
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2040,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.4478533832537064,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0178645754608806
+    },
+    {
+     "t": 11.324000000000451,
+     "residual_mm": 0.9979254632907497,
+     "alarm": false
+    },
+    {
+     "t": 20.83799999999933,
+     "residual_mm": 1.033804163570018,
+     "alarm": false
+    },
+    {
+     "t": 30.371999999994046,
+     "residual_mm": 0.9959728101283094,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2041,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.003999999999909
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.981999999999779
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.893999999995625
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2041,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 1.6692068715459252,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0231318348338236
+    },
+    {
+     "t": 11.266000000000432,
+     "residual_mm": 1.0382286650320038,
+     "alarm": false
+    },
+    {
+     "t": 20.809999999999345,
+     "residual_mm": 1.0233456886880044,
+     "alarm": false
+    },
+    {
+     "t": 30.263999999994105,
+     "residual_mm": 1.007896353523774,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2042,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.989999999999904
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.009999999999778
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.995999999995568
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2042,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.3566991139161164,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0116398937182192
+    },
+    {
+     "t": 11.250000000000426,
+     "residual_mm": 1.0237572320344057,
+     "alarm": false
+    },
+    {
+     "t": 20.82199999999934,
+     "residual_mm": 1.0131035407116573,
+     "alarm": false
+    },
+    {
+     "t": 30.37999999999404,
+     "residual_mm": 1.0364287543930262,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2043,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.045999999999923
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.907999999999783
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.959999999995588
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2043,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 1.5490064123116487,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0141415972586554
+    },
+    {
+     "t": 11.308000000000446,
+     "residual_mm": 1.0490987455233913,
+     "alarm": false
+    },
+    {
+     "t": 20.775999999999364,
+     "residual_mm": 1.0266953134114853,
+     "alarm": false
+    },
+    {
+     "t": 30.297999999994087,
+     "residual_mm": 1.0222301582389859,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2044,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.993999999999906
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.911999999999827
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.9399999999955995
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2044,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.744310705641295,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0161341597726414
+    },
+    {
+     "t": 11.256000000000428,
+     "residual_mm": 1.0139379849034569,
+     "alarm": false
+    },
+    {
+     "t": 20.72799999999939,
+     "residual_mm": 1.001959571197586,
+     "alarm": false
+    },
+    {
+     "t": 30.229999999994124,
+     "residual_mm": 1.015871888493225,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2045,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.999999999999908
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.903999999999826
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.949999999995594
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2045,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.5593811167696767,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0125389975371712
+    },
+    {
+     "t": 11.26200000000043,
+     "residual_mm": 0.9865558698454735,
+     "alarm": false
+    },
+    {
+     "t": 20.72599999999939,
+     "residual_mm": 1.0101771998100584,
+     "alarm": false
+    },
+    {
+     "t": 30.23799999999412,
+     "residual_mm": 0.9960240250682859,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2046,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.041999999999922
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.011999999999729
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.869999999995638
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2046,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 3.5630182951305045,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0672349609506226
+    },
+    {
+     "t": 11.304000000000444,
+     "residual_mm": 1.0339551360407095,
+     "alarm": false
+    },
+    {
+     "t": 20.877999999999307,
+     "residual_mm": 1.0436309555323375,
+     "alarm": false
+    },
+    {
+     "t": 30.30799999999408,
+     "residual_mm": 1.0499748140080922,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2047,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 8.051999999999925
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.003999999999724
+    },
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.9019999999956205
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2047,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.7835513616065732,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0271894229695322
+    },
+    {
+     "t": 11.314000000000448,
+     "residual_mm": 1.0102835830513301,
+     "alarm": false
+    },
+    {
+     "t": 20.8899999999993,
+     "residual_mm": 1.0347491377021845,
+     "alarm": false
+    },
+    {
+     "t": 30.351999999994057,
+     "residual_mm": 1.0467858174459943,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2048,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.983999999999902
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.967999999999806
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 7.951999999995593
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2048,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 2.841636290229599,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0369317453240434
+    },
+    {
+     "t": 11.244000000000424,
+     "residual_mm": 1.0316889278773056,
+     "alarm": false
+    },
+    {
+     "t": 20.773999999999365,
+     "residual_mm": 1.029531434995401,
+     "alarm": false
+    },
+    {
+     "t": 30.287999999994092,
+     "residual_mm": 1.027528664486077,
+     "alarm": false
+    }
+   ]
+  },
+  {
+   "seed": 2049,
+   "correct": 3,
+   "n_parts": 3,
+   "attempts": 3,
+   "success": true,
+   "picks": [
+    {
+     "cls": "pin",
+     "reason": "placed",
+     "cycle_s": 7.983999999999902
+    },
+    {
+     "cls": "block",
+     "reason": "placed",
+     "cycle_s": 8.01599999999978
+    },
+    {
+     "cls": "bracket",
+     "reason": "placed",
+     "cycle_s": 7.929999999995605
+    }
+   ],
+   "end": "tray_empty",
+   "fault": {
+    "type": "camera_drift",
+    "rot_deg": 0.5,
+    "trans_mm": 0.0,
+    "seed": 2049,
+    "kind": "sudden",
+    "onset_s": 0.0
+   },
+   "calib": [
+    {
+     "t": 1.7000000000000013,
+     "residual_mm": 3.1892362601049773,
+     "alarm": true,
+     "recal": "ok",
+     "after_mm": 1.0296354626334348
+    },
+    {
+     "t": 11.244000000000424,
+     "residual_mm": 1.0466944423440094,
+     "alarm": false
+    },
+    {
+     "t": 20.82199999999934,
+     "residual_mm": 1.019808769648245,
+     "alarm": false
+    },
+    {
+     "t": 30.313999999994078,
+     "residual_mm": 0.9998524438102641,
+     "alarm": false
+    }
+   ]
+  }
+ ]
+}

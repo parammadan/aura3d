@@ -18,3 +18,10 @@ def wilson(k: int, n: int, z: float = 1.959964) -> tuple[float, float]:
 def rule_of_three_upper(n: int) -> float:
     """~95% upper bound on a failure rate after n trials with zero failures."""
     return 3.0 / n if n else float("nan")
+
+
+def mcnemar_exact(b: int, c: int) -> float:
+    """Two-sided exact McNemar p-value from discordant counts b (A ok, B fail) and c (A fail, B ok)."""
+    from scipy.stats import binomtest
+    n = b + c
+    return 1.0 if n == 0 else float(binomtest(min(b, c), n, 0.5).pvalue)

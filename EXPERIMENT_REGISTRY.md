@@ -27,3 +27,19 @@ used for tuning.
   alarms), deferral rate, parts correct.
 - **Analysis:** per cell, Wilson 95 % CIs; paired difference B3cal − B1 with exact McNemar test on discordant episodes.
   No threshold changes after this entry.
+
+## EXP-M5-002: per-class grasp tolerance (dev, registered 2026-10-27)
+- Oracle grasp offset by δ ∈ {0,2,4,6,8,10,12,15} mm in a random xy direction; 40 dev seeds per class (0–39).
+- τ_cls = largest δ with success ≥ 95 %. τ is frozen before EXP-M5-003 touches test data.
+
+## EXP-M5-003: pose-risk estimator vs confidence threshold (H1) (registered 2026-10-27, before test data)
+- **Data:** `scripts/make_risk_dataset.py`. Train dev 0–599, calibration dev 600–899, test 3000–3299 (same
+  distribution), shift 3300–3499 (degraded noise, larger bumps, more clutter). One row per detection.
+- **Label:** grasp-point xy error e (mm, capped at 50); out of tolerance := e > τ_cls (EXP-M5-002).
+- **Arms:** (a) estimator quality score (risk = −quality); (b) registration RMS alone; (c) GBRisk predicted error;
+  (d) GBRisk + isotonic P(out).
+- **Primary:** wrong-accept rate (accepted rows that are out of tolerance) at a matched 20 % abstention, on test.
+  **Secondary:** AUROC, AUPRC, risk-coverage AUC; split-conformal (α = 0.1) empirical coverage and mean bound for
+  marginal and Mondrian-by-class on test and shift.
+- **Analysis:** bootstrap 95 % CI (2,000 resamples over scenes) of the difference in wrong-accept rate (c) − (a).
+  Coverage under shift is reported as measured; no guarantee is claimed there.
