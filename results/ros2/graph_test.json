@@ -1,0 +1,9 @@
+{
+ "nominal_frames": 20,
+ "nominal_alarms": 0,
+ "nominal_n_parts_last": 3,
+ "drift_frames": 4,
+ "drift_alarms": 2,
+ "perception_latency_ms_p50": 3.168344497680664,
+ "pass": true
+}
