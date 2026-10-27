@@ -67,14 +67,23 @@ Test AUROC 0.995 (GB) vs 0.754 (estimator score); real-part rows only 0.966 vs 0
 0.890 in distribution, 0.71 under shift.
 ### 5.6 Learned segmentation (EXP-M4-001 / 002)
 COCO-only Mask R-CNN: 0.001 segm mAP. Fine-tuned (head-only / partial / full): 0.854 / 0.853 / 0.861, with no
-established difference. Downstream clutter effect: **PENDING (EXP-M4-002)**.
+established difference. Downstream, in touching-part clutter (EXP-M4-002, 100 paired seeds), B2 (Mask R-CNN + the same pose fit) sorts
+53/100 episodes vs 30/100 for B1 (p = 1.5×10⁻⁵), and first-frame localisation rises from 60.5 % to 99.2 %. The oracle
+ceiling is 58/100: in clutter the gripper, not perception, becomes the limit.
 ### 5.7 Full loop (EXP-M9-001)
-0.5°: B6 42/50 = B3cal 42/50 (p = 1.0), 7/50 B1. Other cells **PENDING**.
-### 5.8 World models (EXP-M6/M7/M8)
+B6 = B3cal in every drift cell (0.5°: 42/50; 1°: 30/50; 10 mm: 30/50; 0 wrong picks; failures are deferrals). After
+validated recalibration, nothing is left for the risk gate to stop. In clutter (EXP-M9-003) the gate cuts wrong picks by
+64 % (95 → 34) but defers 32/50 episodes, lowering success from 14/50 to 5/50 (p = 0.004). It was calibrated on
+uncluttered scenes, so this is a calibration-under-shift failure, consistent with §5.5.
+### 5.8 Cross-robot transfer (EXP-M9-002)
+FANUC M-710iC/50 with no robot-specific code: 0.5° bump B1 6/50 → B3cal 42/50 (p = 3×10⁻¹¹); 10 mm 9/50 → 30/50
+(p = 2×10⁻⁴). The camera and fixtures are shared, so this measures modular transfer, not generalisation to a new cell.
+### 5.9 World models (EXP-M6/M7/M8)
 - JEPA-WM reproduction on its own task: reach-wall 5/12 (paper 41.6 %).
 - Zero-shot on our cell: 2.7× copy error. WM-B (predictor fine-tune): **PENDING** (val 0.77× copy after 3 epochs).
 - Fallback model: h = 6 error 0.43× copy; outcome head AUROC 0.58 (test).
-- Verifier at 0° drift: 88/100 vs geometry 99/100 (p = 0.001). At 1.0°: **PENDING**.
+- Verifier at 0° drift: 88/100 vs geometry 99/100 (p = 0.001); at 1.0°: 16/100 vs 21/100 (p = 0.125); oracle 94/100.
+  A retrained, class-balanced outcome head reached val AUROC 0.669, below the pre-set 0.80 gate, so it was not deployed.
 
 ## 6 Limitations
 Simulation only, with assumed sensor noise. Primitive parts; a mild domain shift for vision; single seeds for training

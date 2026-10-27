@@ -34,6 +34,10 @@ asks for an operator instead of acting.
    camera turns patches of table into "parts". A learned risk model catches them (AUROC 0.97 vs 0.77 for the
    estimator's own score). Its conformal bounds hold in distribution (0.89 of 0.90) and **fail under shift (0.71)**.
 
+## 4b. Learned vision earns its place in clutter (20 s)
+Touching parts merge in depth. Fine-tuned Mask R-CNN lifts first-frame localisation from 60 % to 99 % and sorting from
+30/100 to 53/100 (p = 1.5e-5), close to the 58/100 oracle ceiling, where the gripper becomes the limit.
+
 ## 5. World models: what worked and what didn't (60 s)
 - Reproduced Meta JEPA-WM on its own task: 5/12 vs the paper's 41.6 %.
 - **Zero-shot on our robot it is worse than predicting "nothing moves"** (2.7×). Fine-tuning only the predictor
@@ -52,4 +56,4 @@ asks for an operator instead of acting.
 - *Is this real-robot ready?* No. Simulation, assumed noise, primitive parts. The protocol transfers; the numbers don't.
 - *Why trust the stats?* Seeds are disjoint per split, cells are paired, analysis is registered before the test run,
   and nulls and negatives are reported (H3, M8).
-- *FANUC specifics?* Same code with only a config change. Transfer result: PENDING (EXP-M9-002).
+- *FANUC specifics?* Same code with only a config change: 0.5° bump 6/50 → 42/50 on the M-710iC/50 (p = 3e-11).

@@ -19,5 +19,7 @@ latent world model. ROS 2 Jazzy integration test passes.
 **Honest limits.** Simulation only; assumed sensor noise; primitive parts; drift modelled as a rigid bump; single
 training seeds. JEPA-WMs is CC BY-NC (research only).
 
-**Pending at time of writing:** clutter (learned vs classical segmentation in closed loop), FANUC transfer, JEPA WM-B
-final, remaining full-loop cells.
+- Clutter: Mask R-CNN 30/100 → 53/100 sorting (oracle ceiling 58). FANUC: same code, 0.5° bump 6/50 → 42/50.
+- Risk gate in clutter: wrong picks −64 %, but it over-defers (success 14 → 5/50). It needs in-domain calibration.
+
+**Pending at time of writing:** JEPA WM-B final number, JEPA patch-level outcome probe.
