@@ -107,3 +107,8 @@ used for tuning.
 - **Test on fresh seeds 4100–4149** (never used before), same protocol as EXP-M9-003: gate off vs on, threshold 0.5.
 - **Primary:** wrong picks. **Secondary:** episode success, deferrals. Success criterion stated now: the gate keeps
   ≥ 50 % of the wrong-pick reduction without lowering episode success (McNemar p > 0.05 or better).
+
+## EXP-M4-003: collision-aware grasp selection in clutter (registered 2026-10-27, before test seeds)
+- Dev (seeds 0–11, oracle): 10/12 → 12/12 episodes. Test: seeds 4200–4299 (fresh), 6-part touching clutter.
+- Arms: B0, B0+CA, B2, B2+CA (CA = clearance-maximising part order and pin yaw from *estimated* poses only).
+- **Primary:** episode success, exact McNemar CA vs no-CA within each base. Secondary: wrong picks, parts correct.

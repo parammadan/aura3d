@@ -46,7 +46,7 @@ def oracle_localizer(env):
 
 def run_episode(env, seed: int, localize, cfg: PickPlaceCfg = PickPlaceCfg(), gate=None,  # noqa: B008
                 max_attempts_per_part: int = 2, reset: bool = True, bin_slots: bool = False,
-                skip_failed: bool = False) -> EpisodeResult:
+                skip_failed: bool = False, collision_aware: bool = False) -> EpisodeResult:
     """bin_slots: drop successive parts at a 2x2 grid of points in each bin (needed for > 2 parts per bin)."""
     """gate(estimate, frame) -> (proceed: bool, info) lets reliability layers veto a pick (B3+)."""
     if reset:
@@ -66,6 +66,11 @@ def run_episode(env, seed: int, localize, cfg: PickPlaceCfg = PickPlaceCfg(), ga
         def penalty(e):
             return sum(np.linalg.norm(e.translation[:2] - q) < 0.02 for q in failed_xy) if skip_failed else 0
         est = min(ests, key=lambda e: (penalty(e), e.translation[0], e.translation[1]))   # deterministic order
+        grasp = None
+        if collision_aware:
+            from aura3d.controllers.grasp_select import choose
+            pool = [e for e in ests if penalty(e) == 0] or ests
+            est, grasp, _ = choose(pool, env.meta["table_top"])
         if gate is not None:
             ok, info = gate(est, frame)
             if not ok:
@@ -75,7 +80,7 @@ def run_episode(env, seed: int, localize, cfg: PickPlaceCfg = PickPlaceCfg(), ga
         cls = est.features["cls"]
         b = SORT_BINS[cls]
         off = slots[used.get(b, 0) % 4] if bin_slots else (0.0, 0.0)
-        r = pick_and_place(env, grasp_for(cls, est.T, env.meta["table_top"]), b, cfg, place_offset=off)
+        r = pick_and_place(env, grasp or grasp_for(cls, est.T, env.meta["table_top"]), b, cfg, place_offset=off)
         if r.reason == "placed":
             used[b] = used.get(b, 0) + 1
         elif skip_failed:

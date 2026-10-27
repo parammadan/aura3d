@@ -20,3 +20,4 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+python_files = ["test_*.py"]   # tests/integration/ros2_graph_test.py runs only inside the ROS 2 container
