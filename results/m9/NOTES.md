@@ -44,3 +44,17 @@ really are out of tolerance (merged blobs), and the gate correctly refuses them.
 recovery action:** REOBSERVE re-images the same static scene from the same camera and returns the same estimate.
 A gate only raises throughput when paired with a recovery that changes the information: learned segmentation (B2
 localises 99.2 % of clutter parts, EXP-M4-002), another viewpoint (BELIEF-3D's active perception), or singulation.
+
+# EXP-M9-005 results: gate + learned segmentation (B2) in clutter (fresh seeds 4150–4199). Criterion MET
+| | gate off | gate on |
+|---|---|---|
+| Episode success | 21/50 [0.29, 0.56] | **31/50** [0.48, 0.74] |
+| Parts correct | 257/300 | 272/300 |
+| Wrong picks (primary) | 95 | **48 (−49 %)** |
+| Deferred episodes | 0 | 2 |
+McNemar on success p = 0.031, in favour of the gate. Criterion (≥ 30 % fewer wrong picks, success not lower): met.
+
+Across EXP-M9-003/004/005: **a risk gate is only as useful as the perception behind it.** With B1 in clutter most
+estimates are out of tolerance, and the gate correctly refuses them and stalls the episode. With B2 most estimates are
+good, and the gate removes the remaining bad ones, so success *rises* (avoided bad picks no longer disturb neighbours
+or burn the retry budget). This run did not use collision-aware selection; B2 + CA + gate is untested.

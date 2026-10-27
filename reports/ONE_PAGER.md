@@ -16,9 +16,10 @@ latent world model. ROS 2 Jazzy integration test passes.
 - World models: JEPA reproduction 5/12 (paper 41.6 %). Zero-shot on our cell 2.7× worse than copy; predictor fine-tune → 0.67×. Own model as
   verifier **hurt** picking (99 → 88/100), so it is gated off.
 - Clutter: Mask R-CNN 30/100 → 53/100 sorting (oracle ceiling 58); + collision-aware grasping → **88/100** (= oracle). FANUC: same code, 0.5° bump 6/50 → 42/50.
-- Risk gate in clutter: wrong picks −64 %, but it over-defers (success 14 → 5/50). It needs in-domain calibration.
+- Risk gate in clutter: with classical perception it over-defers (14 → 5/50); with Mask R-CNN it helps: wrong picks
+  −49 %, success 21 → **31/50** (p = 0.03).
 
 **Honest limits.** Simulation only; assumed sensor noise; primitive parts; drift modelled as a rigid bump; single
 training seeds. JEPA-WMs is CC BY-NC (research only).
 
-**Pending at time of writing:** JEPA patch-level outcome probe; in-domain gate calibration; collision-aware grasping.
+**Not done:** real-image validation, gradual drift, ONNX/TensorRT, MoveIt, informative recovery actions.

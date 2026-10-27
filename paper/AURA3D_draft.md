@@ -76,7 +76,11 @@ ceiling is 58/100: in clutter the gripper, not perception, becomes the limit. Co
 B6 = B3cal in every drift cell (0.5°: 42/50; 1°: 30/50; 10 mm: 30/50; 0 wrong picks; failures are deferrals). After
 validated recalibration, nothing is left for the risk gate to stop. In clutter (EXP-M9-003) the gate cuts wrong picks by
 64 % (95 → 34) but defers 32/50 episodes, lowering success from 14/50 to 5/50 (p = 0.004). It was calibrated on
-uncluttered scenes, so this is a calibration-under-shift failure, consistent with §5.5.
+uncluttered scenes. Recalibrating it on clutter (EXP-M9-004) made it more selective (−84 % wrong picks) and deferred even
+more, because with B1 most clutter estimates really are bad and re-observing the same static scene adds no information.
+Paired with learned segmentation (EXP-M9-005, fresh seeds) the gate cuts wrong picks by 49 % (95 → 48) and *raises*
+episode success from 21/50 to 31/50 (p = 0.031) with 2 deferrals. A risk gate is only as useful as the perception and
+recovery actions behind it.
 ### 5.8 Cross-robot transfer (EXP-M9-002)
 FANUC M-710iC/50 with no robot-specific code: 0.5° bump B1 6/50 → B3cal 42/50 (p = 3×10⁻¹¹); 10 mm 9/50 → 30/50
 (p = 2×10⁻⁴). The camera and fixtures are shared, so this measures modular transfer, not generalisation to a new cell.
