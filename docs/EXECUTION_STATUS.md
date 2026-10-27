@@ -13,14 +13,20 @@ _Last updated: 2026-10-27_
 | Camera-drift fault, fixture residual, recalibration with leave-one-sphere-out validation, DriftMonitor | `src/aura3d/calibration/`, EXP-M5-001 registered |
 | JEPA-WMs env on cluster | SLURM 11410184 (see ENVIRONMENT_REPORT) |
 
+- EXP-M5-001 drift dose-response: B3cal > B1 in every drifted cell (e.g. 0.5°: 42/50 vs 7/50, p = 6e-11); B3cal
+  wrong picks 3 total vs B1 116–295 per cell; failures become deferrals (`results/m5/ANALYSIS.md`)
+- EXP-M5-002 grasp tolerance τ = block 15, pin 10, bracket 12 mm (dev)
+- EXP-M5-003 pose risk: GB AUROC 0.995 (0.966 excluding phantoms) vs 0.754; conformal coverage 0.89 in-dist,
+  0.71 under shift (`results/m5/RISK_ANALYSIS.md`)
+- Vision dataset `datasets/vision_v1` (3000/300/300/300, 185 MB; uploaded to cluster)
+
 ## In progress
-- EXP-M5-001 drift dose-response (B1 vs B3cal), running locally.
 - JEPA-WMs official MetaWorld reproduction (cluster, background).
-- Vision dataset generator (`vision_training/synth.py`) written and smoke-tested on 7 images; trainer
-  (`train_maskrcnn.py`) written, **not yet run**.
+- Mask R-CNN FT smoke test queued on A100 (SLURM 11410744); trainer not yet run at full scale.
+- Written, not run: trajectory recorder (smoke-tested on 3 episodes), fallback latent world model + trainer.
 
 ## Not started
-Pose-risk estimator + conformal calibration, trajectory dataset + action adapter, WM fine-tuning, predictive
+Trajectory dataset + action adapter, WM fine-tuning, predictive
 planner, recovery state machine, ROS 2 adapters, real-data (BOP) validation, ONNX/TensorRT, paper, demo.
 
 ## Known issues
@@ -30,4 +36,4 @@ planner, recovery state machine, ROS 2 adapters, real-data (BOP) validation, ONN
 - Results JSON written before the first commit records `git: uncommitted` (EXP-M2-001).
 
 ## Next exact step
-Read EXP-M5-001 results → write the analysis → generate `datasets/vision_v1` → run FT-A/B/C on A100.
+Vision smoke test → FT array; record trajectories (train 400 / val 60 / test 60); JEPA repro report → action adapter.
