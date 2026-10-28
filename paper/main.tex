@@ -1,0 +1,200 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,xcolor,hyperref}
+\usepackage[numbers]{natbib}
+
+\title{Knowing When You Are Wrong:\\ Validated Recalibration, Pose-Risk Gating and World Models\\ for Reliable Simulated Industrial Picking}
+\author{Param Madan}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Vision-guided pick cells fail silently when the believed camera pose is wrong: the pose estimator stays confident
+while every grasp lands off target. In a simulated workcell with two embodiments, a UR10e and a FANUC M-710iC/50 loaded
+from FANUC's official description, we study a reliability loop around a classical depth localiser. It combines a
+fixture-residual drift monitor, robust SE(3) recalibration accepted only if it predicts a held-out reference sphere, a
+learned pose-risk gate against measured grasp tolerances, and collision-aware grasp selection. Every comparison is
+pre-registered, paired and run on held-out seeds. A $0.5^\circ$ camera bump drops sorting success from 50/50 to 7/50.
+The monitored system recovers 42/50 ($p=6\times10^{-11}$) and cuts wrong picks from 251 to 0; its remaining failures are
+explicit deferrals. Slow drift is detected at a median of $0.1^\circ$ with zero false alarms in 1{,}000 frames. Flat
+fixtures leave camera translation weakly observable (a 10\,mm bump is still 7.5\,mm off), and the information-matrix
+condition number does not flag bad fits; reference spheres and held-out validation fix both. In touching-part clutter,
+fine-tuned Mask R-CNN plus clearance-ordered grasping sorts 88/100 trays, equal to oracle poses with the same rule.
+The same code transfers to the FANUC arm without robot-specific changes. A pose-risk gate helps only when the
+perception behind it is good: with classical perception it over-defers, with learned segmentation it halves wrong
+picks and raises success from 21/50 to 31/50. Meta's JEPA world model needs predictor fine-tuning to beat a copy
+baseline on our cell, and neither it nor our own latent model foresees grasp outcome (probe AUROC 0.72 on the
+predicted frame vs 0.99 on the real one), so world models are given no authority over actions. Simulation only.
+\end{abstract}
+
+\section{Introduction}
+Industrial pick-and-place cells are calibrated once and then trusted. A bumped camera, a loosened mount or thermal
+drift silently corrupts every downstream estimate, and a pose estimator's confidence does not see it, because the
+geometry it fits is internally consistent but placed in the wrong frame. We ask a narrow, measurable question: \emph{can
+a perception stack recognise when its geometry is untrustworthy, and act on that, without giving up throughput when
+nothing is wrong?}
+
+We contribute, in simulation:
+(i) a validated-recalibration protocol whose acceptance test is leave-one-sphere-out prediction, with a drift
+dose-response on two embodiments;
+(ii) measurements locating \emph{where} reliability gains come from: wrong actions become deferrals, phantom
+detections dominate drift failures, and gripper collisions dominate clutter failures;
+(iii) a pose-risk gate with measured task tolerances, including its failure modes (coverage loss under shift, and
+over-deferral when perception is weak);
+(iv) a negative result on world-model action verification, with a probe that isolates the cause.
+We do not claim novelty for fixture calibration, conformal prediction or JEPA world models individually, nor any
+performance on hardware.
+
+\section{Related work}
+\textbf{Camera calibration and drift.} Hand-eye calibration \citep{tsai1989handeye} estimates the camera-to-robot
+transform from known motions. We instead monitor an eye-to-hand camera against the workcell's own fixtures and
+recalibrate online, and change detection in the spirit of CUSUM \citep{page1954cusum} motivates a commissioning
+baseline with a fixed alarm rule.
+\textbf{Pose estimation and uncertainty.} Learned 6D estimators such as FoundationPose \citep{wen2024foundationpose}
+and distributional methods such as SE(3)-PoseFlow \citep{jin2025poseflow} produce poses or pose distributions. Our
+earlier BELIEF-3D study \citep{madan2026belief3d} showed that view-dependent calibration bias, not pose noise, limits
+grasping. Here we gate actions on predicted task-frame error, calibrated with conformal methods
+\citep{angelopoulos2021gentle}.
+\textbf{Segmentation.} We fine-tune Mask R-CNN \citep{he2017maskrcnn} on synthetic, domain-randomised images.
+\textbf{World models.} DINO-WM \citep{zhou2024dinowm} and JEPA world models \citep{terver2025jepawms} plan in the
+latent space of a frozen self-supervised encoder such as DINOv2 \citep{oquab2023dinov2}. We test whether such a model,
+reproduced and adapted to our cell, can verify grasp candidates. Simulation uses MuJoCo \citep{todorov2012mujoco}.
+
+\section{Setup}
+\textbf{Workcell.} A table, a pick tray, two bins, three reference spheres on posts, and a fixed RGB-D camera with
+OAK-D-Pro-like geometry (80$^\circ$ HFOV). Depth noise follows stereo triangulation, $\sigma_z = z^2\sigma_d/(f b)$,
+with $b=75$\,mm, $f\approx763$\,px and an \emph{assumed} $\sigma_d=0.1$\,px (0.3 for ``degraded'').
+\textbf{Robots.} UR10e (MuJoCo Menagerie) and FANUC M-710iC/50 (FANUC's kinematics, joint limits and link inertials;
+our servo gains), sharing one parallel-jaw gripper. With oracle poses both place 300/300 parts (Wilson 95\% [0.987, 1]).
+\textbf{Parts and task.} Block, pin and L-bracket CAD primitives; sort 3 (or 6, touching) parts by class.
+\textbf{Protocol.} Dev seeds $<1000$ are used for design; every test cell uses registered, disjoint seed ranges. Arms
+are paired by seed, with exact McNemar tests on episode success.
+
+\section{Methods}
+\textbf{B1 classical localiser.} Depth $\to$ world points (believed extrinsics) $\to$ tray and height gates $\to$
+connected components $\to$ height-profile class $\to$ Huber point-to-SDF planar fit.
+\textbf{Drift monitor.} The residual $r$ is the median $|$SDF$|$ of static-scene points to the fixture CAD under the
+believed extrinsics. Alarm at $r > \mu_0 + 6\sigma_0$ from 20 drift-free commissioning frames.
+\textbf{Recalibration.} Huber least squares over a camera-frame $\mathfrak{se}(3)$ increment. A fit is accepted only
+if, refit without sphere $k$, it predicts sphere $k$ within 2\,mm for at least two spheres; otherwise the cell defers.
+\textbf{Pose risk.} Gradient boosting maps observable features (registration residual, pixel count, valid-depth
+fraction, calibration residual, class) to grasp-point error. Isotonic regression maps that to
+$P(e>\tau_{\text{cls}})$, and split / Mondrian conformal bounds are added. Tolerances come from an oracle-offset sweep:
+$\tau=15$ (block), 12 (bracket) and 10\,mm (pin).
+\textbf{Learned segmentation (B2).} Mask R-CNN (ResNet-50 FPN, COCO weights) fine-tuned on 3{,}000 synthetic images;
+the B1 pose fit is applied inside each mask.
+\textbf{Collision-aware selection (CA).} Pad volumes at pre-shape width are scored by their SDF clearance to the
+\emph{estimated} neighbours; the clearest part is picked first, and pin yaw is searched.
+\textbf{Recovery.} A budgeted state machine (observe, check calibration, recalibrate, localise, evaluate risk,
+execute, verify, defer), with reason codes and no unbounded loops.
+\textbf{World models.} JEPA-WM (MetaWorld checkpoint, frozen DINOv2 ViT-S/14) with an explicit action and proprio
+adapter (1\,cm units, five sub-steps, clipped before normalisation). WM-A is frozen; WM-B fine-tunes the 17.6\,M-parameter
+predictor. A fallback latent model is an MLP on a global DINOv2 embedding with an outcome head. The verifier ranks a
+$5\times5$ grid of grasp candidates by predicted success.
+
+\section{Results}
+\begin{table}[t]\centering\small
+\caption{Camera drift, UR10e, 50 paired episodes per cell (EXP-M5-001). Wrong picks = executed and failed.}
+\begin{tabular}{lccc}\toprule
+Bump & B1 & B3cal & B3cal wrong / deferred\\\midrule
+none & 50/50 & 50/50 & 0 / 0\\
+$0.5^\circ$ & 7/50 & \textbf{42/50} & 0 / 8\\
+$1^\circ$ & 2/50 & 30/50 & 0 / 20\\
+10\,mm & 6/50 & 30/50 & 0 / 20\\
+$3^\circ$+20\,mm & 0/50 & 7/50 & 0 / 43\\\bottomrule
+\end{tabular}\label{tab:drift}\end{table}
+
+\textbf{Noise alone does not separate methods.} B1 equals the oracle (100/100 episodes) under nominal and degraded noise
+on both robots, so we evaluate under injected faults.
+
+\textbf{Drift (Table~\ref{tab:drift}).} The monitored system beats B1 in every drifted cell ($p\le0.016$). B1 makes
+116--295 wrong picks per cell; B3cal makes 3 in total. As drift grows, failures become deferrals. Detection is not the
+bottleneck: alarms fire in 50/50 drifted episodes and 0/50 clean ones. Slow drift (a 0$\to$1$^\circ$ ramp over 20
+observations, EXP-M5-004) is detected in 50/50 runs at a median of $0.10^\circ$ (max $0.35^\circ$), before B1's
+grasp-point error exceeds 5.2\,mm, with 0 false alarms in 1{,}000 drift-free frames.
+
+\textbf{Observability.} With only the table and 24--40\,mm walls, a 10\,mm camera translation is corrected to 7.5\,mm;
+with three reference spheres, to 1.2\,mm. The condition number of $J^\top J$ (400--800) did not separate good from bad
+fits. Held-out sphere validation refuses the $3^\circ$/20\,mm case instead of applying a 1.4\,mm-accurate but unverified
+correction.
+
+\textbf{Where drift failures come from.} A tilted camera lifts table patches above the height gate, producing phantom
+"parts". Measured tolerances (10--15\,mm) exceed the pose shift of a $0.5^\circ$ bump, so phantoms, not small pose
+errors, dominate. The risk model ranks out-of-tolerance estimates with AUROC 0.995 vs 0.754 for the estimator's
+score, and 0.966 vs 0.767 on real-part detections only (post hoc). Split-conformal 90\% bounds reach 0.89 coverage in
+distribution and \textbf{0.71 under shift}.
+
+\textbf{Full loop.} Adding the risk gate to B3cal changes nothing under drift (identical in all four cells, 0 wrong
+picks). After recalibration there is nothing left for it to stop.
+
+\begin{table}[t]\centering\small
+\caption{Touching-part clutter, 6 parts, 100 paired trays (EXP-M4-002/003; fresh seeds per study).}
+\begin{tabular}{lcc}\toprule
+Arm & Sorted trays & Wrong picks\\\midrule
+B1 classical & 30/100 & 355\\
+B2 Mask R-CNN & 53/100 & 284\\
+B0 oracle poses & 58/100 & 269\\\midrule
+B2 (fresh seeds) & 50/100 & 232\\
+\textbf{B2 + CA} & \textbf{88/100} & 55\\
+B0 + CA & 88/100 & 48\\\bottomrule
+\end{tabular}\label{tab:clutter}\end{table}
+
+\textbf{Learned segmentation.} COCO weights alone reach 0.001 segmentation mAP. Head-only, partial and full fine-tuning
+reach 0.854, 0.853 and 0.861 (one seed each; no difference established), and head-only uses 28\% of the memory. In
+clutter (Table~\ref{tab:clutter}) B2 raises first-frame localisation from 60.5\% to 99.2\% and sorting from 30 to 53/100
+($p=1.5\times10^{-5}$), near the 58/100 oracle ceiling, where gripper collisions take over. Clearance ordering lifts B2
+from 50 to 88/100 ($p=7.5\times10^{-11}$), equal to the oracle with the same rule. All 42 remaining failed picks are
+blocks or brackets (a single closing axis) whose descent is blocked; pins, whose grasp yaw is free, never fail.
+
+\textbf{The gate needs good perception.} In clutter with B1, the gate cuts wrong picks by 64\% but defers 32/50 episodes,
+and success falls from 14 to 5/50 ($p=0.004$). Recalibrating it on clutter data made it more selective (wrong picks
+$-84\%$) and deferred more (4/50 success). With B1 most clutter estimates really are bad, and re-observing a static
+scene adds no information. With B2 (EXP-M9-005) the gate cuts wrong picks from 95 to 48 and raises success from 21 to
+31/50 ($p=0.031$), with 2 deferrals.
+
+\textbf{Transfer.} The same code on the FANUC M-710iC/50: a $0.5^\circ$ bump gives 6/50 (B1) vs 42/50 (B3cal),
+$p=3\times10^{-11}$; 10\,mm gives 9 vs 30/50. The camera and fixtures are shared, so this measures modular transfer,
+not generalisation to a new cell.
+
+\begin{table}[t]\centering\small
+\caption{World-model prediction on held-out UR10e trajectories: mean latent L2 as a multiple of a copy-$z_0$ baseline.}
+\begin{tabular}{lccc}\toprule
+$h$ & JEPA zero-shot & JEPA WM-B & Fallback\\\midrule
+1 & 2.76 & 1.08 & 0.63\\
+2 & 2.72 & 0.82 & 0.52\\
+6 & 2.68 & 0.67 & 0.43\\\bottomrule
+\end{tabular}\label{tab:wm}\end{table}
+
+\textbf{World models.} We reproduced JEPA-WM on MetaWorld reach-wall: 5/12 vs the paper's 41.6\%
+\citep{terver2025jepawms}, with $n=12$ and a CI of roughly 15--72\%. Zero-shot on our cell it is worse than copying the
+current frame at every horizon (Table~\ref{tab:wm}). Fine-tuning only the predictor brings it to $0.67\times$ at $h=6$.
+The fallback predicts a global embedding, an easier target, and reaches $0.43\times$. As a grasp verifier the fallback
+\emph{hurt}: 88/100 vs 99/100 for geometry at zero drift ($p=0.001$), and 16 vs 21/100 at $1^\circ$. Its outcome head
+reached only AUROC 0.58--0.67, below a pre-set 0.80 gate. A probe on JEPA patch latents isolates the cause: grasp
+outcome is readable from the \emph{true} final frame (AUROC 0.99) but not from WM-B's \emph{predicted} one (0.72).
+The models learn the arm's motion, not the contact outcome.
+
+\textbf{Deployment.} The fine-tuned Mask R-CNN exports to ONNX with exact outputs (76/76 detections,
+$|\Delta\text{score}|\le1.8\times10^{-6}$), but ONNX Runtime is about $12\times$ slower than PyTorch on a V100 (544 vs
+44\,ms), and its TensorRT provider slower still, so PyTorch is kept. A ROS~2 Jazzy integration test (sim bridge,
+perception, calibration monitor) passes.
+
+\section{Limitations}
+Everything is simulation, with assumed sensor noise and primitive parts. Drift is a rigid bump or a linear ramp of the
+camera, and real mounts also flex. Training runs use single seeds. The vision domain shift we built was too mild to
+probe generalisation. World-model data comes from a scripted policy. JEPA-WMs is licensed CC BY-NC. No result here
+establishes performance on real FANUC, UR or any vendor's software.
+
+\section{Conclusion}
+Reliability came from three things, each measured separately: detecting when geometry is wrong (validated
+recalibration), refusing actions that are likely wrong (risk gating, \emph{if} perception is good enough), and choosing
+actions that are less likely to fail (clearance-ordered grasping). Learned components earned their place where they
+fixed a specific failure (merged blobs) and were kept away from decisions they could not yet make (world-model
+verification). The experiment registry, code and all result files are public at
+\url{https://github.com/parammadan/aura3d}.
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+\end{document}
