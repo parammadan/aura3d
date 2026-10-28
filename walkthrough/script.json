@@ -81,7 +81,7 @@
   "id": "s14",
   "kind": "card",
   "visual": "rigor",
-  "text": "TBD rigor, gradual drift and deployment numbers"
+  "text": "Every experiment was written down before its test run, on seeds never used for tuning, and the bugs and negative results are reported as well. Then, two final checks. A slow camera drift was caught at about a tenth of a degree, with zero false alarms in a thousand frames. And the vision model, exported for deployment, gave identical outputs but ran slower, so it stays in PyTorch. All of this is simulation, with assumed sensor noise and simple parts."
  },
  {
   "id": "s15",

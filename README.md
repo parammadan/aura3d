@@ -18,6 +18,8 @@ action-conditioned world models for predictive planning.
 | **EXP-M5-003**: learned pose-risk vs the estimator's own confidence | AUROC 0.995 vs 0.754 in-distribution (0.966 vs 0.767 excluding phantom detections). Split-conformal coverage 0.89 (target 0.90) in-distribution, **0.71 under shift**, so the guarantee does not survive shift. |
 | **EXP-M4-002/003**: touching-part clutter | Fine-tuned Mask R-CNN: 30/100 → 53/100 episodes; + collision-aware grasp selection → **88/100**, equal to oracle poses with the same rule (p = 7.5e-11) |
 | **EXP-M9-003…005**: pose-risk gate in clutter | Over-defers with classical perception (14 → 5/50). With Mask R-CNN, wrong picks −49 % and success 21 → 31/50 (p = 0.03) |
+| **EXP-M5-004**: gradual drift | 0 false alarms / 1,000 frames; slow drift caught at a median 0.1°, before any out-of-tolerance error |
+| **PERF-001**: ONNX export | Numerically exact, but 12× slower than PyTorch on a V100, so PyTorch is kept |
 | **EXP-M9-002**: same code on the FANUC M-710iC/50 | 0.5° bump: 6/50 → 42/50 (p = 3e-11), with zero robot-specific code |
 | **EXP-M7/M8**: world models | Meta JEPA-WM: zero-shot 2.7× worse than copy; predictor fine-tune 0.67×. **Neither world model foresees grasp outcome** (probe AUROC 0.72 on the predicted frame vs 0.99 on the real one), so world-model verification is gated off |
 
@@ -34,7 +36,7 @@ Experiments are pre-registered in [`EXPERIMENT_REGISTRY.md`](EXPERIMENT_REGISTRY
 ## Also built
 Mask R-CNN fine-tuning (head-only / partial / full); Meta JEPA-WMs reproduction (5/12 vs paper 41.6 %) and adapter;
 own latent world model; world-model grasp verifier (negative result); recovery state machine with budgets; ROS 2 Jazzy
-nodes + integration test (pass); demo video. Paper draft: `paper/AURA3D_draft.md`. Slides: `reports/`.
+nodes + integration test (pass); narrated walkthrough video (`walkthrough/`). Paper draft: `paper/AURA3D_draft.md`. Slides: `reports/`.
 
 ## Layout
 `src/aura3d/` holds `simulation/`, `robots/`, `controllers/`, `cameras/`, `geometry/`, `pose_estimation/`,

@@ -60,6 +60,9 @@ B1 = B0 = 100/100 episodes on both robots, nominal and degraded noise.
 ### 5.3 Drift dose-response (EXP-M5-001)
 See `results/m5/ANALYSIS.md`. B3cal beats B1 in every drifted cell (p ≤ 0.016). B3cal's wrong picks total 3 across all
 cells; failures become deferrals as drift grows (5 → 43 of 50). Zero alarms at zero drift (50 episodes).
+### 5.3b Gradual drift (EXP-M5-004)
+0 false alarms in 1,000 drift-free frames; a 0 → 1° ramp is detected in 50/50 runs at a median of 0.10° (max 0.35°),
+before B1's grasp-point error exceeds 5.2 mm (tolerance 10–15 mm).
 ### 5.4 Observability (docs/CAMERA_CALIBRATION.md)
 Without spheres: 10 mm bump → 7.5 mm residual error. With spheres: 1.2 mm. The condition number of JᵀJ was not discriminative.
 ### 5.5 Pose risk (EXP-M5-003)
@@ -94,6 +97,13 @@ FANUC M-710iC/50 with no robot-specific code: 0.5° bump B1 6/50 → B3cal 42/50
 - Diagnostic probe on JEPA patch latents: success is readable from the *true* final frame (test AUROC 0.990) but not
   from WM-B's *predicted* final frame (0.718). The world models we trained do not foresee grasp outcome. Prediction
   error falls with fine-tuning while the decision-relevant content stays missing.
+
+### 5.10 Deployment (PERF-001)
+ONNX export of the fine-tuned Mask R-CNN is numerically exact (76/76 detections, |Δscore| ≤ 1.8e-6), but ONNX Runtime
+is about 12× slower than PyTorch on a V100 (544 vs 44 ms), and the TensorRT EP is slower still. PyTorch is kept.
+### 5.11 Remaining clutter failures (EXP-M4-004)
+All 42 failed picks in the 12 failed trays are blocks or brackets (single closing axis) whose descent is blocked;
+pins (free yaw) never fail.
 
 ## 6 Limitations
 Simulation only, with assumed sensor noise. Primitive parts; a mild domain shift for vision; single seeds for training
