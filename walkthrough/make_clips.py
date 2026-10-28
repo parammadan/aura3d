@@ -112,7 +112,7 @@ def make(i):
     elif i == "s02":
         im, d = base("", "Param Madan")
         lines(d, 120, 300, ["Robot perception that knows when not to trust itself", "",
-                            "github.com/parammadan/aura3d   ·   linkedin.com/in/parammadan"], sz=44, col=TEXT)
+                            "github.com/parammadan/aura3d"], sz=44, col=TEXT)
         still(im, s, out)
     elif i == "s03":
         footage([DEMOS / "m2_oracle_fanuc_m710ic_50.mp4", DEMOS / "m2_oracle_ur10e.mp4"], s, out,
@@ -192,8 +192,7 @@ def make(i):
         still(im, s, out)
     elif i == "s15":
         im, d = base("The lesson", "Know when you're wrong. Have a good next move.")
-        lines(d, 120, 340, ["github.com/parammadan/aura3d", "Code · results · pre-registered experiments · paper draft",
-                            "", "linkedin.com/in/parammadan"], sz=46, gap=74)
+        lines(d, 120, 340, ["github.com/parammadan/aura3d", "Code · results · pre-registered experiments · paper draft"], sz=46, gap=74)
         still(im, s, out)
     print(i, round(s, 1), "s")
 
