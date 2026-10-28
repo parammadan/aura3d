@@ -27,3 +27,9 @@ Episode success = all 3 parts in their class bin. Wrong picks = executed picks t
   first correction, more or better-placed reference spheres, robot self-observation. None of this has been tested.
 - Not tested here: gradual drift, false-alarm rate over long nominal operation (only 50 episodes ≈ 150 frames), FANUC,
   degraded noise.
+
+# EXP-M5-004: gradual drift + long-run false alarms (seeds 5000–5049, run 2 after the camera-reset bug fix)
+- **False alarms: 0 / 1,000 drift-free frames.**
+- Linear ramp 0 → 1° over 20 observations: detected in **50/50** runs, at a median of **0.10°** (max 0.35°).
+- B1's worst grasp-point error before the first alarm: median 1.07 mm, max **5.2 mm**, below the 10–15 mm tolerance.
+  Slow drift is caught before it can cause a bad pick.

@@ -1,0 +1,878 @@
+{
+ "summary": {
+  "B0": {
+   "episode_success": 0.16666666666666666,
+   "wilson95": [
+    0.04696514175692082,
+    0.4480308646118111
+   ],
+   "parts_correct": 56,
+   "wrong_picks": 41
+  },
+  "B0+CA": {
+   "episode_success": 0.16666666666666666,
+   "wilson95": [
+    0.04696514175692082,
+    0.4480308646118111
+   ],
+   "parts_correct": 60,
+   "wrong_picks": 38
+  },
+  "B2": {
+   "episode_success": 0.08333333333333333,
+   "wilson95": [
+    0.014865094239669363,
+    0.35387991372124555
+   ],
+   "parts_correct": 48,
+   "wrong_picks": 61
+  },
+  "B2+CA": {
+   "episode_success": 0.0,
+   "wilson95": [
+    0.0,
+    0.2424940095530979
+   ],
+   "parts_correct": 56,
+   "wrong_picks": 42
+  },
+  "mcnemar_B0": {
+   "p": 1.0,
+   "discordant": [
+    1,
+    1
+   ]
+  },
+  "mcnemar_B2": {
+   "p": 1.0,
+   "discordant": [
+    1,
+    0
+   ]
+  }
+ },
+ "rows": [
+  {
+   "seed": 4200,
+   "B0": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "reasons": [
+     "pin:placed",
+     "block:placed",
+     "bracket:placed",
+     "block:motion_blocked",
+     "block:placed",
+     "pin:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B0+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "reasons": [
+     "pin:placed",
+     "bracket:placed",
+     "pin:placed",
+     "block:placed",
+     "block:motion_blocked",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "reasons": [
+     "pin:placed",
+     "block:placed",
+     "bracket:placed",
+     "block:motion_blocked",
+     "block:placed",
+     "pin:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "reasons": [
+     "pin:placed",
+     "bracket:placed",
+     "pin:placed",
+     "block:placed",
+     "block:motion_blocked",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   }
+  },
+  {
+   "seed": 4201,
+   "B0": {
+    "correct": 3,
+    "success": false,
+    "wrong": 3,
+    "reasons": [
+     "bracket:motion_blocked",
+     "pin:motion_blocked",
+     "block:motion_blocked",
+     "bracket:placed",
+     "pin:placed",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B0+CA": {
+    "correct": 4,
+    "success": false,
+    "wrong": 3,
+    "reasons": [
+     "pin:placed",
+     "pin:placed",
+     "block:placed",
+     "bracket:placed",
+     "block:motion_blocked",
+     "bracket:closed_on_nothing",
+     "bracket:motion_blocked"
+    ],
+    "end": "tray_empty"
+   },
+   "B2": {
+    "correct": 3,
+    "success": false,
+    "wrong": 4,
+    "reasons": [
+     "bracket:motion_blocked",
+     "pin:motion_blocked",
+     "block:motion_blocked",
+     "pin:motion_blocked",
+     "bracket:placed",
+     "pin:placed",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2+CA": {
+    "correct": 4,
+    "success": false,
+    "wrong": 8,
+    "reasons": [
+     "pin:placed",
+     "pin:placed",
+     "bracket:placed",
+     "block:placed",
+     "block:closed_on_nothing",
+     "block:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked"
+    ],
+    "end": "budget"
+   }
+  },
+  {
+   "seed": 4207,
+   "B0": {
+    "correct": 6,
+    "success": true,
+    "wrong": 1,
+    "reasons": [
+     "block:placed",
+     "pin:placed",
+     "pin:placed",
+     "bracket:motion_blocked",
+     "bracket:placed",
+     "bracket:placed",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B0+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "reasons": [
+     "pin:placed",
+     "pin:placed",
+     "block:placed",
+     "block:motion_blocked",
+     "bracket:placed",
+     "bracket:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2": {
+    "correct": 5,
+    "success": false,
+    "wrong": 4,
+    "reasons": [
+     "block:placed",
+     "pin:placed",
+     "pin:motion_blocked",
+     "pin:motion_blocked",
+     "pin:motion_blocked",
+     "bracket:placed",
+     "bracket:placed",
+     "bracket:motion_blocked",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "reasons": [
+     "pin:placed",
+     "pin:placed",
+     "block:placed",
+     "block:motion_blocked",
+     "bracket:placed",
+     "bracket:placed"
+    ],
+    "end": "tray_empty"
+   }
+  },
+  {
+   "seed": 4221,
+   "B0": {
+    "correct": 5,
+    "success": false,
+    "wrong": 7,
+    "reasons": [
+     "block:motion_blocked",
+     "block:motion_blocked",
+     "block:placed",
+     "pin:placed",
+     "bracket:placed",
+     "pin:placed",
+     "bracket:placed",
+     "block:motion_blocked",
+     "block:closed_on_nothing",
+     "block:motion_blocked",
+     "block:closed_on_nothing",
+     "block:motion_blocked"
+    ],
+    "end": "budget"
+   },
+   "B0+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 7,
+    "reasons": [
+     "pin:placed",
+     "pin:placed",
+     "bracket:placed",
+     "bracket:placed",
+     "block:motion_blocked",
+     "block:placed",
+     "block:motion_blocked",
+     "block:closed_on_nothing",
+     "block:motion_blocked",
+     "block:closed_on_nothing",
+     "block:motion_blocked",
+     "block:closed_on_nothing"
+    ],
+    "end": "budget"
+   },
+   "B2": {
+    "correct": 5,
+    "success": false,
+    "wrong": 7,
+    "reasons": [
+     "block:motion_blocked",
+     "block:motion_blocked",
+     "block:placed",
+     "pin:placed",
+     "bracket:placed",
+     "pin:placed",
+     "bracket:placed",
+     "block:motion_blocked",
+     "block:closed_on_nothing",
+     "block:motion_blocked",
+     "block:closed_on_nothing",
+     "block:motion_blocked"
+    ],
+    "end": "budget"
+   },
+   "B2+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 7,
+    "reasons": [
+     "pin:placed",
+     "pin:placed",
+     "bracket:placed",
+     "bracket:placed",
+     "block:motion_blocked",
+     "block:placed",
+     "block:motion_blocked",
+     "block:closed_on_nothing",
+     "block:motion_blocked",
+     "block:closed_on_nothing",
+     "block:motion_blocked",
+     "block:closed_on_nothing"
+    ],
+    "end": "budget"
+   }
+  },
+  {
+   "seed": 4223,
+   "B0": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "reasons": [
+     "pin:placed",
+     "bracket:placed",
+     "pin:placed",
+     "block:motion_blocked",
+     "block:placed",
+     "bracket:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B0+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 2,
+    "reasons": [
+     "pin:placed",
+     "bracket:placed",
+     "pin:placed",
+     "bracket:placed",
+     "block:motion_blocked",
+     "block:motion_blocked",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "reasons": [
+     "pin:placed",
+     "bracket:placed",
+     "pin:placed",
+     "block:motion_blocked",
+     "block:placed",
+     "bracket:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 3,
+    "reasons": [
+     "pin:placed",
+     "bracket:placed",
+     "pin:placed",
+     "bracket:placed",
+     "block:motion_blocked",
+     "block:motion_blocked",
+     "block:motion_blocked",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   }
+  },
+  {
+   "seed": 4236,
+   "B0": {
+    "correct": 6,
+    "success": true,
+    "wrong": 1,
+    "reasons": [
+     "bracket:motion_blocked",
+     "block:placed",
+     "bracket:placed",
+     "block:placed",
+     "pin:placed",
+     "pin:placed",
+     "bracket:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B0+CA": {
+    "correct": 6,
+    "success": true,
+    "wrong": 1,
+    "reasons": [
+     "pin:placed",
+     "pin:placed",
+     "block:placed",
+     "bracket:motion_blocked",
+     "bracket:placed",
+     "block:placed",
+     "bracket:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2": {
+    "correct": 6,
+    "success": true,
+    "wrong": 3,
+    "reasons": [
+     "bracket:motion_blocked",
+     "block:placed",
+     "block:motion_blocked",
+     "block:placed",
+     "pin:placed",
+     "pin:placed",
+     "bracket:motion_blocked",
+     "bracket:placed",
+     "bracket:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2+CA": {
+    "correct": 4,
+    "success": false,
+    "wrong": 8,
+    "reasons": [
+     "pin:placed",
+     "pin:placed",
+     "block:placed",
+     "block:motion_blocked",
+     "block:motion_blocked",
+     "block:placed",
+     "block:motion_blocked",
+     "bracket:motion_blocked",
+     "block:motion_blocked",
+     "block:motion_blocked",
+     "block:motion_blocked",
+     "block:motion_blocked"
+    ],
+    "end": "budget"
+   }
+  },
+  {
+   "seed": 4242,
+   "B0": {
+    "correct": 4,
+    "success": false,
+    "wrong": 8,
+    "reasons": [
+     "pin:placed",
+     "pin:placed",
+     "block:motion_blocked",
+     "bracket:placed",
+     "bracket:closed_on_nothing",
+     "block:placed",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:closed_on_nothing",
+     "bracket:closed_on_nothing",
+     "bracket:motion_blocked"
+    ],
+    "end": "budget"
+   },
+   "B0+CA": {
+    "correct": 4,
+    "success": false,
+    "wrong": 8,
+    "reasons": [
+     "bracket:placed",
+     "pin:placed",
+     "pin:placed",
+     "bracket:motion_blocked",
+     "block:placed",
+     "block:motion_blocked",
+     "block:closed_on_nothing",
+     "block:motion_blocked",
+     "block:closed_on_nothing",
+     "block:motion_blocked",
+     "block:closed_on_nothing",
+     "block:motion_blocked"
+    ],
+    "end": "budget"
+   },
+   "B2": {
+    "correct": 5,
+    "success": false,
+    "wrong": 4,
+    "reasons": [
+     "pin:placed",
+     "pin:placed",
+     "block:motion_blocked",
+     "block:motion_blocked",
+     "bracket:motion_blocked",
+     "block:placed",
+     "bracket:placed",
+     "bracket:motion_blocked",
+     "bracket:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2+CA": {
+    "correct": 4,
+    "success": false,
+    "wrong": 1,
+    "reasons": [
+     "bracket:placed",
+     "pin:placed",
+     "pin:placed",
+     "bracket:motion_blocked",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   }
+  },
+  {
+   "seed": 4243,
+   "B0": {
+    "correct": 5,
+    "success": false,
+    "wrong": 4,
+    "reasons": [
+     "block:placed",
+     "pin:placed",
+     "block:placed",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "pin:placed",
+     "bracket:motion_blocked",
+     "bracket:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B0+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 7,
+    "reasons": [
+     "block:placed",
+     "pin:placed",
+     "block:placed",
+     "pin:placed",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:placed",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked"
+    ],
+    "end": "budget"
+   },
+   "B2": {
+    "correct": 1,
+    "success": false,
+    "wrong": 11,
+    "reasons": [
+     "block:placed",
+     "pin:motion_blocked",
+     "bracket:motion_blocked",
+     "pin:closed_on_nothing",
+     "pin:closed_on_nothing",
+     "pin:closed_on_nothing",
+     "pin:closed_on_nothing",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "pin:closed_on_nothing"
+    ],
+    "end": "budget"
+   },
+   "B2+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 7,
+    "reasons": [
+     "block:placed",
+     "pin:placed",
+     "block:placed",
+     "pin:placed",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:placed",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked"
+    ],
+    "end": "budget"
+   }
+  },
+  {
+   "seed": 4253,
+   "B0": {
+    "correct": 3,
+    "success": false,
+    "wrong": 9,
+    "reasons": [
+     "block:motion_blocked",
+     "block:motion_blocked",
+     "block:placed",
+     "pin:motion_blocked",
+     "bracket:placed",
+     "pin:placed",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "pin:motion_blocked",
+     "bracket:closed_on_nothing",
+     "pin:motion_blocked",
+     "bracket:motion_blocked"
+    ],
+    "end": "budget"
+   },
+   "B0+CA": {
+    "correct": 6,
+    "success": true,
+    "wrong": 3,
+    "reasons": [
+     "pin:placed",
+     "bracket:motion_blocked",
+     "bracket:placed",
+     "pin:placed",
+     "block:motion_blocked",
+     "bracket:motion_blocked",
+     "block:placed",
+     "block:placed",
+     "bracket:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2": {
+    "correct": 2,
+    "success": false,
+    "wrong": 10,
+    "reasons": [
+     "block:motion_blocked",
+     "block:motion_blocked",
+     "block:motion_blocked",
+     "block:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:placed",
+     "pin:placed",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "block:motion_blocked",
+     "block:motion_blocked",
+     "block:motion_blocked"
+    ],
+    "end": "budget"
+   },
+   "B2+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 2,
+    "reasons": [
+     "pin:placed",
+     "pin:placed",
+     "bracket:motion_blocked",
+     "bracket:placed",
+     "bracket:motion_blocked",
+     "block:placed",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   }
+  },
+  {
+   "seed": 4255,
+   "B0": {
+    "correct": 5,
+    "success": false,
+    "wrong": 3,
+    "reasons": [
+     "pin:placed",
+     "block:placed",
+     "block:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:placed",
+     "pin:placed",
+     "bracket:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B0+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 3,
+    "reasons": [
+     "pin:placed",
+     "pin:placed",
+     "block:placed",
+     "bracket:placed",
+     "block:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "reasons": [
+     "pin:placed",
+     "block:placed",
+     "block:motion_blocked",
+     "bracket:placed",
+     "pin:placed",
+     "bracket:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2+CA": {
+    "correct": 4,
+    "success": false,
+    "wrong": 2,
+    "reasons": [
+     "pin:placed",
+     "pin:placed",
+     "block:placed",
+     "bracket:placed",
+     "block:motion_blocked",
+     "bracket:motion_blocked"
+    ],
+    "end": "tray_empty"
+   }
+  },
+  {
+   "seed": 4257,
+   "B0": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "reasons": [
+     "block:placed",
+     "block:motion_blocked",
+     "pin:placed",
+     "pin:placed",
+     "bracket:placed",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B0+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "reasons": [
+     "bracket:placed",
+     "pin:placed",
+     "block:placed",
+     "pin:placed",
+     "block:motion_blocked",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2": {
+    "correct": 4,
+    "success": false,
+    "wrong": 5,
+    "reasons": [
+     "block:placed",
+     "block:motion_blocked",
+     "pin:motion_blocked",
+     "bracket:motion_blocked",
+     "block:placed",
+     "pin:placed",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "reasons": [
+     "bracket:placed",
+     "pin:placed",
+     "block:placed",
+     "pin:placed",
+     "block:motion_blocked",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   }
+  },
+  {
+   "seed": 4281,
+   "B0": {
+    "correct": 4,
+    "success": false,
+    "wrong": 2,
+    "reasons": [
+     "block:motion_blocked",
+     "bracket:motion_blocked",
+     "pin:placed",
+     "block:placed",
+     "bracket:placed",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B0+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "reasons": [
+     "block:placed",
+     "pin:placed",
+     "pin:placed",
+     "bracket:placed",
+     "block:motion_blocked",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   },
+   "B2": {
+    "correct": 2,
+    "success": false,
+    "wrong": 10,
+    "reasons": [
+     "block:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:motion_blocked",
+     "bracket:closed_on_nothing",
+     "bracket:closed_on_nothing",
+     "pin:motion_blocked",
+     "block:placed",
+     "bracket:motion_blocked",
+     "block:placed",
+     "bracket:closed_on_nothing",
+     "bracket:motion_blocked",
+     "bracket:closed_on_nothing"
+    ],
+    "end": "budget"
+   },
+   "B2+CA": {
+    "correct": 5,
+    "success": false,
+    "wrong": 1,
+    "reasons": [
+     "block:placed",
+     "pin:placed",
+     "pin:placed",
+     "bracket:placed",
+     "block:motion_blocked",
+     "block:placed"
+    ],
+    "end": "tray_empty"
+   }
+  }
+ ]
+}

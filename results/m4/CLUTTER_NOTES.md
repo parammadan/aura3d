@@ -26,3 +26,9 @@ McNemar CA vs no-CA: B0 p = 8.7e-7 (2 vs 28 discordant); B2 p = 7.5e-11 (1 vs 39
 lifts learned perception from 50 to 88/100 and cuts wrong picks by 76 %. **B2 + CA equals the oracle + CA**: with
 fine-tuned segmentation plus clearance ordering, perception is no longer the limit in this clutter setting. Remaining
 12 % failures are not yet analysed.
+
+# EXP-M4-004: why B2 + CA still fails 12/100 trays (descriptive, seeds rerun with per-pick reasons)
+42 failed picks: block motion_blocked 20, bracket motion_blocked 18, block closed_on_nothing 4. **Pins: 0.**
+Every remaining failure is a part with a single closing axis whose descent is blocked by a neighbour or wall. The
+pin's grasp yaw can rotate, which is why it never fails. Next fix (untested): a second grasp axis for the block (its
+60 mm side fits the 110 mm jaw), and a small push / singulation action when no axis is clear.

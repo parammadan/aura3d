@@ -1,0 +1,33 @@
+{
+ "export_s": 5.140569686889648,
+ "onnx_mb": 176.293956,
+ "ort": "1.23.2",
+ "providers_available": [
+  "TensorrtExecutionProvider",
+  "CUDAExecutionProvider",
+  "CPUExecutionProvider"
+ ],
+ "gpu": "Tesla V100-SXM2-32GB",
+ "agreement": {
+  "images": 20,
+  "torch_dets": 76,
+  "onnx_dets": 76,
+  "matched": 76,
+  "max_score_diff": 1.8477439880371094e-06,
+  "min_mask_iou": 1.0
+ },
+ "latency": {
+  "torch_fp32": {
+   "p50_ms": 44.359967578202486,
+   "p95_ms": 45.12314790626988
+  },
+  "ort_cuda": {
+   "p50_ms": 543.834115494974,
+   "p95_ms": 578.588630061131
+  },
+  "ort_tensorrt_fp16": {
+   "p50_ms": 6428.571015014313,
+   "p95_ms": 7089.779777650256
+  }
+ }
+}
