@@ -1,5 +1,7 @@
 # AURA-3D: Adaptive, Uncertainty-Aware Robotic Autonomy
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23734027.svg)](https://doi.org/10.5281/zenodo.23734027)
+
 Simulation-first research on **reliable industrial pick-and-place under changing workcell conditions**: calibrated
 3D perception, camera-drift monitoring with validated recalibration, pose-risk gating, and (in progress)
 action-conditioned world models for predictive planning.
@@ -36,7 +38,7 @@ Experiments are pre-registered in [`EXPERIMENT_REGISTRY.md`](EXPERIMENT_REGISTRY
 ## Also built
 Mask R-CNN fine-tuning (head-only / partial / full); Meta JEPA-WMs reproduction (5/12 vs paper 41.6 %) and adapter;
 own latent world model; world-model grasp verifier (negative result); recovery state machine with budgets; ROS 2 Jazzy
-nodes + integration test (pass); narrated walkthrough video (`walkthrough/`). Paper draft: `paper/AURA3D_draft.md`. Slides: `reports/`.
+nodes + integration test (pass); narrated walkthrough video (`walkthrough/`). Paper (preprint): [doi:10.5281/zenodo.23734027](https://doi.org/10.5281/zenodo.23734027), PDF `paper/AURA3D_paper.pdf`. Slides: `reports/`.
 
 ## Layout
 `src/aura3d/` holds `simulation/`, `robots/`, `controllers/`, `cameras/`, `geometry/`, `pose_estimation/`,
